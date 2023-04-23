@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://kae1dpusjuy4"]
+
+[ext_resource type="Texture2D" uid="uid://cpdr3t88f1pw2" path="res://art/charactere/Among-Us-Green.png" id="1"]
+[ext_resource type="Script" path="res://Character/Among_us_vert.cs" id="1_ltvvh"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(74, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ch1pf"]
+size = Vector2(74, 96)
+
+[sub_resource type="Animation" id="Animation_ubu13"]
+resource_name = "mort"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.5, 0.1), Vector2(0.5, 0.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5kbs1"]
+_data = {
+"mort": SubResource("Animation_ubu13")
+}
+
+[node name="Among_us_vert" type="CharacterBody2D" groups=["enemies"]]
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 62
+script = ExtResource("1_ltvvh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -2)
+shape = SubResource("1")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -2)
+shape = SubResource("RectangleShape2D_ch1pf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5kbs1")
+}
+
+[node name="RayCast2D_left" type="RayCast2D" parent="."]
+position = Vector2(-34, 42)
+target_position = Vector2(0, 15)
+collision_mask = 48
+
+[node name="RayCast2D_right" type="RayCast2D" parent="."]
+position = Vector2(32, 44)
+target_position = Vector2(0, 15)
+collision_mask = 48
+
+[node name="RayCast2D_side_right" type="RayCast2D" parent="."]
+position = Vector2(36, 0)
+target_position = Vector2(5, 0)
+collision_mask = 50
+
+[node name="RayCast2D_side_left" type="RayCast2D" parent="."]
+position = Vector2(-34, 0)
+target_position = Vector2(-5, 0)
+collision_mask = 50
