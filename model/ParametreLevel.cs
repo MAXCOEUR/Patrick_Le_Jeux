@@ -12,7 +12,7 @@ public partial class ParametreLevel
 	public float Gravity;
 	
 	public ParametreLevel(){
-		jumpBase = -400.0f;
+		jumpBase = -500.0f;
 		jumpHold = -10.0f;
 		maxJumpTime = 500;
 		VitesseMax = 300.0f;

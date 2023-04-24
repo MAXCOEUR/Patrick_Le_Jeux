@@ -3,34 +3,24 @@ using System;
 
 public partial class Patrick : Charactere
 {
-	private float currentVitess = 0;
-	private ParametreLevel parametreLevel = new ParametreLevel();
-	private Sprite2D sprite;
 	private long currentJumpTime = 0;
 	private bool isJumping = false;
-	Area2D patrickArea;
-	AnimationPlayer annimation ;
-
 	bool isInvincible=false;
-	bool isOnWallCurrent = false;
 
 	private DateTime lastWallLeftJump= DateTime.UtcNow;
 	private DateTime lastWallRightJump= DateTime.UtcNow;
 
-	private int etat =1;
-
 	public override void _Ready()
 	{
-		sprite = GetNode<Sprite2D>("Sprite2D");
-		patrickArea = GetNode<Area2D>("Area2D");
-		annimation = GetNode<AnimationPlayer>("AnimationPlayer");
-		annimation.Connect("animation_finished", new Callable(this, "On_animation_finish"));
-		setEtat(2);
-
-		patrickArea.Connect("area_entered", new Callable(this, "OnCollision"));
+		base._Ready();
 	}
 
-	void OnCollision(Area2D otherArea) {
+	public void setParam(ParametreLevel parametreLevel)
+	{
+		this.parametreLevel = parametreLevel;
+	}
+
+	override protected void OnCollision(Area2D otherArea) {
 		Vector2 velocity = Velocity;
 		var otherParent = otherArea.GetParent();
 		GD.Print(otherParent.GetGroups());
@@ -46,12 +36,7 @@ public partial class Patrick : Charactere
 					lessEtat();
 				}
 			}
-			
-			
 		}
-	}
-	public void setParam(ParametreLevel parametreLevel){
-		this.parametreLevel = parametreLevel;
 	}
 	override public void lessEtat(){
 		isInvincible=true;
@@ -90,7 +75,7 @@ public partial class Patrick : Charactere
 		}
 	}
 
-	private void On_animation_finish(string anim_name) {
+	override protected void On_animation_finish(string anim_name) {
 		if(anim_name=="mort"){
 			GameOver gameOver = GetNode<GameOver>("../Camera2D/GameOver");
 			gameOver.setVisible();
@@ -100,39 +85,12 @@ public partial class Patrick : Charactere
 		}
 		
 	}
-	
-	private void goRight(Vector2 velocity,Vector2 direction)
-	{
-		sprite.FlipH = false;
-
-		if (velocity.X<0)
-		{
-			currentVitess *= parametreLevel.Friction;
-		}
-
-		currentVitess = Mathf.Clamp(currentVitess + direction.X * parametreLevel.Acceleration,-parametreLevel.VitesseMax,parametreLevel.VitesseMax);
-
-	}
-
-	private void goLeft(Vector2 velocity,Vector2 direction)
-	{
-		sprite.FlipH = true;
-
-		if (velocity.X>0)
-		{
-			currentVitess *= parametreLevel.Friction;
-		}
-		
-		currentVitess = Mathf.Clamp(currentVitess + direction.X * parametreLevel.Acceleration,-parametreLevel.VitesseMax,parametreLevel.VitesseMax);
-	}
 
 	public override void _PhysicsProcess(double delta)
 	{
+		base._PhysicsProcess(delta);
 		Vector2 velocity = Velocity;
 
-		// Add the gravity.
-		if (!IsOnFloor())
-			velocity.Y += parametreLevel.Gravity * (float)delta;
 
 		// Handle Jump.
 		if (Input.IsActionJustPressed("ui_jump")){
@@ -145,14 +103,14 @@ public partial class Patrick : Charactere
 			else if (isOnLeftWall()) {
 				lastWallLeftJump= DateTime.UtcNow;
 				sprite.FlipH = false;
-				velocity.Y = parametreLevel.jumpBase*1.5f;
-				currentVitess = -parametreLevel.jumpBase*2;
+				velocity.Y = parametreLevel.jumpBase*1f;
+				currentVitess = -parametreLevel.jumpBase*1.5f;
 			}
 			else if (isOnRightWall()) {
 				lastWallRightJump= DateTime.UtcNow;
 				sprite.FlipH = true;
-				velocity.Y = parametreLevel.jumpBase*1.5f;
-				currentVitess = parametreLevel.jumpBase*2;
+				velocity.Y = parametreLevel.jumpBase*1f;
+				currentVitess = parametreLevel.jumpBase*1.5f;
 			}
 			
 		}

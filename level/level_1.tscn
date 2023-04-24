@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://level/CameraScript.cs" id="1"]
 [ext_resource type="Script" path="res://level/level_1Script.cs" id="2"]
 [ext_resource type="PackedScene" uid="uid://pon7ecu0ltwe" path="res://map/map_1.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://interface/GameOver.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://dvdsp71f8qkqx" path="res://interface/GameOver.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://iqkmq53urwaa" path="res://interface/echap.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://dkpq2bm023kog" path="res://Character/Patrick.tscn" id="6_mkuyk"]
 
@@ -11,6 +11,10 @@
 script = ExtResource("2")
 
 [node name="map_1" parent="." instance=ExtResource("3")]
+
+[node name="Patrick" parent="." instance=ExtResource("6_mkuyk")]
+position = Vector2(164, 402)
+rotation = 4.46638e-06
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(640, 362)
@@ -21,15 +25,10 @@ visible = false
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 2
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="GameOver" parent="Camera2D" instance=ExtResource("4")]
 visible = false
-layout_mode = 3
-anchors_preset = 15
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Patrick" parent="." instance=ExtResource("6_mkuyk")]
-position = Vector2(164, 402)

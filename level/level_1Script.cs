@@ -12,7 +12,6 @@ public partial class level_1Script : Node2D
 	public override void _Ready()
 	{
 		_player = GetNode<Patrick>("Patrick");
-		_player.setParam(parametreLevel);
 		
 	}
 }

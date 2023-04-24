@@ -3,27 +3,18 @@ using System;
 
 public partial class Among_us_vert : Charactere
 {
-	private ParametreLevel parametreLevel = new ParametreLevel();
-
-	private Sprite2D sprite;
-	private TileMap tileMap;
 
 	protected int life=-1;
-	protected private float currentVitess = 0;
-	protected int difTimeChangeDir = 2;
-	private DateTime lastChange= DateTime.UtcNow;
-	AnimationPlayer annimation ;
 
-	private int etat =1;
+	protected int difTimeChangeDir = 300;
+	private DateTime lastChange= DateTime.UtcNow;
+
 	public override void _Ready()
 	{
-		sprite = GetNode<Sprite2D>("Sprite2D");
-		setEtat(1);
-		tileMap = GetNode<TileMap>("../TileMap");
-		annimation = GetNode<AnimationPlayer>("AnimationPlayer");
-		annimation.Connect("animation_finished", new Callable(this, "On_animation_finish"));
+		base._Ready();
 
 		parametreLevel.VitesseMax=100;
+		parametreLevel.Friction = 0;
 	}
 
 	override public void setEtat(int i){
@@ -45,49 +36,31 @@ public partial class Among_us_vert : Charactere
 		};
 	}
 
-	private void On_animation_finish(string anim_name) {
+	override protected void On_animation_finish(string anim_name) {
 		if(anim_name=="mort"){
 			this.QueueFree();
 		}
 	}
-
-	private void goRight(Vector2 velocity,Vector2 direction)
+	override protected void OnCollision(Area2D otherArea)
 	{
-		sprite.FlipH = false;
-
-		if (velocity.X<0)
-		{
-			currentVitess *= parametreLevel.Friction;
-		}
-
-		currentVitess = Mathf.Clamp(currentVitess + direction.X * parametreLevel.Acceleration,-parametreLevel.VitesseMax,parametreLevel.VitesseMax);
 
 	}
 
-	private void goLeft(Vector2 velocity,Vector2 direction)
+	protected void changeDirection()
 	{
-		sprite.FlipH = true;
-
-		if (velocity.X>0)
-		{
-			currentVitess *= parametreLevel.Friction;
-		}
-		
-		currentVitess = Mathf.Clamp(currentVitess + direction.X * parametreLevel.Acceleration,-parametreLevel.VitesseMax,parametreLevel.VitesseMax);
+		life = (life == 1) ? -1 : 1;
 	}
 
 	public override void _PhysicsProcess(double delta){
-		parametreLevel.VitesseMax=100;
+		base._PhysicsProcess(delta);
+
 		Vector2 velocity = Velocity;
-		if (!IsOnFloor())
-			velocity.Y += parametreLevel.Gravity * (float)delta;
 
 		Vector2 direction = new Vector2(0,0);
 
-		if (isOnWall()&&DateTime.UtcNow.Second-lastChange.Second>=difTimeChangeDir){
-			lastChange= DateTime.UtcNow;
-			life = (life==1)?-1:1;
-		}
+		TimeSpan duration = DateTime.UtcNow.Subtract(lastChange);
+
+		
 		if(life==-1){
 			direction = new Vector2(-1,0);
 		}
@@ -107,9 +80,14 @@ public partial class Among_us_vert : Charactere
 		{
 			currentVitess *= parametreLevel.Friction;
 		}
-		GD.Print(parametreLevel.VitesseMax);
+		if (isOnWall() && duration.TotalMilliseconds >= difTimeChangeDir)
+		{
+			lastChange = DateTime.UtcNow;
+			changeDirection();
+		}
 		velocity.X=currentVitess;
 
+		
 		Velocity = velocity;
 		MoveAndSlide();
 	}

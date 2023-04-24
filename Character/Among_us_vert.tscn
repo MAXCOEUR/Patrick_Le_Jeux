@@ -57,22 +57,17 @@ libraries = {
 "": SubResource("AnimationLibrary_5kbs1")
 }
 
-[node name="RayCast2D_left" type="RayCast2D" parent="."]
-position = Vector2(-34, 42)
+[node name="RayCast2D_bot" type="RayCast2D" parent="."]
+position = Vector2(0, 44)
 target_position = Vector2(0, 15)
 collision_mask = 48
 
 [node name="RayCast2D_right" type="RayCast2D" parent="."]
-position = Vector2(32, 44)
-target_position = Vector2(0, 15)
-collision_mask = 48
-
-[node name="RayCast2D_side_right" type="RayCast2D" parent="."]
 position = Vector2(36, 0)
 target_position = Vector2(5, 0)
 collision_mask = 50
 
-[node name="RayCast2D_side_left" type="RayCast2D" parent="."]
+[node name="RayCast2D_left" type="RayCast2D" parent="."]
 position = Vector2(-34, 0)
 target_position = Vector2(-5, 0)
 collision_mask = 50

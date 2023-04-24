@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://b0e7yryadi3wn"]
+
+[ext_resource type="Script" path="res://Character/tank.cs" id="1_gpsko"]
+[ext_resource type="Texture2D" uid="uid://d32coloinfj08" path="res://art/charactere/tank.png" id="1_xorhk"]
+[ext_resource type="Texture2D" uid="uid://bn808hj5yxrif" path="res://art/charactere/canon.png" id="2_6g3su"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdvto"]
+size = Vector2(590, 254)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5u7k2"]
+size = Vector2(590, 253)
+
+[sub_resource type="Animation" id="Animation_xik2x"]
+resource_name = "mort"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.2, 0.05), Vector2(0.2, 0.05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vuf2e"]
+_data = {
+"mort": SubResource("Animation_xik2x")
+}
+
+[node name="tank" type="CharacterBody2D"]
+scale = Vector2(0.2, 0.2)
+collision_layer = 2
+collision_mask = 62
+script = ExtResource("1_gpsko")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Tank" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-78.5, -8.5)
+texture = ExtResource("1_xorhk")
+
+[node name="Canon" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-90, -65)
+texture = ExtResource("2_6g3su")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(37, -1)
+shape = SubResource("RectangleShape2D_rdvto")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(37, -0.5)
+shape = SubResource("RectangleShape2D_5u7k2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vuf2e")
+}
+
+[node name="RayCast2D_bot" type="RayCast2D" parent="."]
+position = Vector2(36, 119)
+target_position = Vector2(0, 15)
+collision_mask = 48
+
+[node name="RayCast2D_right" type="RayCast2D" parent="."]
+position = Vector2(332, 0)
+target_position = Vector2(1, 0)
+collision_mask = 50
+
+[node name="RayCast2D_left" type="RayCast2D" parent="."]
+position = Vector2(-258, 0)
+target_position = Vector2(-1, 0)
+collision_mask = 50

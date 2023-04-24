@@ -5,12 +5,15 @@ public partial class Among_us_rouge : Among_us_vert
 {
 
 	private DateTime lastChangeEmpty= DateTime.UtcNow;
+	
 
 
+	public override void _Ready()
+	{
+		base._Ready();
+	}
 	public bool isOnPlatformEnd() {
-		RayCast2D raycastLeft = GetNode<RayCast2D>("RayCast2D_left");
-		RayCast2D  raycastRight = GetNode<RayCast2D>("RayCast2D_right");
-		if(raycastLeft.IsColliding() && raycastRight.IsColliding()){
+		if(raycastBot.IsColliding()){
 			return false;
 		}
 		return true;
@@ -19,11 +22,15 @@ public partial class Among_us_rouge : Among_us_vert
 	public override void _PhysicsProcess(double delta){
 		base._PhysicsProcess(delta);
 		Vector2 velocity = Velocity;
-		if((isOnPlatformEnd()) && DateTime.UtcNow.Second-lastChangeEmpty.Second>=difTimeChangeDir){
-			lastChangeEmpty= DateTime.UtcNow;
-			life = (life==1)?-1:1;
+		TimeSpan duration = DateTime.UtcNow.Subtract(lastChangeEmpty);
+		if ((isOnPlatformEnd()) && duration.TotalMilliseconds >= difTimeChangeDir)
+		{
+			lastChangeEmpty = DateTime.UtcNow;
+			changeDirection();
 		}
-		//GD.Print(isEmptyLeftPlatforme()+" "+isEmptyRightPlatforme());
 
 	}
 }
+
+
+
