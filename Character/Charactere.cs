@@ -40,7 +40,7 @@ public abstract partial class Charactere : CharacterBody2D
 		scaleAbsolute = Scale;
 
 
-	}
+    }
 
 	public bool isOnWall(){
 		if (isOnLeftWall()|| isOnRightWall())
@@ -58,11 +58,7 @@ public abstract partial class Charactere : CharacterBody2D
 
 	protected float goRight(Vector2 direction)
 	{
-
-
-
-		Scale = new Vector2(scaleAbsolute.X, scaleAbsolute.Y);
-
+		sprite.FlipH = false;
 
 		return direction.X * parametreLevel.Acceleration;
 
@@ -70,9 +66,8 @@ public abstract partial class Charactere : CharacterBody2D
 
 	protected float goLeft(Vector2 direction)
 	{
+		sprite.FlipH = true;
 
-
-		Scale = new Vector2(-scaleAbsolute.X, scaleAbsolute.Y);
 
 		return direction.X * parametreLevel.Acceleration;
 	}

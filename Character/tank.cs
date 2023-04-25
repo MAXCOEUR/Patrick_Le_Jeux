@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Threading;
+using System.Timers;
 
 public partial class tank : Charactere
 {
@@ -11,6 +13,8 @@ public partial class tank : Charactere
 	protected Sprite2D canon;
 	protected Sprite2D tankSprite;
 
+	protected System.Timers.Timer timerFire;
+
 	public override void _Ready()
 	{
 		base._Ready();
@@ -18,6 +22,12 @@ public partial class tank : Charactere
 		canon = sprite.GetNode<Sprite2D>("Canon");
 		tankSprite = sprite.GetNode<Sprite2D>("Tank");
 		directionDeplacment = new Vector2(0, 0);
+
+		timerFire = new System.Timers.Timer(5000);
+		timerFire.Elapsed += (timerSender, timerEvent) => send(timerSender, timerEvent);
+		timerFire.AutoReset = true;
+		timerFire.Enabled = true;
+
 	}
 	public override void lessEtat()
 	{
@@ -78,5 +88,19 @@ public partial class tank : Charactere
 
 
 		canon.Rotation = angle;
+	}
+
+	public void send(object source, System.Timers.ElapsedEventArgs e)
+	{
+		PackedScene packedScene = GD.Load<PackedScene>("../Among_us_rouge.tscn");
+		missile missile = (missile)packedScene.GetScript();
+
+
+		Vector2 directionaled = new Vector2(1, 0);
+		missile.setdirection(directionaled);
+
+
+		GetTree().Root.AddChild(missile);
+
 	}
 }

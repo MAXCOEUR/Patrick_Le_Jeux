@@ -23,5 +23,10 @@ public partial class ZoneGame : Node2D
 			enemie.setEtat(0);
 			GD.Print("a dieux enemies !");
 		}
+		else if (otherParent.IsInGroup("ObjectEnemie")) {
+			Object enemie= (Object)otherParent;
+			enemie.setEtat(0);
+			GD.Print("a dieux ObjectEnemie !");
+		}
 	}
 }

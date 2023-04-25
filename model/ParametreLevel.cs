@@ -20,4 +20,14 @@ public partial class ParametreLevel
 		Acceleration = 10.0f;
 		Gravity = 980.0f;
 	}
+	public void setDed()
+	{
+        jumpBase = 0;
+        jumpHold = 0;
+        maxJumpTime = 0;
+        VitesseMax = 0;
+        Friction = 0;
+        Acceleration = 0;
+        Gravity = 0;
+    }
 }

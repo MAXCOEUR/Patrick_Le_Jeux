@@ -19,15 +19,36 @@ public partial class Patrick : Charactere
 		Vector2 velocity = Velocity;
 		var otherParent = otherArea.GetParent();
 		GD.Print(otherParent.GetGroups());
-		if (otherParent.IsInGroup("enemies")) {
-			if(!isInvincible){
-				if(Velocity.Y>0){
+		if (otherParent.IsInGroup("enemies"))
+		{
+			if (!isInvincible)
+			{
+				if (Velocity.Y > 0)
+				{
 					annimation.Play("saut_sur_ennmie");
-					Velocity = new Vector2(Velocity.X,parametreLevel.jumpBase);
-					Charactere enemie= (Charactere)otherParent;
+					Velocity = new Vector2(Velocity.X, parametreLevel.jumpBase);
+					Charactere enemie = (Charactere)otherParent;
 					enemie.lessEtat();
 				}
-				else{
+				else
+				{
+					lessEtat();
+				}
+			}
+		}
+		else if (otherParent.IsInGroup("ObjectEnemie"))
+		{
+			if (!isInvincible)
+			{
+				if (Velocity.Y > 0)
+				{
+					annimation.Play("saut_sur_ennmie");
+					Velocity = new Vector2(Velocity.X, parametreLevel.jumpBase);
+					Object enemie = (Object)otherParent;
+					enemie.lessEtat();
+				}
+				else
+				{
 					lessEtat();
 				}
 			}
@@ -55,8 +76,8 @@ public partial class Patrick : Charactere
 		switch (i){
 			case 0:
 				annimation.Play("mort");
-				
-			break;
+				parametreLevel.setDed();
+				break;
 			case 1:
 				newScale = new Vector2(0.5f,0.5f);
 				this.Scale=newScale;
@@ -74,6 +95,7 @@ public partial class Patrick : Charactere
 		if(anim_name=="mort"){
 			GameOver gameOver = GetNode<GameOver>("../Camera2D/GameOver");
 			gameOver.setVisible();
+			Visible = false;
 		}
 		else if (anim_name=="hit"){
 			isInvincible=false;

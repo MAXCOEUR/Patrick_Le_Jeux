@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsqr4gue7x8wr"]
+
+[ext_resource type="Texture2D" uid="uid://b1x3q65tcpxfr" path="res://art/charactere/objet/rocket.png" id="1_b0sbs"]
+[ext_resource type="Script" path="res://Objet/missile.cs" id="1_s2ix4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fviju"]
+size = Vector2(100, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r638"]
+size = Vector2(100, 30)
+
+[sub_resource type="Animation" id="Animation_gtqb6"]
+resource_name = "explosion"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_y6e52"]
+resource_name = "mort"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.2, 0.05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wkq0b"]
+_data = {
+"explosion": SubResource("Animation_gtqb6"),
+"mort": SubResource("Animation_y6e52")
+}
+
+[sub_resource type="Gradient" id="Gradient_scmih"]
+
+[node name="Missile" type="CharacterBody2D" groups=["ObjectEnemie"]]
+scale = Vector2(0.2, 0.2)
+collision_layer = 4
+collision_mask = 56
+script = ExtResource("1_s2ix4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_b0sbs")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10, 0)
+shape = SubResource("RectangleShape2D_fviju")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-10, 0)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_3r638")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wkq0b")
+}
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+scale = Vector2(1e-05, 1e-05)
+emitting = false
+amount = 500
+lifetime = 3.0
+speed_scale = 5.0
+explosiveness = 0.3
+direction = Vector2(150, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 700.0
+angular_velocity_min = -720.0
+angular_velocity_max = 718.58
+linear_accel_max = 78.14
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_scmih")

@@ -33,7 +33,7 @@ _data = {
 [node name="Among_us_vert" type="CharacterBody2D" groups=["enemies"]]
 scale = Vector2(0.5, 0.5)
 collision_layer = 2
-collision_mask = 62
+collision_mask = 58
 script = ExtResource("1_ltvvh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
