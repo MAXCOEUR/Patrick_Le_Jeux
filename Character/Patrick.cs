@@ -15,11 +15,6 @@ public partial class Patrick : Charactere
 		base._Ready();
 	}
 
-	public void setParam(ParametreLevel parametreLevel)
-	{
-		this.parametreLevel = parametreLevel;
-	}
-
 	override protected void OnCollision(Area2D otherArea) {
 		Vector2 velocity = Velocity;
 		var otherParent = otherArea.GetParent();
@@ -104,13 +99,13 @@ public partial class Patrick : Charactere
 				lastWallLeftJump= DateTime.UtcNow;
 				sprite.FlipH = false;
 				velocity.Y = parametreLevel.jumpBase*1f;
-				currentVitess = -parametreLevel.jumpBase*1.5f;
+				velocity.X = -parametreLevel.jumpBase*4f;
 			}
 			else if (isOnRightWall()) {
 				lastWallRightJump= DateTime.UtcNow;
 				sprite.FlipH = true;
 				velocity.Y = parametreLevel.jumpBase*1f;
-				currentVitess = parametreLevel.jumpBase*1.5f;
+				velocity.X = parametreLevel.jumpBase*4f;
 			}
 			
 		}
@@ -133,22 +128,21 @@ public partial class Patrick : Charactere
 		
 		if (direction != Vector2.Zero)
 		{
-			if(direction.X>0 && DateTime.UtcNow.Second-lastWallRightJump.Second>=1){
-				goRight(velocity,direction);
-			}else if (DateTime.UtcNow.Second-lastWallLeftJump.Second>=1){
-				goLeft(velocity,direction);
+			TimeSpan durationLastWallRightJump = DateTime.UtcNow.Subtract(lastWallRightJump);
+			TimeSpan durationLastWallLeftJump = DateTime.UtcNow.Subtract(lastWallLeftJump);
+			if (direction.X>0 && durationLastWallRightJump.TotalSeconds> 1){
+				velocity.X += goRight(direction);
+			}else if (durationLastWallLeftJump.TotalSeconds >= 1){
+				velocity.X += goLeft(direction);
 			}
 		}
 		else
 		{
-			currentVitess *= parametreLevel.Friction;
+			velocity.X *= parametreLevel.Friction;
 		}
+
 		
-
-		velocity.X=currentVitess;
-
 		Velocity = velocity;
-		MoveAndSlide();
 	}
 
 }

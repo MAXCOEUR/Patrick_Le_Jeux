@@ -13,7 +13,7 @@ script = ExtResource("2")
 [node name="map_1" parent="." instance=ExtResource("3")]
 
 [node name="Patrick" parent="." instance=ExtResource("6_mkuyk")]
-position = Vector2(164, 402)
+position = Vector2(262, 409)
 rotation = 4.46638e-06
 
 [node name="Camera2D" type="Camera2D" parent="."]

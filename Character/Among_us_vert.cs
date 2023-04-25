@@ -4,7 +4,7 @@ using System;
 public partial class Among_us_vert : Charactere
 {
 
-	protected int life=-1;
+	
 
 	protected int difTimeChangeDir = 300;
 	private DateTime lastChange= DateTime.UtcNow;
@@ -13,14 +13,14 @@ public partial class Among_us_vert : Charactere
 	{
 		base._Ready();
 
-		parametreLevel.VitesseMax=100;
+		parametreLevel.VitesseMax=50;
 		parametreLevel.Friction = 0;
 	}
 
 	override public void setEtat(int i){
 		switch (i){
 			case 0:
-				life=0;
+				directionDeplacment= new Vector2(0, 0);
 				annimation.Play("mort");
 			break;
 			case 1:
@@ -48,7 +48,7 @@ public partial class Among_us_vert : Charactere
 
 	protected void changeDirection()
 	{
-		life = (life == 1) ? -1 : 1;
+		directionDeplacment.X = (directionDeplacment.X==1) ? -1 : 1;
 	}
 
 	public override void _PhysicsProcess(double delta){
@@ -61,31 +61,30 @@ public partial class Among_us_vert : Charactere
 		TimeSpan duration = DateTime.UtcNow.Subtract(lastChange);
 
 		
-		if(life==-1){
+		if(base.directionDeplacment.X==-1){
 			direction = new Vector2(-1,0);
 		}
-		else if (life==1){
+		else if (base.directionDeplacment.X ==1){
 			direction = new Vector2(1,0);
 		}
 
 		if (direction != Vector2.Zero)
 		{
 			if(direction.X>0){
-				goRight(velocity,direction);
+				velocity.X += goRight(direction);
 			}else{
-				goLeft(velocity,direction);
+				velocity.X += goLeft(direction);
 			}
 		}
 		else
 		{
-			currentVitess *= parametreLevel.Friction;
+			velocity.X *= parametreLevel.Friction;
 		}
 		if (isOnWall() && duration.TotalMilliseconds >= difTimeChangeDir)
 		{
 			lastChange = DateTime.UtcNow;
 			changeDirection();
 		}
-		velocity.X=currentVitess;
 
 		
 		Velocity = velocity;

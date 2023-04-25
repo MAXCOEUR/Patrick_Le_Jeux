@@ -1483,10 +1483,10 @@ script = ExtResource("8")
 position = Vector2(517, 405)
 
 [node name="Among_us_rouge" parent="." instance=ExtResource("1")]
-position = Vector2(1233, 201)
+position = Vector2(746, 199)
 
 [node name="tank2" parent="." groups=["enemies"] instance=ExtResource("7_u6tg6")]
-position = Vector2(729, 206)
+position = Vector2(1174, 212)
 
 [node name="tank3" parent="." groups=["enemies"] instance=ExtResource("7_u6tg6")]
-position = Vector2(832, 623)
+position = Vector2(56.0001, 630)

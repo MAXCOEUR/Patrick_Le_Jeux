@@ -4,7 +4,6 @@ using System;
 public abstract partial class Charactere : CharacterBody2D
 {
 	protected int etat=1;
-	protected float currentVitess = 0;
 	protected ParametreLevel parametreLevel = new ParametreLevel();
 	protected Sprite2D sprite;
 	protected Area2D area;
@@ -12,12 +11,15 @@ public abstract partial class Charactere : CharacterBody2D
 	protected RayCast2D raycastLeft ;
 	protected RayCast2D raycastRight;
 	protected RayCast2D raycastBot;
+	protected Vector2 directionDeplacment = new Vector2(-1,0);
 
 	abstract public void lessEtat();
 	abstract public void setEtat(int i);
 
 	abstract protected void OnCollision(Area2D otherArea);
 	abstract protected void On_animation_finish(string anim_name);
+
+	protected Vector2 scaleAbsolute;
 
 
 
@@ -35,6 +37,8 @@ public abstract partial class Charactere : CharacterBody2D
 		raycastLeft = GetNode<RayCast2D>("RayCast2D_left");
 		raycastRight = GetNode<RayCast2D>("RayCast2D_right");
 		raycastBot = GetNode<RayCast2D>("RayCast2D_bot");
+		scaleAbsolute = Scale;
+
 
 	}
 
@@ -52,29 +56,29 @@ public abstract partial class Charactere : CharacterBody2D
 		return raycastRight.IsColliding();
 	}
 
-	protected void goRight(Vector2 velocity, Vector2 direction)
+	protected float goRight(Vector2 direction)
 	{
-		sprite.FlipH = false;
 
-		if (velocity.X < 0)
-		{
-			currentVitess *= parametreLevel.Friction;
-		}
 
-		currentVitess = Mathf.Clamp(currentVitess + direction.X * parametreLevel.Acceleration, -parametreLevel.VitesseMax, parametreLevel.VitesseMax);
+
+		Scale = new Vector2(scaleAbsolute.X, scaleAbsolute.Y);
+
+
+		return direction.X * parametreLevel.Acceleration;
 
 	}
 
-	protected void goLeft(Vector2 velocity, Vector2 direction)
+	protected float goLeft(Vector2 direction)
 	{
-		sprite.FlipH = true;
 
-		if (velocity.X > 0)
-		{
-			currentVitess *= parametreLevel.Friction;
-		}
 
-		currentVitess = Mathf.Clamp(currentVitess + direction.X * parametreLevel.Acceleration, -parametreLevel.VitesseMax, parametreLevel.VitesseMax);
+		Scale = new Vector2(-scaleAbsolute.X, scaleAbsolute.Y);
+
+		return direction.X * parametreLevel.Acceleration;
+	}
+	public void setParam(ParametreLevel parametreLevel)
+	{
+		this.parametreLevel = parametreLevel;
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -85,6 +89,10 @@ public abstract partial class Charactere : CharacterBody2D
 		if (!IsOnFloor())
 			velocity.Y += parametreLevel.Gravity * (float)delta;
 
-		Velocity=velocity;
+
+		velocity.X = Mathf.Clamp(velocity.X, -parametreLevel.VitesseMax, parametreLevel.VitesseMax);
+		Velocity = velocity;
+		MoveAndSlide();
+
 	}
 }

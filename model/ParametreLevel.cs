@@ -16,7 +16,7 @@ public partial class ParametreLevel
 		jumpHold = -10.0f;
 		maxJumpTime = 500;
 		VitesseMax = 300.0f;
-		Friction = 0.90f;
+		Friction = 0.80f;
 		Acceleration = 10.0f;
 		Gravity = 980.0f;
 	}

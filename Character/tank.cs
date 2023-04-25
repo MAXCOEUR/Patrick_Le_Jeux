@@ -3,7 +3,6 @@ using System;
 
 public partial class tank : Charactere
 {
-	protected int life = 0;
 
 	protected int difTimeLastShoot = 2;
 	private DateTime lastShoot = DateTime.UtcNow;
@@ -18,7 +17,7 @@ public partial class tank : Charactere
 		patrick = GetNode<Patrick>("../../Patrick");
 		canon = sprite.GetNode<Sprite2D>("Canon");
 		tankSprite = sprite.GetNode<Sprite2D>("Tank");
-
+		directionDeplacment = new Vector2(0, 0);
 	}
 	public override void lessEtat()
 	{
@@ -35,7 +34,7 @@ public partial class tank : Charactere
 		switch (i)
 		{
 			case 0:
-				life = 0;
+				directionDeplacment = new Vector2(0,0);
 				annimation.Play("mort");
 				break;
 			case 1:
@@ -79,8 +78,5 @@ public partial class tank : Charactere
 
 
 		canon.Rotation = angle;
-		
-
-		MoveAndSlide();
 	}
 }

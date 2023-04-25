@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvxc824sh2n6j"]
+[gd_scene load_steps=4 format=3 uid="uid://cvxc824sh2n6j"]
 
 [ext_resource type="Texture2D" uid="uid://bypv0glebts7k" path="res://art/charactere/le_papy_de_brigitte.png" id="1"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(67, 96)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8umx0"]
+size = Vector2(67, 96)
+
 [node name="le_papy_de_brigitte" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 60
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
@@ -14,3 +20,28 @@ texture = ExtResource("1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, -2)
 shape = SubResource("1")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.5, -2)
+shape = SubResource("RectangleShape2D_8umx0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="RayCast2D_bot" type="RayCast2D" parent="."]
+position = Vector2(0, 46)
+target_position = Vector2(0, 15)
+collision_mask = 48
+
+[node name="RayCast2D_right" type="RayCast2D" parent="."]
+position = Vector2(36, 0)
+target_position = Vector2(1, 0)
+collision_mask = 50
+
+[node name="RayCast2D_left" type="RayCast2D" parent="."]
+position = Vector2(-30, 0)
+target_position = Vector2(-2, 0)
+collision_mask = 50
