@@ -1,0 +1,8 @@
+res://level/level_1.tscn
+res://map/map_1.tscn
+res://Character/le_papy_de_brigitte.tscn
+res://Character/le_papy_de_brigitte.gd
+res://Character/Charactere.cs
+res://Character/Among_us_vert.cs
+res://Character/Patrick.cs
+res://Character/tank.cs
