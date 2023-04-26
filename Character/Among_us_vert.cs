@@ -43,7 +43,21 @@ public partial class Among_us_vert : Charactere
 	}
 	override protected void OnCollision(Area2D otherArea)
 	{
+		
+		var otherParent = otherArea.GetParent();
+		
 
+		if (otherParent.IsInGroup("player"))
+		{
+			Patrick player = (Patrick)otherParent;
+			if (!player.isInvincible)
+			{
+				if (player.Velocity.Y <= 0)
+				{
+					player.lessEtat();
+				}
+			}
+		}
 	}
 
 	protected void changeDirection()
@@ -88,6 +102,5 @@ public partial class Among_us_vert : Charactere
 
 		
 		Velocity = velocity;
-		MoveAndSlide();
 	}
 }

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b0e7yryadi3wn"]
 
+[ext_resource type="Script" path="res://Character/tank.cs" id="1_gqtdh"]
 [ext_resource type="Texture2D" uid="uid://d32coloinfj08" path="res://art/charactere/tank.png" id="1_xorhk"]
-[ext_resource type="Script" path="res://Character/tank.cs" id="1_xuett"]
 [ext_resource type="Texture2D" uid="uid://bn808hj5yxrif" path="res://art/charactere/canon.png" id="2_6g3su"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdvto"]
@@ -34,8 +34,8 @@ _data = {
 [node name="tank" type="CharacterBody2D" groups=["enemies"]]
 scale = Vector2(0.2, 0.2)
 collision_layer = 2
-collision_mask = 62
-script = ExtResource("1_xuett")
+collision_mask = 58
+script = ExtResource("1_gqtdh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
@@ -46,6 +46,7 @@ texture = ExtResource("1_xorhk")
 [node name="Canon" type="Sprite2D" parent="Sprite2D"]
 position = Vector2(-90, -65)
 texture = ExtResource("2_6g3su")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.00001, -1)

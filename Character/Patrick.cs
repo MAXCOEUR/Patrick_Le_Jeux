@@ -5,7 +5,7 @@ public partial class Patrick : Charactere
 {
 	private long currentJumpTime = 0;
 	private bool isJumping = false;
-	bool isInvincible=false;
+	public bool isInvincible=false;
 
 	private DateTime lastWallLeftJump= DateTime.UtcNow;
 	private DateTime lastWallRightJump= DateTime.UtcNow;
@@ -18,7 +18,6 @@ public partial class Patrick : Charactere
 	override protected void OnCollision(Area2D otherArea) {
 		Vector2 velocity = Velocity;
 		var otherParent = otherArea.GetParent();
-		GD.Print(otherParent.GetGroups());
 		if (otherParent.IsInGroup("enemies"))
 		{
 			if (!isInvincible)
@@ -29,10 +28,6 @@ public partial class Patrick : Charactere
 					Velocity = new Vector2(Velocity.X, parametreLevel.jumpBase);
 					Charactere enemie = (Charactere)otherParent;
 					enemie.lessEtat();
-				}
-				else
-				{
-					lessEtat();
 				}
 			}
 		}
@@ -46,10 +41,6 @@ public partial class Patrick : Charactere
 					Velocity = new Vector2(Velocity.X, parametreLevel.jumpBase);
 					Object enemie = (Object)otherParent;
 					enemie.lessEtat();
-				}
-				else
-				{
-					lessEtat();
 				}
 			}
 		}

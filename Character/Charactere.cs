@@ -40,7 +40,7 @@ public abstract partial class Charactere : CharacterBody2D
 		scaleAbsolute = Scale;
 
 
-    }
+	}
 
 	public bool isOnWall(){
 		if (isOnLeftWall()|| isOnRightWall())
@@ -60,6 +60,11 @@ public abstract partial class Charactere : CharacterBody2D
 	{
 		sprite.FlipH = false;
 
+		if (Velocity.X < 0)
+		{
+			return direction.X * parametreLevel.Acceleration * (1+parametreLevel.Friction);
+		}
+
 		return direction.X * parametreLevel.Acceleration;
 
 	}
@@ -68,6 +73,10 @@ public abstract partial class Charactere : CharacterBody2D
 	{
 		sprite.FlipH = true;
 
+		if (Velocity.X > 0)
+		{
+			return direction.X * parametreLevel.Acceleration * (1 + parametreLevel.Friction);
+		}
 
 		return direction.X * parametreLevel.Acceleration;
 	}

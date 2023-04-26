@@ -1,23 +1,27 @@
 using Godot;
 using System;
+using System.Reflection;
 using System.Threading;
 using System.Timers;
 
 public partial class tank : Charactere
 {
 
-	protected int difTimeLastShoot = 2;
-	private DateTime lastShoot = DateTime.UtcNow;
-
 	protected Patrick patrick;
 	protected Sprite2D canon;
 	protected Sprite2D tankSprite;
 
 	protected System.Timers.Timer timerFire;
+	Vector2 direction = new Vector2(1,0);
+	Vector2 distance = new Vector2(1, 0);
+
 
 	public override void _Ready()
 	{
 		base._Ready();
+
+		
+
 		patrick = GetNode<Patrick>("../../Patrick");
 		canon = sprite.GetNode<Sprite2D>("Canon");
 		tankSprite = sprite.GetNode<Sprite2D>("Tank");
@@ -55,7 +59,20 @@ public partial class tank : Charactere
 
 	protected override void OnCollision(Area2D otherArea)
 	{
+		var otherParent = otherArea.GetParent();
+
 		
+		if (otherParent.IsInGroup("player"))
+		{
+			Patrick player = (Patrick)otherParent;
+			if (!player.isInvincible)
+			{
+				if (player.Velocity.Y <= 0)
+				{
+					player.lessEtat();
+				}
+			}
+		}
 	}
 
 	protected override void On_animation_finish(string anim_name)
@@ -69,14 +86,14 @@ public partial class tank : Charactere
 	public override void _PhysicsProcess(double delta)
 	{
 		base._PhysicsProcess(delta);
-		TimeSpan duration = DateTime.UtcNow.Subtract(lastShoot);
 
-		Vector2 tankPosition = Position + canon.Position;
+		Vector2 tankPosition = Position;
 		Vector2 patrickPosition = patrick.Position;
 
-
-		float angle = (float)Math.Atan2(patrickPosition.Y - tankPosition.Y, patrickPosition.X - tankPosition.X);
-		if (angle < -MathF.PI / 2 || angle > MathF.PI / 2)
+		distance = new Vector2(patrickPosition.X - tankPosition.X, patrickPosition.Y - tankPosition.Y);
+		Vector2 directiontmp = distance.Normalized();
+		direction = directiontmp.Clamp(-Vector2.One, Vector2.One);
+		if (direction.X<0)
 		{
 			tankSprite.FlipH = false;
 		}
@@ -84,23 +101,25 @@ public partial class tank : Charactere
 		{
 			tankSprite.FlipH = true;
 		}
-		angle += MathF.PI;
 
-
-		canon.Rotation = angle;
+		canon.LookAt(patrickPosition);
 	}
 
 	public void send(object source, System.Timers.ElapsedEventArgs e)
 	{
-		PackedScene packedScene = GD.Load<PackedScene>("../Among_us_rouge.tscn");
-		missile missile = (missile)packedScene.GetScript();
+		if (distance.Length() < 1000)
+		{
+			PackedScene missileScene = (PackedScene)ResourceLoader.Load("res://Objet/missile.tscn");
+			// Créer une nouvelle instance du missile à partir de la scène préfabriquée
+			missile missile = (missile)missileScene.Instantiate();
+			// Définir la position initiale du missile à la position actuelle du tank
+			missile.Position = Position;
 
 
-		Vector2 directionaled = new Vector2(1, 0);
-		missile.setdirection(directionaled);
-
-
-		GetTree().Root.AddChild(missile);
-
+			//missile.setdirection(direction);
+			GetParent().AddChild(missile);
+			missile.setdirection(direction);
+		}
+		
 	}
 }

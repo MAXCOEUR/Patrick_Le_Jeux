@@ -6,10 +6,12 @@ public partial class missile : Object
 	public override void _Ready()
 	{
 		base._Ready();
+		parametreLevel.Gravity = 0f;
 		setdirection(new Vector2(1, -1));
 	}
 	public override void _Process(double delta)
 	{
+		Velocity = new Vector2(parametreLevel.VitesseMax * direction.X, parametreLevel.VitesseMax * direction.Y);
 		base._Process(delta);
 
 		LookAt(Position+direction);
@@ -59,6 +61,30 @@ public partial class missile : Object
 				direction = new Vector2(0, 0);
 				annimation.Play("explosion");
 				break;
+		}
+	}
+
+	protected override void OnCollision(Area2D otherArea)
+	{
+		var otherParent = otherArea.GetParent();
+		if (otherParent.IsInGroup("player"))
+		{
+			Patrick player = (Patrick)otherParent;
+			if (!player.isInvincible)
+			{
+				if (player.Velocity.Y <= 0)
+				{
+					player.lessEtat();
+				}
+			}
+		}
+		if (otherParent.IsInGroup("enemies") && !(otherParent is tank))
+		{
+			Charactere player = (Charactere)otherParent;
+			if (player.Velocity.Y <= 0)
+			{
+				player.lessEtat();
+			}
 		}
 	}
 }
