@@ -22,7 +22,7 @@ public partial class Patrick : Charactere
 		{
 			if (!isInvincible)
 			{
-				if (Velocity.Y > 0)
+				if (directionCurrent.Y > 0)
 				{
 					annimation.Play("saut_sur_ennmie");
 					Velocity = new Vector2(Velocity.X, parametreLevel.jumpBase);
@@ -35,7 +35,7 @@ public partial class Patrick : Charactere
 		{
 			if (!isInvincible)
 			{
-				if (Velocity.Y > 0)
+				if (directionCurrent.Y > 0)
 				{
 					annimation.Play("saut_sur_ennmie");
 					Velocity = new Vector2(Velocity.X, parametreLevel.jumpBase);
@@ -96,6 +96,7 @@ public partial class Patrick : Charactere
 
 	public override void _PhysicsProcess(double delta)
 	{
+		GD.Print(directionCurrent);
 		base._PhysicsProcess(delta);
 		Vector2 velocity = Velocity;
 

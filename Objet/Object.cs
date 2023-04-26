@@ -13,7 +13,7 @@ public abstract partial class Object : CharacterBody2D
 	public override void _Ready()
 	{
 		parametreLevel.VitesseMax = 75;
-		direction = new Vector2(1, 0);
+		direction = new Vector2(0, 0);
 		sprite = GetNode<Sprite2D>("Sprite2D");
 		annimation = GetNode<AnimationPlayer>("AnimationPlayer");
 		annimation.Connect("animation_finished", new Callable(this, "On_animation_finish"));
@@ -50,6 +50,7 @@ public abstract partial class Object : CharacterBody2D
 
         
         Velocity = velocity;
+		
 		MoveAndSlide();
 	}
 }

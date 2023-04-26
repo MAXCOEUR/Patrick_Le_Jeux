@@ -13,6 +13,9 @@ public abstract partial class Charactere : CharacterBody2D
 	protected RayCast2D raycastBot;
 	protected Vector2 directionDeplacment = new Vector2(-1,0);
 
+	private Vector2 OldDirectionCurrent;
+	public Vector2 directionCurrent;
+
 	abstract public void lessEtat();
 	abstract public void setEtat(int i);
 
@@ -38,6 +41,8 @@ public abstract partial class Charactere : CharacterBody2D
 		raycastRight = GetNode<RayCast2D>("RayCast2D_right");
 		raycastBot = GetNode<RayCast2D>("RayCast2D_bot");
 		scaleAbsolute = Scale;
+
+		OldDirectionCurrent = Position;
 
 
 	}
@@ -87,6 +92,12 @@ public abstract partial class Charactere : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		
+		Vector2 tmpDir = Position-OldDirectionCurrent;
+		OldDirectionCurrent = Position;
+		tmpDir.Normalized();
+		directionCurrent = tmpDir.Clamp(-Vector2.One,Vector2.One);
+
 		Vector2 velocity = Velocity;
 
 		// Add the gravity.

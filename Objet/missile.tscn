@@ -11,6 +11,21 @@ size = Vector2(100, 30)
 
 [sub_resource type="Gradient" id="Gradient_scmih"]
 
+[sub_resource type="Animation" id="Animation_is8pj"]
+resource_name = "explosion"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="Animation" id="Animation_l3ffb"]
 resource_name = "mort"
 length = 0.5
@@ -25,21 +40,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0.2, 0.2), Vector2(0.2, 0.05), Vector2(0.2, 0.05)]
-}
-
-[sub_resource type="Animation" id="Animation_is8pj"]
-resource_name = "explosion"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CPUParticles2D:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f4fas"]

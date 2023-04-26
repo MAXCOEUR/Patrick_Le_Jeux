@@ -67,7 +67,7 @@ public partial class tank : Charactere
 			Patrick player = (Patrick)otherParent;
 			if (!player.isInvincible)
 			{
-				if (player.Velocity.Y <= 0)
+				if (player.directionCurrent.Y <= 0)
 				{
 					player.lessEtat();
 				}
