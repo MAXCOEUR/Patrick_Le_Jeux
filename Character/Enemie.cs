@@ -19,8 +19,6 @@ public abstract partial class Enemies : Charactere
 			Patrick player = (Patrick)otherParent;
 			if (!player.isInvincible)
 			{
-				var bot_top = Position.Y - GetViewportRect().Size.Y/2;
-				GD.Print(player.Position.Y+" "+player.GetViewportRect().Size.Y/2+"/"+Position.Y+" "+GetViewportRect().Size.Y/2);
 				if (player.directionCurrent.Y <= 0)
 				{
 					player.lessEtat();

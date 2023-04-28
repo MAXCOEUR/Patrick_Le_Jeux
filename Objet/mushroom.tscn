@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5g3vfj0xxh8c"]
+
+[ext_resource type="Script" path="res://Objet/mushroom.cs" id="1_57k7p"]
+[ext_resource type="Texture2D" uid="uid://ch3k6nk065q3c" path="res://art/charactere/Mushroom.png" id="1_vpxmd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fqls"]
+size = Vector2(100, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyp0d"]
+size = Vector2(100, 100)
+
+[node name="Mushroom" type="CharacterBody2D" groups=["Objet"]]
+scale = Vector2(0.5, 0.5)
+collision_layer = 4
+collision_mask = 56
+script = ExtResource("1_57k7p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_vpxmd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1fqls")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_qyp0d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="RayCast2D_bot" type="RayCast2D" parent="."]
+position = Vector2(0, 44)
+target_position = Vector2(0, 15)
+collision_mask = 48
+
+[node name="RayCast2D_right" type="RayCast2D" parent="."]
+position = Vector2(50, 46)
+target_position = Vector2(5, 0)
+collision_mask = 52
+
+[node name="RayCast2D_left" type="RayCast2D" parent="."]
+position = Vector2(-50, 48)
+target_position = Vector2(-5, 0)
+collision_mask = 52

@@ -96,11 +96,11 @@ public partial class tank : Enemies
 			missile missile = (missile)missileScene.Instantiate();
 			// Définir la position initiale du missile à la position actuelle du tank
 			missile.Position = Position;
-			missile.setModeEnemie(this);
+			
 
 			//missile.setdirection(direction);
 			GetParent().AddChild(missile);
-			missile.setdirection(direction);
+			missile.setdirection(direction,this);
 		}
 		
 	}

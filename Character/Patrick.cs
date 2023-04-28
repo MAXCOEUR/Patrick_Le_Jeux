@@ -16,7 +16,9 @@ public partial class Patrick : Charactere
 
 	CollisionShape2D collisionShapePlayer;
 
-
+	public int getEtat(){
+		return etat;
+	}
 	public override void _Ready()
 	{
 		base._Ready();
@@ -42,19 +44,20 @@ public partial class Patrick : Charactere
 				TimeSpan durationLastShootMissile = DateTime.Now.Subtract(lastShootMissile);
 				if (durationLastShootMissile.TotalSeconds > 1)
 				{
-					lastShootMissile=DateTime.Now;
+					lastShootMissile = DateTime.Now;
 					PackedScene missileScene = (PackedScene)ResourceLoader.Load("res://Objet/missile.tscn");
 					missile missile = (missile)missileScene.Instantiate();
 					missile.Position = Position;
-					missile.setModeEnemie(this);
+
 					GetParent().AddChild(missile);
+
 					if (directionCurrent.X < 0)
 					{
-						missile.setdirection(new Vector2(-1, 0));
+						missile.setdirection(new Vector2(-1, 0), this);
 					}
 					else
 					{
-						missile.setdirection(new Vector2(1, 0));
+						missile.setdirection(new Vector2(1, 0), this);
 					}
 				}
 
@@ -90,11 +93,15 @@ public partial class Patrick : Charactere
 				{
 					if (directionCurrent.Y > 0)
 					{
-						annimation.Play("saut_sur_ennmie");
-						Velocity = new Vector2(Velocity.X, parametreLevel.jumpBase);
+						if (!enemie.waitPlayer)
+						{
+							annimation.Play("saut_sur_ennmie");
+							Velocity = new Vector2(Velocity.X, parametreLevel.jumpBase);
 
-						enemie.lessEtat();
+							enemie.lessEtat();
+						}
 					}
+
 				}
 
 			}
@@ -122,7 +129,7 @@ public partial class Patrick : Charactere
 				setEtat(2);
 				break;
 			case 6:
-				setEtat(2);
+				setEtat(0);
 				break;
 			case 7:
 				setEtat(2);
@@ -130,10 +137,24 @@ public partial class Patrick : Charactere
 		};
 	}
 
+	void resetObjet()
+	{
+		try
+		{
+			objet.setEtat(0);
+		}
+		catch
+		{
+
+		}
+
+		objet = null;
+	}
 	override public void setEtat(int i)
 	{
 		Vector2 newScale;
 		etat = i;
+		int o = 0;
 		switch (i)
 		{
 			case 0: //ded
@@ -143,25 +164,27 @@ public partial class Patrick : Charactere
 			case 1: //petit
 				newScale = new Vector2(0.5f, 0.5f);
 				this.Scale = newScale;
+				resetObjet();
 				break;
 			case 2: //grand
 				newScale = new Vector2(1f, 1f);
 				this.Scale = newScale;
-				objet.setEtat(0);
-				objet = null;
+				resetObjet();
 				break;
 			case 3: //missile
 				newScale = new Vector2(1f, 1f);
 				this.Scale = newScale;
+				resetObjet();
 				PackedScene missileScene = (PackedScene)ResourceLoader.Load("res://Objet/missile.tscn");
 				missile ob = (missile)missileScene.Instantiate();
-				ob.setModePlayer(this);
 				objet = ob;
 				AddChild(ob);
+				ob.setModePlayer(this);
 				break;
 			case 4: //epee
 				newScale = new Vector2(1f, 1f);
 				this.Scale = newScale;
+				resetObjet();
 				PackedScene epeeScene = (PackedScene)ResourceLoader.Load("res://Objet/epee.tscn");
 				epee epee = (epee)epeeScene.Instantiate();
 				epee.setModePlayer(this);
@@ -171,16 +194,20 @@ public partial class Patrick : Charactere
 			case 5: //fire
 				newScale = new Vector2(1f, 1f);
 				this.Scale = newScale;
+				resetObjet();
 				break;
 			case 6: //mini
-				newScale = new Vector2(1f, 1f);
+				newScale = new Vector2(0.25f, 0.25f);
 				this.Scale = newScale;
+				resetObjet();
 				break;
 			case 7: //invincible
 				newScale = new Vector2(1f, 1f);
 				this.Scale = newScale;
+				resetObjet();
 				break;
 		}
+		GD.Print(o++);
 	}
 
 	override protected void On_animation_finish(string anim_name)

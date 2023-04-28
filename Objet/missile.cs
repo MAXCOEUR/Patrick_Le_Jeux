@@ -9,7 +9,11 @@ public partial class missile : Object
 	{
 		base._Ready();
 		startLunch = DateTime.Now;
-		parametreLevel.Gravity = 0f;
+		parametreLevel.VitesseMax = VitesseMaxDefault*2;
+		CpuParticles2D paticule2DFumée= GetNode<CpuParticles2D>("fumée");
+		paticule2DFumée.Emitting=false;
+		parametreLevel.Gravity = new ParametreLevel().Gravity;
+		waitPlayer=true;
 	}
 	public override void _Process(double delta)
 	{
@@ -85,6 +89,7 @@ public partial class missile : Object
 			{
 				Patrick player = (Patrick)otherParent;
 				player.setEtat(3);
+				lessEtat();
 			}
 		}
 		else
@@ -113,15 +118,11 @@ public partial class missile : Object
 	}
 	public override void setModePlayer(Charactere user){
 		base.setModePlayer(user);
-		CpuParticles2D paticule2DFumée= GetNode<CpuParticles2D>("fumée");
-		paticule2DFumée.Emitting=false;
+		parametreLevel.Gravity=0f;
 	}
-	public override void setWaitPlayer(Charactere user)
+	public override void setdirection(Vector2 dir,Charactere user)
 	{
-		base.setWaitPlayer(user);
-		CpuParticles2D paticule2DFumée= GetNode<CpuParticles2D>("fumée");
-		paticule2DFumée.Emitting=false;
-		parametreLevel.Gravity = new ParametreLevel().Gravity;
-		sprite.Rotation = Mathf.Pi/2;
+		base.setdirection(dir,user);
+		parametreLevel.Gravity=0f;
 	}
 }

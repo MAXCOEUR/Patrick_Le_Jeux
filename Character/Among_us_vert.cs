@@ -48,7 +48,7 @@ public partial class Among_us_vert : Enemies
 
 	protected void changeDirection()
 	{
-		directionDeplacment.X = (directionDeplacment.X==1) ? -1 : 1;
+		directionDeplacment.X = -directionDeplacment.X;
 	}
 
 	public override void _PhysicsProcess(double delta){

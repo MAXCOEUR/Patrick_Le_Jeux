@@ -15,26 +15,22 @@ public partial class epee : Object
 		base._Ready();
 		size = GetViewportRect().Size;
 		parametreLevel.VitesseMax = vitessLance;
-	}
-	public override void setModePlayer(Charactere user)
-	{
-		base.setModePlayer(user);
-		Scale=new Vector2(0.5f,0.5f);
-		parametreLevel.Gravity=0f;
+		waitPlayer=true;
 	}
 	public override void _Process(double delta)
 	{
 		base._Process(delta);
 	}
-	public void lanceRight()
+	public void lance()
 	{
-		Velocity = new Vector2(vitessLance, -vitessLance);
-
-		annimation.Play("attaque");
-	}
-	public void lanceLeft()
-	{
-		Velocity = new Vector2(-vitessLance, -vitessLance);
+		if(direction.X<0){
+			Velocity = new Vector2(-vitessLance, -vitessLance);
+		}
+		else
+		{
+			Velocity = new Vector2(vitessLance, -vitessLance);
+		}
+		
 
 		annimation.Play("attaque");
 	}
@@ -64,7 +60,12 @@ public partial class epee : Object
 		var otherParent = otherArea.GetParent();
 		if (waitPlayer)
 		{
-
+			if (otherParent.IsInGroup("player"))
+			{
+				Patrick player = (Patrick)otherParent;
+				player.setEtat(4);
+				setEtat(0);
+			}
 		}
 		else
 		{
@@ -93,9 +94,15 @@ public partial class epee : Object
 			annimation.Play("attaque");
 		}
 	}
-	public override void setWaitPlayer(Charactere user)
+	public override void setModePlayer(Charactere user)
 	{
-		base.setWaitPlayer(user);
+		base.setModePlayer(user);
+		Scale=new Vector2(0.5f,0.5f);
+		parametreLevel.Gravity=0f;
+	}
+	public override void setdirection(Vector2 dir,Charactere user){
+		base.setdirection(dir,user);
 		parametreLevel.VitesseMax = VitesseMaxDefault;
+		CollisionMask &= ~(uint)48;
 	}
 }

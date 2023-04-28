@@ -12,7 +12,7 @@ public abstract partial class Object : CharacterBody2D
 
 	protected const int VitesseMaxDefault=75;
 
-	protected bool waitPlayer=false;
+	public bool waitPlayer=false;
 	protected bool modePlayer=false;
 
 	protected ParametreLevel parametreLevel = new ParametreLevel();
@@ -26,9 +26,6 @@ public abstract partial class Object : CharacterBody2D
 
 		area = GetNode<Area2D>("Area2D");
 		area.Connect("area_entered", new Callable(this, "OnCollision"));
-	}
-	public void setModeEnemie(Charactere user){
-		this.user=user;
 	}
 
 	public void attack_player(bool isLeft){
@@ -56,11 +53,6 @@ public abstract partial class Object : CharacterBody2D
 			sprite.FlipH=false;
 		}
 	}
-
-	public virtual void setWaitPlayer(Charactere user){
-		this.user=user;
-		waitPlayer=true;
-	}
 	public virtual void setModePlayer(Charactere user){
 		this.user=user;
 		modePlayer=true;
@@ -81,9 +73,12 @@ public abstract partial class Object : CharacterBody2D
 	}
 	abstract public void lessEtat();
 	abstract public void setEtat(int i);
-	public void setdirection(Vector2 dir)
+	public virtual void setdirection(Vector2 dir,Charactere user)
 	{
+		this.user=user;
 		this.direction = dir;
+		waitPlayer=false;
+		modePlayer=false;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

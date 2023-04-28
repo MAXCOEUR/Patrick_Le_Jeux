@@ -1,13 +1,7 @@
-res://Character/soldat_pasclassique.tscn
 res://map/map_1.tscn
-res://level/level_1.tscn
-res://Character/Among_us_rouge.tscn
-res://Character/soldat_pasclassique.cs
-res://Objet/epee.cs
 res://Objet/epee.tscn
-res://Objet/Object.cs
-res://Character/Patrick.tscn
 res://Character/Patrick.cs
-res://level/level_1Script.cs
+res://Objet/mushroom.cs
+res://Objet/mushroom_mini.tscn
+res://Objet/mushroom.tscn
 res://Objet/missile.tscn
-res://Objet/missile.cs

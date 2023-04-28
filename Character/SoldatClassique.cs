@@ -22,18 +22,19 @@ public partial class SoldatClassique : Among_us_vert
 		PackedScene epeeScene = (PackedScene)ResourceLoader.Load("res://Objet/epee.tscn");
 		epee epee = (epee)epeeScene.Instantiate();
 		epee.Position = Position;
-		epee.setModeEnemie(this);
+		epee.setdirection(new Vector2(0,0),this);
 
 		//missile.setdirection(direction);
 		GetParent().AddChild(epee);
 		if (directionDeplacment.X < 0)
 		{
-			epee.lanceLeft();
+			epee.setdirection(new Vector2(-1,0),this);
 		}
 		else
 		{
-			epee.lanceRight();
+			epee.setdirection(new Vector2(1,0),this);
 		}
+		epee.lance();
 
 	}
 }
