@@ -5,26 +5,81 @@ public abstract partial class Object : CharacterBody2D
 {
 	protected Vector2 direction;
 	protected Sprite2D sprite;
-    protected Area2D area;
-    protected AnimationPlayer annimation;
+	protected Area2D area;
+	protected AnimationPlayer annimation;
 	protected int etat = 1;
+	public Charactere user;
 
-    protected ParametreLevel parametreLevel = new ParametreLevel();
+	protected const int VitesseMaxDefault=75;
+
+	protected bool waitPlayer=false;
+	protected bool modePlayer=false;
+
+	protected ParametreLevel parametreLevel = new ParametreLevel();
 	public override void _Ready()
 	{
-		parametreLevel.VitesseMax = 75;
+		parametreLevel.VitesseMax = VitesseMaxDefault;
 		direction = new Vector2(0, 0);
 		sprite = GetNode<Sprite2D>("Sprite2D");
 		annimation = GetNode<AnimationPlayer>("AnimationPlayer");
 		annimation.Connect("animation_finished", new Callable(this, "On_animation_finish"));
 
-        area = GetNode<Area2D>("Area2D");
-        area.Connect("area_entered", new Callable(this, "OnCollision"));
-    }
+		area = GetNode<Area2D>("Area2D");
+		area.Connect("area_entered", new Callable(this, "OnCollision"));
+	}
+	public void setModeEnemie(Charactere user){
+		this.user=user;
+	}
 
-	abstract protected void On_animation_finish(string anim_name);
-    abstract protected void OnCollision(Area2D otherArea);
-    abstract public void lessEtat();
+	public void attack_player(bool isLeft){
+		if(isLeft){
+			attaqueLeft();
+		}
+		else{
+			attaqueRight();
+		}
+	}
+	public void attaqueRight()
+	{
+		annimation.Play("attaque_player_right");
+	}
+	public void attaqueLeft()
+	{
+		annimation.Play("attaque_player_left");
+	}
+
+	public void setdirectionFlip(bool isLeft){
+		if(isLeft){
+			sprite.FlipH=true;
+		}
+		else{
+			sprite.FlipH=false;
+		}
+	}
+
+	public virtual void setWaitPlayer(Charactere user){
+		this.user=user;
+		waitPlayer=true;
+	}
+	public virtual void setModePlayer(Charactere user){
+		this.user=user;
+		modePlayer=true;
+	}
+
+	protected virtual void On_animation_finish(string anim_name){
+		if (anim_name == "mort")
+		{
+			this.QueueFree();
+		}
+	}
+	protected virtual bool OnCollision(Area2D otherArea){
+		var otherParent = otherArea.GetParent();
+		if(otherParent==user){
+			return false;
+		}
+		return true;
+	}
+	abstract public void lessEtat();
 	abstract public void setEtat(int i);
 	public void setdirection(Vector2 dir)
 	{
@@ -35,21 +90,20 @@ public abstract partial class Object : CharacterBody2D
 	public override void _Process(double delta)
 	{
 		Vector2 velocity = Velocity;
-
 		if(!(this is missile))
 		{
-            velocity.Y += parametreLevel.VitesseMax * direction.Y;
-            velocity.X += parametreLevel.VitesseMax * direction.X;
-            velocity.X = Mathf.Clamp(velocity.X, -parametreLevel.VitesseMax, parametreLevel.VitesseMax);
-        }
+			velocity.Y += parametreLevel.VitesseMax * direction.Y;
+			velocity.X += parametreLevel.VitesseMax * direction.X;
+			velocity.X = Mathf.Clamp(velocity.X, -parametreLevel.VitesseMax, parametreLevel.VitesseMax);
+		}
 		
 
-        if (!IsOnFloor())
-            velocity.Y += parametreLevel.Gravity * (float)delta;
+		if (!IsOnFloor())
+			velocity.Y += parametreLevel.Gravity * (float)delta;
 
 
-        
-        Velocity = velocity;
+		
+		Velocity = velocity;
 		
 		MoveAndSlide();
 	}

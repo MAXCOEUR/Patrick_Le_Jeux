@@ -3,33 +3,41 @@ using System;
 
 public partial class missile : Object
 {
+	private DateTime startLunch;
+	private int TimeLife = 10;
 	public override void _Ready()
 	{
 		base._Ready();
+		startLunch = DateTime.Now;
 		parametreLevel.Gravity = 0f;
-		setdirection(new Vector2(1, -1));
 	}
 	public override void _Process(double delta)
 	{
 		Velocity = new Vector2(parametreLevel.VitesseMax * direction.X, parametreLevel.VitesseMax * direction.Y);
 		base._Process(delta);
 
-		LookAt(Position+direction);
+		if(!modePlayer){
+			LookAt(Position + direction);
+		}
 
-		KinematicCollision2D collision = MoveAndCollide(direction,true);
-		if(collision != null)
+		KinematicCollision2D collision = MoveAndCollide(direction, true);
+		if (collision != null)
 		{
 			setEtat(-1);
 		}
-		
+
+		if(!modePlayer && !waitPlayer){
+			TimeSpan duration = DateTime.Now.Subtract(startLunch);
+			if(duration.TotalSeconds>TimeLife){
+				annimation.Play("explosion");
+			}
+		}
+
 	}
 
 	protected override void On_animation_finish(string anim_name)
 	{
-		if (anim_name == "mort")
-		{
-			this.QueueFree();
-		}
+		base.On_animation_finish(anim_name);
 		if (anim_name == "explosion")
 		{
 			this.QueueFree();
@@ -48,6 +56,7 @@ public partial class missile : Object
 
 	public override void setEtat(int i)
 	{
+		etat = i;
 		switch (i)
 		{
 			case 0:
@@ -64,27 +73,55 @@ public partial class missile : Object
 		}
 	}
 
-	protected override void OnCollision(Area2D otherArea)
+	protected override bool OnCollision(Area2D otherArea)
 	{
+		if(!base.OnCollision(otherArea)){
+			return false;
+		}
 		var otherParent = otherArea.GetParent();
-		if (otherParent.IsInGroup("player"))
+		if (waitPlayer)
 		{
-			Patrick player = (Patrick)otherParent;
-			if (!player.isInvincible)
+			if (otherParent.IsInGroup("player"))
 			{
-				if (player.Velocity.Y <= 0)
+				Patrick player = (Patrick)otherParent;
+				player.setEtat(3);
+			}
+		}
+		else
+		{
+			if (otherParent.IsInGroup("player"))
+			{
+				Patrick player = (Patrick)otherParent;
+				if (!player.isInvincible)
+				{
+					if (player.directionCurrent.Y <= 0)
+					{
+						player.lessEtat();
+					}
+				}
+			}
+			else if (otherParent.IsInGroup("enemies"))
+			{
+				Charactere player = (Charactere)otherParent;
+				if (player.directionCurrent.Y <= 0)
 				{
 					player.lessEtat();
 				}
 			}
 		}
-		if (otherParent.IsInGroup("enemies") && !(otherParent is tank))
-		{
-			Charactere player = (Charactere)otherParent;
-			if (player.Velocity.Y <= 0)
-			{
-				player.lessEtat();
-			}
-		}
+		return true;
+	}
+	public override void setModePlayer(Charactere user){
+		base.setModePlayer(user);
+		CpuParticles2D paticule2DFumée= GetNode<CpuParticles2D>("fumée");
+		paticule2DFumée.Emitting=false;
+	}
+	public override void setWaitPlayer(Charactere user)
+	{
+		base.setWaitPlayer(user);
+		CpuParticles2D paticule2DFumée= GetNode<CpuParticles2D>("fumée");
+		paticule2DFumée.Emitting=false;
+		parametreLevel.Gravity = new ParametreLevel().Gravity;
+		sprite.Rotation = Mathf.Pi/2;
 	}
 }

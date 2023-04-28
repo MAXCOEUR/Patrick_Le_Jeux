@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Threading;
 using System.Timers;
 
-public partial class tank : Charactere
+public partial class tank : Enemies
 {
 
 	protected Patrick patrick;
@@ -57,24 +57,6 @@ public partial class tank : Charactere
 		}
 	}
 
-	protected override void OnCollision(Area2D otherArea)
-	{
-		var otherParent = otherArea.GetParent();
-
-		
-		if (otherParent.IsInGroup("player"))
-		{
-			Patrick player = (Patrick)otherParent;
-			if (!player.isInvincible)
-			{
-				if (player.directionCurrent.Y <= 0)
-				{
-					player.lessEtat();
-				}
-			}
-		}
-	}
-
 	protected override void On_animation_finish(string anim_name)
 	{
 		if (anim_name == "mort")
@@ -114,7 +96,7 @@ public partial class tank : Charactere
 			missile missile = (missile)missileScene.Instantiate();
 			// Définir la position initiale du missile à la position actuelle du tank
 			missile.Position = Position;
-
+			missile.setModeEnemie(this);
 
 			//missile.setdirection(direction);
 			GetParent().AddChild(missile);

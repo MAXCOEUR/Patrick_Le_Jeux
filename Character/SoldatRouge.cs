@@ -21,7 +21,7 @@ public partial class SoldatRouge : Among_us_rouge
 		PackedScene epeeScene = (PackedScene)ResourceLoader.Load("res://Objet/epee.tscn");
 		epee epee = (epee)epeeScene.Instantiate();
 		epee.Position = Position;
-		epee.setUser(this);
+		epee.setModeEnemie(this);
 
 		//missile.setdirection(direction);
 		GetParent().AddChild(epee);

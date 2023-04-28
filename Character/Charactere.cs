@@ -89,6 +89,7 @@ public abstract partial class Charactere : CharacterBody2D
 	{
 		this.parametreLevel = parametreLevel;
 	}
+	
 
 	public override void _PhysicsProcess(double delta)
 	{

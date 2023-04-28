@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Among_us_vert : Charactere
+public partial class Among_us_vert : Enemies
 {
 
 	
@@ -18,13 +18,11 @@ public partial class Among_us_vert : Charactere
 	}
 
 	override public void setEtat(int i){
+		etat=i;
 		switch (i){
 			case 0:
 				directionDeplacment= new Vector2(0, 0);
 				annimation.Play("mort");
-			break;
-			case 1:
-				//normal
 			break;
 		}
 	}
@@ -33,30 +31,18 @@ public partial class Among_us_vert : Charactere
 			case 1:
 				setEtat(0);
 			break;
+			case 2:
+				setEtat(1);
+			break;
+			case 3:
+				setEtat(2);
+			break;
 		};
 	}
 
 	override protected void On_animation_finish(string anim_name) {
 		if(anim_name=="mort"){
 			this.QueueFree();
-		}
-	}
-	override protected void OnCollision(Area2D otherArea)
-	{
-		
-		var otherParent = otherArea.GetParent();
-		
-
-		if (otherParent.IsInGroup("player"))
-		{
-			Patrick player = (Patrick)otherParent;
-			if (!player.isInvincible)
-			{
-				if (player.directionCurrent.Y <= 0)
-				{
-					player.lessEtat();
-				}
-			}
 		}
 	}
 
