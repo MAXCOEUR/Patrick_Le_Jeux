@@ -1,7 +1,3 @@
-res://map/map_1.tscn
 res://Objet/epee.tscn
-res://Character/Patrick.cs
-res://Objet/mushroom.cs
-res://Objet/mushroom_mini.tscn
-res://Objet/mushroom.tscn
-res://Objet/missile.tscn
+res://Objet/MysteryBlock_mushroom.tscn
+res://map/map_1.tscn
