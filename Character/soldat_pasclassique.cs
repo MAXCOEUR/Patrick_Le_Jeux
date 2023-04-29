@@ -20,7 +20,6 @@ public partial class soldat_pasclassique : Among_us_rouge
 	}
 	public void shoot(object source, System.Timers.ElapsedEventArgs e)
 	{
-		GD.Print("shoot");
 		isInvincible = true;
 		annimation.Play("shoot");
 	}

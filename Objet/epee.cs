@@ -15,6 +15,7 @@ public partial class epee : Object
 		base._Ready();
 		size = GetViewportRect().Size;
 		parametreLevel.VitesseMax = vitessLance;
+		parametreLevel.Friction=1f;
 		waitPlayer=true;
 	}
 	public override void _Process(double delta)
@@ -79,6 +80,7 @@ public partial class epee : Object
 			}
 			else if (otherParent.IsInGroup("enemies"))
 			{
+				GD.Print("collison epee with enemies "+otherParent);
 				Charactere player = (Charactere)otherParent;
 				player.lessEtat();
 			}
@@ -99,10 +101,10 @@ public partial class epee : Object
 		base.setModePlayer(user);
 		Scale=new Vector2(0.5f,0.5f);
 		parametreLevel.Gravity=0f;
+		waitPlayer=false;
 	}
 	public override void setdirection(Vector2 dir,Charactere user){
 		base.setdirection(dir,user);
-		parametreLevel.VitesseMax = VitesseMaxDefault;
 		CollisionMask &= ~(uint)48;
 	}
 }

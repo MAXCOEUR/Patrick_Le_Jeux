@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dysul5glhrdm4"]
+
+[ext_resource type="Texture2D" uid="uid://bj8bjbncee6yj" path="res://art/block/tilesheet_complete.png" id="1_5n1tt"]
+[ext_resource type="Script" path="res://map/moving_plaform/moving_platform_h3.cs" id="1_sty6d"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pa3qf"]
+texture = ExtResource("1_5n1tt")
+texture_region_size = Vector2i(30, 30)
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bkgct"]
+tile_size = Vector2i(30, 30)
+custom_data_layer_0/name = ""
+custom_data_layer_0/type = 0
+sources/0 = SubResource("TileSetAtlasSource_pa3qf")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ly5h5"]
+size = Vector2(60, 20)
+
+[node name="moving_platform_h3" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_sty6d")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_bkgct")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 458752, 9, 65535, 327680, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_ly5h5")

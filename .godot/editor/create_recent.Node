@@ -1,6 +1,7 @@
-AnimationPlayer
+CharacterBody2D
 CollisionShape2D
+TileMap
+AnimationPlayer
 Area2D
 Sprite2D
-CharacterBody2D
 CPUParticles2D

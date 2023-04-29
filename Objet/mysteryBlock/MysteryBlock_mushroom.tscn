@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://d130jptgsnsro"]
+[gd_scene load_steps=7 format=3 uid="uid://bk114skwv473a"]
 
-[ext_resource type="Texture2D" uid="uid://es3vij0qiiec" path="res://art/block/mystery_Block.jpg" id="1_cvlhe"]
-[ext_resource type="Script" path="res://Objet/MysteryBlock_mushroom.cs" id="1_kq221"]
+[ext_resource type="Script" path="res://Objet/mysteryBlock/MysteryBlock_mushroom.cs" id="1_dgju6"]
+[ext_resource type="Texture2D" uid="uid://es3vij0qiiec" path="res://art/block/mystery_Block.jpg" id="2_klnnk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxdhp"]
 size = Vector2(30, 30)
@@ -33,11 +33,11 @@ _data = {
 [node name="MysteryBlock_mushroom" type="StaticBody2D"]
 collision_layer = 32
 collision_mask = 0
-script = ExtResource("1_kq221")
+script = ExtResource("1_dgju6")
 
 [node name="sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_cvlhe")
+texture = ExtResource("2_klnnk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nxdhp")

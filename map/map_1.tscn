@@ -1,11 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://pon7ecu0ltwe"]
+[gd_scene load_steps=18 format=3 uid="uid://dgg6i7rx7ophe"]
 
 [ext_resource type="Texture2D" uid="uid://dc3xacrvbhrji" path="res://art/fond/map1.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://bj8bjbncee6yj" path="res://art/block/tilesheet_complete.png" id="4"]
 [ext_resource type="Script" path="res://map/ZoneGame.cs" id="5"]
-[ext_resource type="PackedScene" uid="uid://d130jptgsnsro" path="res://Objet/MysteryBlock_mushroom.tscn" id="6_pqlpf"]
+[ext_resource type="PackedScene" uid="uid://cpbnhxghs1c6v" path="res://Objet/mysteryBlock/MysteryBlock_epee.tscn" id="6_380oa"]
 [ext_resource type="PackedScene" uid="uid://hjx4d4vrpwqh" path="res://Character/soldat_pasclassique.tscn" id="7_x17ie"]
 [ext_resource type="Script" path="res://map/TileMap.cs" id="8"]
+[ext_resource type="PackedScene" uid="uid://depgya6tdgv16" path="res://map/moving_plaform/moving_platform_v1.tscn" id="9_8y8mi"]
+[ext_resource type="PackedScene" uid="uid://dysul5glhrdm4" path="res://map/moving_plaform/moving_platform_h3.tscn" id="9_akjj1"]
+[ext_resource type="PackedScene" uid="uid://cgyrbv12tpgfc" path="res://map/moving_plaform/moving_platform_h2.tscn" id="10_gfbo4"]
+[ext_resource type="PackedScene" uid="uid://s4v05mqlb3s6" path="res://Character/Among_us_rouge.tscn" id="10_ld1m4"]
+[ext_resource type="PackedScene" uid="uid://5d24lmgnsil8" path="res://map/moving_plaform/moving_platform_v2.tscn" id="10_whvaq"]
+[ext_resource type="PackedScene" uid="uid://bw4mh1bs5utjq" path="res://map/moving_plaform/moving_platform_v3.tscn" id="11_ym0wx"]
 
 [sub_resource type="RectangleShape2D" id="10"]
 size = Vector2(15417.5, 1076.75)
@@ -1483,5 +1489,26 @@ script = ExtResource("8")
 position = Vector2(772, 160)
 scale = Vector2(1, 1)
 
-[node name="MysteryBlock_mushroom" parent="." instance=ExtResource("6_pqlpf")]
-position = Vector2(531, 277)
+[node name="Among_us_rouge" parent="." instance=ExtResource("10_ld1m4")]
+position = Vector2(2144, 609)
+
+[node name="MysteryBlock_mushroom" parent="." instance=ExtResource("6_380oa")]
+position = Vector2(372, 462)
+
+[node name="moving_platform_h3" parent="." instance=ExtResource("9_akjj1")]
+position = Vector2(412, 52)
+
+[node name="moving_platforme_h1" parent="." instance=ExtResource("9_8y8mi")]
+position = Vector2(176, 398)
+
+[node name="moving_platform_h2" parent="." instance=ExtResource("10_whvaq")]
+position = Vector2(994, 398)
+
+[node name="moving_platform_h4" parent="." instance=ExtResource("11_ym0wx")]
+position = Vector2(1125, 387)
+
+[node name="moving_platform_h5" parent="." instance=ExtResource("9_akjj1")]
+position = Vector2(783, 492)
+
+[node name="moving_platform_h6" parent="." instance=ExtResource("10_gfbo4")]
+position = Vector2(972, 53)

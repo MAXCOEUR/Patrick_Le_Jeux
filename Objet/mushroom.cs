@@ -14,7 +14,7 @@ public partial class mushroom : mushroomGeneral
 		if (otherParent.IsInGroup("player"))
 		{
 			Patrick player = (Patrick)otherParent;
-			if(player.getEtat()<2){
+			if(player.getEtat()<2 ||player.getEtat()==6 ){
 				player.setEtat(2);
 				lessEtat();
 			}

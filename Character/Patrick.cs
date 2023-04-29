@@ -15,6 +15,7 @@ public partial class Patrick : Charactere
 	private DateTime lastShootMissile = DateTime.UtcNow;
 
 	CollisionShape2D collisionShapePlayer;
+	bool directionPlayerWantIsLeft=false;
 
 	public int getEtat(){
 		return etat;
@@ -30,14 +31,7 @@ public partial class Patrick : Charactere
 		{
 			if (objet is epee)
 			{
-				if (directionCurrent.X < 0)
-				{
-					objet.attack_player(true);
-				}
-				else
-				{
-					objet.attack_player(false);
-				}
+				objet.attack_player(directionPlayerWantIsLeft);
 			}
 			else if (objet is missile)
 			{
@@ -187,9 +181,9 @@ public partial class Patrick : Charactere
 				resetObjet();
 				PackedScene epeeScene = (PackedScene)ResourceLoader.Load("res://Objet/epee.tscn");
 				epee epee = (epee)epeeScene.Instantiate();
-				epee.setModePlayer(this);
 				objet = epee;
 				AddChild(epee);
+				epee.setModePlayer(this);
 				break;
 			case 5: //fire
 				newScale = new Vector2(1f, 1f);
@@ -230,17 +224,14 @@ public partial class Patrick : Charactere
 		base._PhysicsProcess(delta);
 		Vector2 velocity = Velocity;
 
-		if (objet != null)
-		{
+		if(objet != null){
 			Shape2D shape = collisionShapePlayer.Shape;
 			Vector2 size = shape.GetRect().Size;
-			if (directionCurrent.X < 0)
-			{
+			if(directionPlayerWantIsLeft){
 				objet.setdirectionFlip(true);
 				objet.Position = new Vector2(-size.X / 2, 0);
 			}
-			else if (directionCurrent.X > 0)
-			{
+			else{
 				objet.setdirectionFlip(false);
 				objet.Position = new Vector2(size.X / 2, 0);
 			}
@@ -297,10 +288,12 @@ public partial class Patrick : Charactere
 			TimeSpan durationLastWallLeftJump = DateTime.UtcNow.Subtract(lastWallLeftJump);
 			if (direction.X > 0 && durationLastWallRightJump.TotalSeconds > 1)
 			{
+				directionPlayerWantIsLeft = false;
 				velocity.X += goRight(direction);
 			}
 			else if (durationLastWallLeftJump.TotalSeconds >= 1)
 			{
+				directionPlayerWantIsLeft=true;
 				velocity.X += goLeft(direction);
 			}
 		}

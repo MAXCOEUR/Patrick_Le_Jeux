@@ -9,30 +9,37 @@ public partial class missile : Object
 	{
 		base._Ready();
 		startLunch = DateTime.Now;
-		parametreLevel.VitesseMax = VitesseMaxDefault*2;
-		CpuParticles2D paticule2DFumée= GetNode<CpuParticles2D>("fumée");
-		paticule2DFumée.Emitting=false;
+		parametreLevel.VitesseMax = VitesseMaxDefault * 2;
+		CpuParticles2D paticule2DFumée = GetNode<CpuParticles2D>("fumée");
+		paticule2DFumée.Emitting = false;
 		parametreLevel.Gravity = new ParametreLevel().Gravity;
-		waitPlayer=true;
+		waitPlayer = true;
 	}
 	public override void _Process(double delta)
 	{
 		Velocity = new Vector2(parametreLevel.VitesseMax * direction.X, parametreLevel.VitesseMax * direction.Y);
 		base._Process(delta);
 
-		if(!modePlayer){
+		if (!modePlayer)
+		{
 			LookAt(Position + direction);
 		}
 
-		KinematicCollision2D collision = MoveAndCollide(direction, true);
-		if (collision != null)
+		if (!modePlayer)
 		{
-			setEtat(-1);
+			KinematicCollision2D collision = MoveAndCollide(direction, true);
+			if (collision != null)
+			{
+				setEtat(-1);
+			}
 		}
 
-		if(!modePlayer && !waitPlayer){
+
+		if (!modePlayer && !waitPlayer)
+		{
 			TimeSpan duration = DateTime.Now.Subtract(startLunch);
-			if(duration.TotalSeconds>TimeLife){
+			if (duration.TotalSeconds > TimeLife)
+			{
 				annimation.Play("explosion");
 			}
 		}
@@ -79,7 +86,8 @@ public partial class missile : Object
 
 	protected override bool OnCollision(Area2D otherArea)
 	{
-		if(!base.OnCollision(otherArea)){
+		if (!base.OnCollision(otherArea))
+		{
 			return false;
 		}
 		var otherParent = otherArea.GetParent();
@@ -116,13 +124,14 @@ public partial class missile : Object
 		}
 		return true;
 	}
-	public override void setModePlayer(Charactere user){
-		base.setModePlayer(user);
-		parametreLevel.Gravity=0f;
-	}
-	public override void setdirection(Vector2 dir,Charactere user)
+	public override void setModePlayer(Charactere user)
 	{
-		base.setdirection(dir,user);
-		parametreLevel.Gravity=0f;
+		base.setModePlayer(user);
+		parametreLevel.Gravity = 0f;
+	}
+	public override void setdirection(Vector2 dir, Charactere user)
+	{
+		base.setdirection(dir, user);
+		parametreLevel.Gravity = 0f;
 	}
 }
