@@ -19,7 +19,10 @@ public abstract partial class Enemies : Charactere
 			Patrick player = (Patrick)otherParent;
 			if (!player.isInvincible)
 			{
-				if (player.directionCurrent.Y <= 0)
+				float piedPatrick = player.Position.Y + (player.getSize()*player.Scale/2).Y -5;
+				float teteEnemie = Position.Y - (getSize()*Scale/2).Y +5;
+				
+				if (piedPatrick > teteEnemie)
 				{
 					player.lessEtat();
 				}

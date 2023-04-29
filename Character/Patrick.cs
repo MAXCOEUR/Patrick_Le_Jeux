@@ -65,15 +65,22 @@ public partial class Patrick : Charactere
 	{
 		Vector2 velocity = Velocity;
 		var otherParent = otherArea.GetParent();
+		
 		if (otherParent.IsInGroup("enemies"))
 		{
 			if (!isInvincible)
 			{
-				if (directionCurrent.Y > 0)
+				Charactere enemie = (Charactere)otherParent;
+				float piedPatrick = Position.Y + (getSize()*Scale/2).Y -5 ;
+				float teteEnemie = enemie.Position.Y - (enemie.getSize()*enemie.Scale/2).Y +5;
+
+				GD.Print(piedPatrick+" "+ teteEnemie);
+
+				if (piedPatrick <= teteEnemie)
 				{
 					annimation.Play("saut_sur_ennmie");
 					Velocity = new Vector2(Velocity.X, parametreLevel.jumpBase);
-					Charactere enemie = (Charactere)otherParent;
+					
 					enemie.lessEtat();
 				}
 			}
@@ -85,7 +92,11 @@ public partial class Patrick : Charactere
 				Object enemie = (Object)otherParent;
 				if (enemie.user != this)
 				{
-					if (directionCurrent.Y > 0)
+
+					float piedPatrick = Position.Y + (getSize()*Scale/2).Y -5;
+					float teteEnemie = enemie.Position.Y - (enemie.getSize()*enemie.Scale/2).Y+5;
+
+					if (piedPatrick <= teteEnemie)
 					{
 						if (!enemie.waitPlayer)
 						{
@@ -100,10 +111,14 @@ public partial class Patrick : Charactere
 
 			}
 		}
+		else if (otherParent.IsInGroup("fin")){
+			annimation.Play("fin");
+			parametreLevel.setDed();
+		}
 	}
 	override public void lessEtat()
 	{
-		isInvincible = true;
+		//isInvincible = true;
 		annimation.Play("hit");
 		switch (etat)
 		{

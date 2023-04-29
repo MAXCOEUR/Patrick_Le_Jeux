@@ -7,7 +7,7 @@ public partial class SoldatRouge : Among_us_rouge
 	public override void _Ready()
 	{
 		base._Ready();
-		timerFire = new System.Timers.Timer(1500);
+		timerFire = new System.Timers.Timer(2000);
 		timerFire.Elapsed += (timerSender, timerEvent) => send(timerSender, timerEvent);
 		timerFire.AutoReset = true;
 		timerFire.Enabled = true;

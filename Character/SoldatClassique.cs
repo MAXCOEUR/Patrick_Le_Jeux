@@ -8,7 +8,7 @@ public partial class SoldatClassique : Among_us_vert
 	public override void _Ready()
 	{
 		base._Ready();
-		timerFire = new System.Timers.Timer(2000);
+		timerFire = new System.Timers.Timer(2500);
 		timerFire.Elapsed += (timerSender, timerEvent) => send(timerSender, timerEvent);
 		timerFire.AutoReset = true;
 		timerFire.Enabled = true;

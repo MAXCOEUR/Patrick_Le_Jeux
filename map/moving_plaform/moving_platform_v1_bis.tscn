@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1a5u80fkevyh"]
+
+[ext_resource type="Script" path="res://map/moving_plaform/moving_platform_v1_bis.cs" id="1_gymmy"]
+[ext_resource type="Texture2D" uid="uid://bj8bjbncee6yj" path="res://art/block/tilesheet_complete.png" id="2_ps6s0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pa3qf"]
+texture = ExtResource("2_ps6s0")
+texture_region_size = Vector2i(30, 30)
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5vtdb"]
+tile_size = Vector2i(30, 30)
+custom_data_layer_0/name = ""
+custom_data_layer_0/type = 0
+sources/0 = SubResource("TileSetAtlasSource_pa3qf")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47fap"]
+size = Vector2(180, 20)
+
+[node name="moving_platforme_h1" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_gymmy")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_5vtdb")
+format = 2
+layer_0/tile_data = PackedInt32Array(2, 458752, 9, 1, 393216, 9, 0, 393216, 9, 65535, 393216, 9, 65534, 393216, 9, 65533, 327680, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_47fap")

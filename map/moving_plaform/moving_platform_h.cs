@@ -3,7 +3,7 @@ using System;
 
 public partial class moving_platform_h : CharacterBody2D
 {
-	bool isleft=false;
+	protected bool isleft=false;
 	protected System.Timers.Timer changeTimer;
 	public override void _Ready(){
 		changeTimer = new System.Timers.Timer(10000);

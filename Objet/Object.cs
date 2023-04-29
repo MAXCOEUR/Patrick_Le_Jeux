@@ -14,10 +14,13 @@ public abstract partial class Object : CharacterBody2D
 
 	public bool waitPlayer=false;
 	protected bool modePlayer=false;
+	Shape2D shape;
+	protected Vector2 size;
 
 	protected ParametreLevel parametreLevel = new ParametreLevel();
 	public override void _Ready()
 	{
+		shape = GetNode<CollisionShape2D>("CollisionShape2D").Shape;
 		parametreLevel.VitesseMax = VitesseMaxDefault;
 		direction = new Vector2(0, 0);
 		sprite = GetNode<Sprite2D>("Sprite2D");
@@ -81,9 +84,14 @@ public abstract partial class Object : CharacterBody2D
 		modePlayer=false;
 	}
 
+	public Vector2 getSize(){
+		return size;
+	}
+	
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		size = shape.GetRect().Size;
 		Vector2 velocity = Velocity;
 		if(!(this is missile))
 		{

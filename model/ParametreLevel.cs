@@ -22,8 +22,8 @@ public partial class ParametreLevel
 
     public ParametreLevel()
     {
-        jumpBase = -500.0f;
-        jumpHold = -10.0f;
+        jumpBase = -300.0f;
+        jumpHold = -14.0f;
         maxJumpTime = 500;
         VitesseMax = 300.0f;
         Friction = 0.80f;

@@ -24,11 +24,15 @@ public abstract partial class Charactere : CharacterBody2D
 
 	protected Vector2 scaleAbsolute;
 
+	Shape2D shape;
+	protected Vector2 size;
+
 
 
 
 	public override void _Ready()
 	{
+		shape = GetNode<CollisionShape2D>("CollisionShape2D").Shape;
 		sprite = GetNode<Sprite2D>("Sprite2D");
 		annimation = GetNode<AnimationPlayer>("AnimationPlayer");
 		annimation.Connect("animation_finished", new Callable(this, "On_animation_finish"));
@@ -45,6 +49,10 @@ public abstract partial class Charactere : CharacterBody2D
 		OldDirectionCurrent = Position;
 
 
+	}
+
+	public Vector2 getSize(){
+		return size;
 	}
 
 	public bool isOnWall(){
@@ -93,7 +101,7 @@ public abstract partial class Charactere : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		
+		size = shape.GetRect().Size;
 		Vector2 tmpDir = Position-OldDirectionCurrent;
 		OldDirectionCurrent = Position;
 		tmpDir.Normalized();

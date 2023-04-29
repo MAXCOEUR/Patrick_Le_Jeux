@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dkpq2bm023kog"]
+[gd_scene load_steps=10 format=3 uid="uid://dkpq2bm023kog"]
 
 [ext_resource type="Texture2D" uid="uid://qh8rkgl7c3s5" path="res://art/charactere/Patrick.png" id="1"]
 [ext_resource type="Script" path="res://Character/Patrick.cs" id="2"]
@@ -8,6 +8,58 @@ size = Vector2(210, 88)
 
 [sub_resource type="RectangleShape2D" id="2"]
 size = Vector2(210, 88)
+
+[sub_resource type="Animation" id="Animation_4pvl0"]
+resource_name = "fin"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 12.5664, 25.1327, 37.6991]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.4, 0.5, 0.6, 1, 1.4, 1.5, 1.6, 2, 2.4, 2.5, 2.6, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -450), Vector2(0, -500), Vector2(0, -450), Vector2(0, 0), Vector2(0, -450), Vector2(0, -500), Vector2(0, -450), Vector2(0, 0), Vector2(0, -450), Vector2(0, -500), Vector2(0, -450), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fin1:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("fin2:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
 
 [sub_resource type="Animation" id="Animation_svnr7"]
 resource_name = "hit"
@@ -58,6 +110,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fh16j"]
 _data = {
+"fin": SubResource("Animation_4pvl0"),
 "hit": SubResource("Animation_svnr7"),
 "mort": SubResource("Animation_m1e0j"),
 "saut_sur_ennmie": SubResource("Animation_t1i7b")
@@ -66,7 +119,7 @@ _data = {
 [node name="Patrick" type="CharacterBody2D" groups=["player"]]
 rotation = 6.28319
 scale = Vector2(0.2, 0.2)
-collision_mask = 56
+collision_mask = 120
 script = ExtResource("2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -97,7 +150,7 @@ scale_amount_max = 10.0
 color = Color(1, 0, 0, 1)
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_mask = 31
+collision_mask = 71
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-3.87033e-06, -1)
@@ -122,3 +175,45 @@ collision_mask = 48
 position = Vector2(-105, 0.00046897)
 target_position = Vector2(-1, 0)
 collision_mask = 48
+
+[node name="fin1" type="CPUParticles2D" parent="."]
+position = Vector2(55.0002, 39.9998)
+emitting = false
+amount = 100
+lifetime = 3.0
+speed_scale = 2.0
+direction = Vector2(0, -1)
+spread = 10.0
+gravity = Vector2(0, 20)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+linear_accel_min = -10.0
+linear_accel_max = 50.0
+radial_accel_min = -10.0
+radial_accel_max = 50.0
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+color = Color(0.976471, 0.352941, 0.533333, 1)
+
+[node name="fin2" type="CPUParticles2D" parent="."]
+position = Vector2(-69.9998, 40.0003)
+emitting = false
+amount = 100
+lifetime = 3.0
+speed_scale = 2.0
+direction = Vector2(0, -1)
+spread = 10.0
+gravity = Vector2(0, 20)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+linear_accel_min = -10.0
+linear_accel_max = 50.0
+radial_accel_min = -10.0
+radial_accel_max = 50.0
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+color = Color(0, 1, 0, 1)

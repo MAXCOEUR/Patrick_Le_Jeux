@@ -107,7 +107,9 @@ public partial class missile : Object
 				Patrick player = (Patrick)otherParent;
 				if (!player.isInvincible)
 				{
-					if (player.directionCurrent.Y <= 0)
+					float piedPatrick = player.Position.Y + (player.getSize()*player.Scale/2).Y -5;
+					float teteEnemie = Position.Y - (getSize()*Scale/2).Y +5;
+					if (piedPatrick > teteEnemie)
 					{
 						player.lessEtat();
 					}
@@ -116,7 +118,11 @@ public partial class missile : Object
 			else if (otherParent.IsInGroup("enemies"))
 			{
 				Charactere player = (Charactere)otherParent;
-				if (player.directionCurrent.Y <= 0)
+
+				float piedPatrick = player.Position.Y + (player.getSize()*player.Scale/2).Y -5;
+				float teteEnemie = Position.Y - (getSize()*Scale/2).Y +5;
+
+				if (piedPatrick > teteEnemie)
 				{
 					player.lessEtat();
 				}
