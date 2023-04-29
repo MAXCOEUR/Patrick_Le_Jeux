@@ -4,6 +4,7 @@ using System;
 public partial class ParametreLevel
 {
     public float jumpBase;
+    public float Walljump;
     public float jumpHold;
     public float maxJumpTime;
     public float VitesseMax;
@@ -22,8 +23,9 @@ public partial class ParametreLevel
 
     public ParametreLevel()
     {
+        Walljump = -600.0f;
         jumpBase = -300.0f;
-        jumpHold = -14.0f;
+        jumpHold = -15.0f;
         maxJumpTime = 500;
         VitesseMax = 300.0f;
         Friction = 0.80f;
@@ -32,6 +34,7 @@ public partial class ParametreLevel
     }
     public void setDed()
     {
+        Walljump=0;
         jumpBase = 0;
         jumpHold = 0;
         maxJumpTime = 0;

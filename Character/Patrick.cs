@@ -74,8 +74,6 @@ public partial class Patrick : Charactere
 				float piedPatrick = Position.Y + (getSize()*Scale/2).Y -5 ;
 				float teteEnemie = enemie.Position.Y - (enemie.getSize()*enemie.Scale/2).Y +5;
 
-				GD.Print(piedPatrick+" "+ teteEnemie);
-
 				if (piedPatrick <= teteEnemie)
 				{
 					annimation.Play("saut_sur_ennmie");
@@ -118,7 +116,7 @@ public partial class Patrick : Charactere
 	}
 	override public void lessEtat()
 	{
-		//isInvincible = true;
+		isInvincible = true;
 		annimation.Play("hit");
 		switch (etat)
 		{
@@ -216,7 +214,6 @@ public partial class Patrick : Charactere
 				resetObjet();
 				break;
 		}
-		GD.Print(o++);
 	}
 
 	override protected void On_animation_finish(string anim_name)
@@ -268,15 +265,15 @@ public partial class Patrick : Charactere
 			{
 				lastWallLeftJump = DateTime.UtcNow;
 				sprite.FlipH = false;
-				velocity.Y = parametreLevel.jumpBase * 1f;
-				velocity.X = -parametreLevel.jumpBase * 4f;
+				velocity.Y = parametreLevel.Walljump * 1f;
+				velocity.X = -parametreLevel.Walljump * 4f;
 			}
 			else if (isOnRightWall())
 			{
 				lastWallRightJump = DateTime.UtcNow;
 				sprite.FlipH = true;
-				velocity.Y = parametreLevel.jumpBase * 1f;
-				velocity.X = parametreLevel.jumpBase * 4f;
+				velocity.Y = parametreLevel.Walljump * 1f;
+				velocity.X = parametreLevel.Walljump * 4f;
 			}
 
 		}

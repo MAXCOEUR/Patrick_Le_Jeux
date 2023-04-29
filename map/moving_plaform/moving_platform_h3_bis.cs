@@ -6,6 +6,6 @@ public partial class moving_platform_h3_bis : moving_platform_h
 	public override void _Ready(){
 		base._Ready();
 		isleft=true;
-		changeTimer.Interval=3000;
+		changeTimer.Interval=5000;
 	}
 }

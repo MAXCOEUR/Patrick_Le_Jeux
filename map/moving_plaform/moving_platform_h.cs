@@ -15,9 +15,9 @@ public partial class moving_platform_h : CharacterBody2D
 		Vector2 velocity = new Vector2(0,0);
 
 		if(isleft){
-			velocity.X=-1;
+			velocity.X=-2;
 		}else{
-			velocity.X=1;
+			velocity.X=2;
 		}
 
 		MoveAndCollide(velocity);

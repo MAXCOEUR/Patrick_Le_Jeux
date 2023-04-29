@@ -5,6 +5,6 @@ public partial class moving_platform_h3 : moving_platform_h
 {
 	public override void _Ready(){
 		base._Ready();
-		changeTimer.Interval=3000;
+		changeTimer.Interval=5000;
 	}
 }

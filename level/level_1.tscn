@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4bqr406bohm3"]
+[gd_scene load_steps=6 format=3 uid="uid://b4bqr406bohm3"]
 
 [ext_resource type="Script" path="res://level/CameraScript.cs" id="1"]
 [ext_resource type="Script" path="res://level/level_1Script.cs" id="2"]
-[ext_resource type="PackedScene" uid="uid://dgg6i7rx7ophe" path="res://map/map_1.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://dvdsp71f8qkqx" path="res://interface/GameOver.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://iqkmq53urwaa" path="res://interface/echap.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://dkpq2bm023kog" path="res://Character/Patrick.tscn" id="6_mkuyk"]
@@ -10,13 +9,18 @@
 [node name="level_1" type="Node2D"]
 script = ExtResource("2")
 
-[node name="map_1" parent="." instance=ExtResource("3")]
+[node name="Polygon2D" type="Polygon2D" parent="."]
+z_index = -1
+color = Color(0, 0.658824, 0.952941, 1)
+polygon = PackedVector2Array(-19532, -13168, 39009, -13168, 39654, 16990, -19451, 16829)
 
 [node name="Patrick" parent="." instance=ExtResource("6_mkuyk")]
-position = Vector2(205, 527)
-rotation = 4.46638e-06
+z_index = 1
+position = Vector2(14358, 517)
+rotation = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
+z_index = 2
 position = Vector2(640, 362)
 script = ExtResource("1")
 

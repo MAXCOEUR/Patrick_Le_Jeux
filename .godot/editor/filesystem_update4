@@ -1,9 +1,5 @@
-res://map/map_1.tscn
-res://Character/Patrick.tscn
-res://map/fin/fin_map_1.tscn
 res://level/level_1.tscn
-res://map/moving_plaform/moving_platform_h3_bis.tscn
-res://map/moving_plaform/moving_platform_h1_bis.tscn
-res://map/moving_plaform/moving_platform_h1_bis.cs
-res://map/moving_plaform/moving_platform_v2_bis.tscn
-res://map/moving_plaform/moving_platform_v1_bis.tscn
+res://map/map_1.tscn
+res://level/level_1Script.cs
+res://map/fin/fin_map_1.tscn
+res://map/fin/fin_map_1.cs
