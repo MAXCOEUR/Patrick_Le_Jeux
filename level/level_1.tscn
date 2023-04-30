@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4bqr406bohm3"]
+[gd_scene load_steps=7 format=3 uid="uid://b4bqr406bohm3"]
 
 [ext_resource type="Script" path="res://level/CameraScript.cs" id="1"]
 [ext_resource type="Script" path="res://level/level_1Script.cs" id="2"]
 [ext_resource type="PackedScene" uid="uid://dvdsp71f8qkqx" path="res://interface/GameOver.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://iqkmq53urwaa" path="res://interface/echap.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://drixkki3uqa0m" path="res://interface/menu_niveaux.tscn" id="6_cl3tb"]
 [ext_resource type="PackedScene" uid="uid://dkpq2bm023kog" path="res://Character/Patrick.tscn" id="6_mkuyk"]
 
 [node name="level_1" type="Node2D"]
@@ -23,6 +24,13 @@ rotation = 0.0
 z_index = 2
 position = Vector2(640, 362)
 script = ExtResource("1")
+_smoothTime = null
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Camera2D"]
+offset_left = -640.0
+offset_top = -362.0
+offset_right = 640.0
+offset_bottom = 358.0
 
 [node name="echap" parent="Camera2D" instance=ExtResource("5")]
 visible = false
@@ -32,13 +40,11 @@ anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
 
+[node name="menu_niveaux" parent="Camera2D/echap" instance=ExtResource("6_cl3tb")]
+visible = false
+layout_mode = 1
+
 [node name="GameOver" parent="Camera2D" instance=ExtResource("4")]
 visible = false
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Camera2D"]
-offset_left = -640.0
-offset_top = -362.0
-offset_right = 640.0
-offset_bottom = 358.0

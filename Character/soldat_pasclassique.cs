@@ -48,7 +48,6 @@ public partial class soldat_pasclassique : Among_us_rouge
 		base.On_animation_finish(anim_name);
 		if (anim_name == "cout_pri")
 		{
-			isInvincible = false;
 		}
 		else if (anim_name=="shoot")
 		{
@@ -66,12 +65,10 @@ public partial class soldat_pasclassique : Among_us_rouge
 					setEtat(0);
 					break;
 				case 2:
-					isInvincible = true;
 					annimation.Play("cout_pri");
 					setEtat(1);
 					break;
 				case 3:
-					isInvincible = true;
 					annimation.Play("cout_pri");
 					setEtat(2);
 					break;

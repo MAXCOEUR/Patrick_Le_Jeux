@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dgg6i7rx7ophe"]
+[gd_scene load_steps=25 format=3 uid="uid://dgg6i7rx7ophe"]
 
 [ext_resource type="Script" path="res://map/map_1.cs" id="1_exnmd"]
 [ext_resource type="Texture2D" uid="uid://dc3xacrvbhrji" path="res://art/fond/map1.png" id="3"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://cpbnhxghs1c6v" path="res://Objet/mysteryBlock/MysteryBlock_epee.tscn" id="14_qku2q"]
 [ext_resource type="PackedScene" uid="uid://c0bffrtnaqpx2" path="res://Objet/mysteryBlock/MysteryBlock_mushroom_mini.tscn" id="15_r4www"]
 [ext_resource type="PackedScene" uid="uid://kae1dpusjuy4" path="res://Character/Among_us_vert.tscn" id="16_ecrdt"]
+[ext_resource type="PackedScene" uid="uid://b13hamth4aslf" path="res://Collection/kalash.tscn" id="17_n4cm8"]
+[ext_resource type="PackedScene" uid="uid://c4k06se6hsf52" path="res://Collection/pot_de_fleur.tscn" id="18_nr80e"]
 
 [sub_resource type="RectangleShape2D" id="10"]
 size = Vector2(15417.5, 1329.38)
@@ -1591,3 +1593,11 @@ collision_layer = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="look_map"]
 position = Vector2(10365.5, -299.5)
 shape = SubResource("RectangleShape2D_flkaf")
+
+[node name="collection" type="Node2D" parent="."]
+
+[node name="Kalash" parent="collection" instance=ExtResource("17_n4cm8")]
+position = Vector2(10212, -309)
+
+[node name="pot_de_fleur" parent="collection" instance=ExtResource("18_nr80e")]
+position = Vector2(13939, -123)

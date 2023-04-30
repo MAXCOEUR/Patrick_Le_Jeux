@@ -26,16 +26,22 @@ public partial class ZoneGame : Node2D
         {
             if (!isEnd)
             {
-                Charactere enemie = (Charactere)otherParent;
-                enemie.setEtat(0);
-                GD.Print("a dieux player !");
+                Charactere palyer = (Charactere)otherParent;
+                if (!palyer.GetArea2D().GetNode<CollisionShape2D>("CollisionShape2D").Disabled)
+                {
+                    palyer.setEtat(0);
+                    GD.Print("a dieux player !");
+                }
             }
         }
         else if (otherParent.IsInGroup("enemies"))
         {
             Charactere enemie = (Charactere)otherParent;
-            enemie.setEtat(0);
-            GD.Print("a dieux enemies !");
+            if (!enemie.GetArea2D().GetNode<CollisionShape2D>("CollisionShape2D").Disabled)
+            {
+                enemie.setEtat(0);
+                GD.Print("a dieux enemies !");
+            }
         }
         else if (otherParent.IsInGroup("ObjectEnemie"))
         {

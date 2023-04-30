@@ -1,9 +1,12 @@
+res://Collection
+res://map/moving_plaform
+res://level
+res://map/fin
+res://interface
+res://map
 res://Character/boss
+res://Objet
 res://
 res://map/boss
-res://map
-res://map/moving_plaform
-res://map/fin
 res://Objet/mysteryBlock
-res://Objet
 res://Character

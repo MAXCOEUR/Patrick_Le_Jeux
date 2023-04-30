@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dflbc5otm8ioa"]
+
+[ext_resource type="Script" path="res://Collection/collection_show.cs" id="1_algdg"]
+[ext_resource type="Texture2D" uid="uid://c4tq3hmi7p2ls" path="res://art/collection/etegere.png" id="2_7xo8o"]
+
+[node name="CollectionShow" type="Node2D"]
+script = ExtResource("1_algdg")
+
+[node name="Etegere" type="Sprite2D" parent="."]
+position = Vector2(643, 347)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_7xo8o")
+
+[node name="bt_retour" type="Button" parent="."]
+offset_left = 19.0
+offset_top = 15.0
+offset_right = 80.0
+offset_bottom = 46.0
+text = "Retour"

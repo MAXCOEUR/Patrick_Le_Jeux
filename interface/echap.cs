@@ -6,7 +6,7 @@ public partial class echap : Control
 
 	private Camera2D _camera;
 	
-	private bool active =false;
+	public bool active =false;
 	
 	public override void _Ready()
 	{
@@ -16,6 +16,7 @@ public partial class echap : Control
 		
 		GetNode<Button>("CenterContainer/GridContainer/bt_continuer").Connect("button_down", new Callable(this, "_OnBt_Resume"));
 		GetNode<Button>("CenterContainer/GridContainer/bt_revenir_au_menu").Connect("button_down", new Callable(this, "_OnBt_revenir_au_menu"));
+		GetNode<Button>("CenterContainer/GridContainer/bt_menu_des_niveaux").Connect("button_down", new Callable(this, "_OnBt_menu_des_niveaux"));
 	}
 	
 	public override void _PhysicsProcess(double delta)
@@ -29,18 +30,22 @@ public partial class echap : Control
 			SetPosition(new Vector2(-cameraRect.Size.X/2,-cameraRect.Size.Y/2));
 
 			active=!active;
-			Visible = active;
 		}
+		Visible = active;
 	}
 	
 	
 	private void _OnBt_Resume()
 	{
 		active=false;
-		Visible = active;
 	}
 	private void _OnBt_revenir_au_menu()
 	{
 		GetTree().ChangeSceneToFile("res://interface/StartMenu.tscn");
+	}
+	private void _OnBt_menu_des_niveaux()
+	{
+		menu_niveaux menu_niv = GetNode<menu_niveaux>("menu_niveaux");
+		menu_niv.Visible=true;
 	}
 }

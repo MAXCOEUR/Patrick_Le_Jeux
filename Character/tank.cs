@@ -22,12 +22,16 @@ public partial class tank : Enemies
 
 		
 
-		patrick = GetNode<Patrick>("../../Patrick");
+		patrick = GetNode<Patrick>("../../../Patrick");
 		canon = sprite.GetNode<Sprite2D>("Canon");
 		tankSprite = sprite.GetNode<Sprite2D>("Tank");
 		directionDeplacment = new Vector2(0, 0);
 
-		timerFire = new System.Timers.Timer(5000);
+		Random random = new Random();
+		int intervalSeconds = random.Next(2, 11);
+		int intervalMillis = intervalSeconds * 1000;
+
+		timerFire = new System.Timers.Timer(intervalMillis);
 		timerFire.Elapsed += (timerSender, timerEvent) => send(timerSender, timerEvent);
 		timerFire.AutoReset = true;
 		timerFire.Enabled = true;

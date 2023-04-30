@@ -28,7 +28,9 @@ public abstract partial class Charactere : CharacterBody2D
 	protected Vector2 size;
 
 
-
+	public Area2D GetArea2D(){
+		return area;
+	}
 
 	public override void _Ready()
 	{

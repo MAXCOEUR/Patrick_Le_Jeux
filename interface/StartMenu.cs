@@ -8,6 +8,7 @@ public partial class StartMenu : Control
 	{
 		GetNode<Button>("CenterContainer/GridContainer/bt_NouvellePartie").Connect("button_down", new Callable(this, "_OnBt_NouvellePartiePressed"));
 		GetNode<Button>("CenterContainer/GridContainer/bt_quitter").Connect("button_down", new Callable(this, "_OnBt_quitter"));
+		GetNode<Button>("CenterContainer/GridContainer/bt_collection").Connect("button_down", new Callable(this, "_OnBt_collection"));
 	}
 	
 	
@@ -18,6 +19,9 @@ public partial class StartMenu : Control
 	private void _OnBt_quitter()
 	{	
 		GetTree().Quit();
+	}
+	private void _OnBt_collection(){
+		GetTree().ChangeSceneToFile("res://Collection/collection_show.tscn");
 	}
 	
 }

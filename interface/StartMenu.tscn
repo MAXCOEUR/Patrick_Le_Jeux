@@ -32,8 +32,9 @@ text = "Nouvelle Partie"
 layout_mode = 2
 text = "Continuer une Partie"
 
-[node name="Button3" type="Button" parent="CenterContainer/GridContainer"]
+[node name="bt_collection" type="Button" parent="CenterContainer/GridContainer"]
 layout_mode = 2
+text = "Collection"
 
 [node name="bt_quitter" type="Button" parent="CenterContainer/GridContainer"]
 layout_mode = 2
