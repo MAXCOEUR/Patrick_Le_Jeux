@@ -1,5 +1,5 @@
 res://level/level_1.tscn
 res://map/map_1.tscn
+res://map/boss/map_boss_1.tscn
 res://level/level_1Script.cs
-res://map/fin/fin_map_1.tscn
-res://map/fin/fin_map_1.cs
+res://Character/boss/thierry.tscn

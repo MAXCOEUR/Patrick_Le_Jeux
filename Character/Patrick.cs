@@ -298,12 +298,12 @@ public partial class Patrick : Charactere
 		{
 			TimeSpan durationLastWallRightJump = DateTime.UtcNow.Subtract(lastWallRightJump);
 			TimeSpan durationLastWallLeftJump = DateTime.UtcNow.Subtract(lastWallLeftJump);
-			if (direction.X > 0 && durationLastWallRightJump.TotalSeconds > 1)
+			if (direction.X > 0 && durationLastWallRightJump.TotalSeconds >= 1)
 			{
 				directionPlayerWantIsLeft = false;
 				velocity.X += goRight(direction);
 			}
-			else if (durationLastWallLeftJump.TotalSeconds >= 1)
+			else if (direction.X < 0 && durationLastWallLeftJump.TotalSeconds >= 1)
 			{
 				directionPlayerWantIsLeft=true;
 				velocity.X += goLeft(direction);

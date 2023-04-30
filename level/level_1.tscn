@@ -16,7 +16,7 @@ polygon = PackedVector2Array(-19532, -13168, 39009, -13168, 39654, 16990, -19451
 
 [node name="Patrick" parent="." instance=ExtResource("6_mkuyk")]
 z_index = 1
-position = Vector2(14358, 517)
+position = Vector2(89, 622)
 rotation = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -36,3 +36,9 @@ grow_vertical = 1
 visible = false
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Camera2D"]
+offset_left = -640.0
+offset_top = -362.0
+offset_right = 640.0
+offset_bottom = 358.0

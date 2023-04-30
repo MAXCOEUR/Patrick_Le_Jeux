@@ -20,6 +20,8 @@ public abstract partial class fin_map : Node2D
 		timerEnd.Start();
 	}
 
-	protected abstract void callLevel1();
+	protected virtual void callLevel1(){
+		timerEnd.Stop();
+	}
 
 }

@@ -6,6 +6,7 @@ public partial class CameraScript : Camera2D
 	private CharacterBody2D _player;
 	private int speed = 4000;
 	private Vector2 _maxOffset;
+	private Vector2 _sizeScreen = new Vector2(1280,720);
 	private Vector2 _velocity;
 
 	[Export]
@@ -17,7 +18,7 @@ public partial class CameraScript : Camera2D
 	public override void _Ready()
 	{
 		_player = GetNode<CharacterBody2D>("../Patrick");
-		_maxOffset = new Vector2(15359, 720);
+		_maxOffset = new Vector2(15359, 0);
 	}
 
 	public void set_maxOffset(Vector2 maxOffset)
@@ -38,17 +39,16 @@ public partial class CameraScript : Camera2D
 			Vector2 _viewportSize = GetViewportRect().Size;
 
 			// Calculer le zoom en fonction du ratio de l'écran
-			float zoom = _viewportSize.Y / 720f;
+			float zoom = _viewportSize.Y / _sizeScreen.Y;
 
 			// Ajuster la position maximale de la caméra en fonction du zoom
 			Vector2 maxPos = _maxOffset * zoom;
 
 			Vector2 targetPos = _player.GlobalPosition;
-			Vector2 camPos = Position;
 			Vector2 offset = targetPos;
 
-			offset.X = Mathf.Max(offset.X, _viewportSize.X / 2);
-			offset.Y = Mathf.Min(offset.Y, -_viewportSize.Y / 2 + maxPos.Y);
+			offset.X = Mathf.Clamp(offset.X,_sizeScreen.X*zoom / 2, maxPos.X-_sizeScreen.X*zoom / 2 );
+			offset.Y = Mathf.Clamp(offset.Y,maxPos.Y,_sizeScreen.Y / 2);
 
 			// Déplacer la caméra en douceur
 			Position = Position.MoveToward(offset, speed * (float)delta);
