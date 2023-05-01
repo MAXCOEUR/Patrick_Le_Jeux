@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Data.SQLite;
 
 public partial class level_1Script : Node2D
 {
@@ -10,6 +11,7 @@ public partial class level_1Script : Node2D
 
 	private Polygon2D background;
 	private VideoStreamPlayer videoPlayer;
+	protected Database db = Database.Instance;
 
 
 	public override void _Ready()
@@ -21,13 +23,56 @@ public partial class level_1Script : Node2D
 		_camera = GetNode<CameraScript>("Camera2D");
 		_player = GetNode<Patrick>("Patrick");
 		_player.setEtat(1);
+
+
+		SQLiteCommand command = new SQLiteCommand("SELECT MAX(numeroMap) FROM MapCurrent", db.getConnection);
+		object result = command.ExecuteScalar();
+
+		int maxNumeroMap = 0;
+		try
+		{
+			maxNumeroMap = Convert.ToInt32(result);
+		}
+		catch
+		{
+			maxNumeroMap = 1;
+		}
+
 		//debugMode();
-		setVideo("res://art/annimation/video_episode1/intro.ogv");
+		setMapChose(maxNumeroMap);
+	}
+
+	private void setMapChose(int numMap){
+		switch (numMap) {
+			case 1:
+				setVideo("res://art/annimation/video_episode1/intro.ogv");
+			break;
+			case 2:
+				setMap2();
+			break;
+			case 3:
+			break;
+			case 4:
+			break;
+			case 5:
+			break;
+		}
 	}
 
 	public void setMap1()
 	{
 		removeNonEssentialChildren();
+
+		try{
+			string insertQuery = "INSERT INTO MapCurrent(numeroMap) VALUES(@numeroMap)";
+			SQLiteCommand insertCommand = new SQLiteCommand(insertQuery, db.getConnection);
+			insertCommand.Parameters.AddWithValue("@numeroMap", 1);
+			insertCommand.ExecuteNonQuery();
+		}catch{
+			
+		}
+		
+
 		setVideo("res://art/annimation/video_episode1/debut_map1.ogv");
 	}
 	public void Finish_map_1()
@@ -47,6 +92,15 @@ public partial class level_1Script : Node2D
 	public void setMap2()
 	{
 		removeNonEssentialChildren();
+		try{
+			string insertQuery = "INSERT INTO MapCurrent(numeroMap) VALUES(@numeroMap)";
+			SQLiteCommand insertCommand = new SQLiteCommand(insertQuery, db.getConnection);
+			insertCommand.Parameters.AddWithValue("@numeroMap", 2);
+			insertCommand.ExecuteNonQuery();
+		}catch{
+
+		}
+
 		setVideo("res://art/annimation/video_episode2/debut_map.ogv");
 	}
 	public void Finish_map_2()
@@ -121,7 +175,7 @@ public partial class level_1Script : Node2D
 				AddChild(mapBoss2);
 				_player.Position = new Vector2(100, 500);
 				_player.setParam(new ParametreLevel());
-			break;
+				break;
 		}
 	}
 
@@ -145,12 +199,12 @@ public partial class level_1Script : Node2D
 	private void debugMode()
 	{
 		_camera.set_maxOffset(new Vector2(15359, -400));
-				background.Color = new Color(0 / 255.0f, 168 / 255.0f, 243 / 255.0f);
-				PackedScene missileScene = (PackedScene)ResourceLoader.Load("res://map/map_1.tscn");
-				map_1 map = (map_1)missileScene.Instantiate();
-				AddChild(map);
-				_player.Position = new Vector2(14300, 0);
-				_player.setParam(new ParametreLevel());
+		background.Color = new Color(0 / 255.0f, 168 / 255.0f, 243 / 255.0f);
+		PackedScene missileScene = (PackedScene)ResourceLoader.Load("res://map/map_1.tscn");
+		map_1 map = (map_1)missileScene.Instantiate();
+		AddChild(map);
+		_player.Position = new Vector2(14300, 0);
+		_player.setParam(new ParametreLevel());
 	}
 
 }

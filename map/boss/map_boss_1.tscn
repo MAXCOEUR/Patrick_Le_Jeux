@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://5gat8t6126b3"]
 
 [ext_resource type="Script" path="res://map/boss/map_boss_1.cs" id="1_mmmr7"]
-[ext_resource type="Texture2D" uid="uid://4dbnt1rhg3pt" path="res://art/fond/plaine.png" id="2_7mhtn"]
+[ext_resource type="Texture2D" uid="uid://cyr6syq0f6jof" path="res://art/fond/Dans_la_jungle.png" id="2_kr1rt"]
 [ext_resource type="Texture2D" uid="uid://bj8bjbncee6yj" path="res://art/block/tilesheet_complete.png" id="3_cimly"]
 [ext_resource type="Script" path="res://map/TileMap.cs" id="4_vv3i6"]
 [ext_resource type="PackedScene" uid="uid://ymeind6px2jv" path="res://Character/boss/thierry.tscn" id="5_hbbif"]
@@ -1469,9 +1469,9 @@ position = Vector2(640.125, 212)
 shape = SubResource("RectangleShape2D_8i7e0")
 
 [node name="Plaine" type="Sprite2D" parent="."]
-position = Vector2(648, 360)
-scale = Vector2(1.0125, 1)
-texture = ExtResource("2_7mhtn")
+position = Vector2(644.5, 344.5)
+scale = Vector2(0.672396, 0.637963)
+texture = ExtResource("2_kr1rt")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_1pbre")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://blljsnnfb8vfk"]
 
 [ext_resource type="Script" path="res://map/boss/map_boss_2.cs" id="1_dxp7r"]
-[ext_resource type="Texture2D" uid="uid://4dbnt1rhg3pt" path="res://art/fond/plaine.png" id="1_sgx7x"]
+[ext_resource type="Texture2D" uid="uid://c5fume5h28tr2" path="res://art/fond/la_bagarre.png" id="2_k4jkr"]
 [ext_resource type="Texture2D" uid="uid://bj8bjbncee6yj" path="res://art/block/tilesheet_complete.png" id="2_kkmvc"]
 [ext_resource type="PackedScene" uid="uid://2rllvt4pt81n" path="res://Character/boss/pascal.tscn" id="5_81ml1"]
 
@@ -820,9 +820,9 @@ position = Vector2(646.125, 212)
 shape = SubResource("RectangleShape2D_xejhn")
 
 [node name="Plaine" type="Sprite2D" parent="."]
-position = Vector2(648, 360)
-scale = Vector2(1.0125, 1)
-texture = ExtResource("1_sgx7x")
+position = Vector2(644, 372)
+scale = Vector2(0.670833, 0.687037)
+texture = ExtResource("2_k4jkr")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_e48uy")

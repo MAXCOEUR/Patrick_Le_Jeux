@@ -12,23 +12,25 @@ grow_vertical = 2
 script = ExtResource("1_lr7op")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1282.0
-offset_bottom = 719.0
-
-[node name="level_1" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -612.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="level_1"]
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="level_1/GridContainer"]
+[node name="Label" type="Label" parent="CenterContainer/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Level 1"
@@ -36,61 +38,31 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="bt_map_1" type="Button" parent="level_1/GridContainer"]
+[node name="bt_map_1" type="Button" parent="CenterContainer/GridContainer"]
 layout_mode = 2
-text = "map 1
+text = "chapitre 1
 "
 
-[node name="bt_map_2" type="Button" parent="level_1/GridContainer"]
+[node name="bt_map_2" type="Button" parent="CenterContainer/GridContainer"]
 layout_mode = 2
-text = "map 2
+text = "chapitre 2
 "
 
-[node name="bt_map_3" type="Button" parent="level_1/GridContainer"]
+[node name="bt_map_3" type="Button" parent="CenterContainer/GridContainer"]
 layout_mode = 2
-text = "map 3
+text = "chapitre 3
 "
 
-[node name="bt_map_4" type="Button" parent="level_1/GridContainer"]
+[node name="bt_map_4" type="Button" parent="CenterContainer/GridContainer"]
 layout_mode = 2
-text = "map 4
+text = "chapitre 4
 "
 
-[node name="bt_map_5" type="Button" parent="level_1/GridContainer"]
+[node name="bt_map_5" type="Button" parent="CenterContainer/GridContainer"]
 layout_mode = 2
-text = "map 5
+text = "chapitre 5
 "
 
-[node name="level_2" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 658.0
-offset_top = 2.0
-offset_right = -1.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="GridContainer" type="GridContainer" parent="level_2"]
+[node name="bt_quitter" type="Button" parent="CenterContainer/GridContainer"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="level_2/GridContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "level 2"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="bt_" type="Button" parent="level_2/GridContainer"]
-layout_mode = 2
-
-[node name="bt_quitter" type="Button" parent="."]
-layout_mode = 0
-offset_left = 497.0
-offset_top = 614.0
-offset_right = 749.0
-offset_bottom = 635.0
 text = "Quitter"

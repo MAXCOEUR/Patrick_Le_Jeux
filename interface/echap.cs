@@ -46,6 +46,7 @@ public partial class echap : Control
 	private void _OnBt_menu_des_niveaux()
 	{
 		menu_niveaux menu_niv = GetNode<menu_niveaux>("menu_niveaux");
+		menu_niv.update();
 		menu_niv.Visible=true;
 	}
 }

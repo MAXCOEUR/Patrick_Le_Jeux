@@ -26,11 +26,7 @@ uppercase = true
 
 [node name="bt_NouvellePartie" type="Button" parent="CenterContainer/GridContainer"]
 layout_mode = 2
-text = "Nouvelle Partie"
-
-[node name="bt_ContinuerUnePartie" type="Button" parent="CenterContainer/GridContainer"]
-layout_mode = 2
-text = "Continuer une Partie"
+text = "Jouer"
 
 [node name="bt_collection" type="Button" parent="CenterContainer/GridContainer"]
 layout_mode = 2

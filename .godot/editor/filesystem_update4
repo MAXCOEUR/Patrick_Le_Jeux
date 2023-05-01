@@ -1,4 +1,4 @@
-res://Collection/renard.tscn
-res://Collection/renard.cs
-res://Collection/chateaux.tscn
-res://map/map_1.tscn
+res://interface/menu_niveaux.tscn
+res://level/level_1Script.cs
+res://interface/menu_niveaux.cs
+res://interface/echap.tscn
