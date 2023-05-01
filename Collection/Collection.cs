@@ -19,8 +19,8 @@ abstract public partial class Collection : Node2D
 		var otherParent = otherArea.GetParent();
 		if (otherParent.IsInGroup("player"))
 		{
-			setCollectionInDb();
 			this.QueueFree();
+			setCollectionInDb();
 		}
 	}
 

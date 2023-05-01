@@ -12,7 +12,7 @@ public abstract partial class Object : CharacterBody2D
 
 	protected const int VitesseMaxDefault=75;
 
-	public bool waitPlayer=false;
+	public bool waitPlayer=true;
 	protected bool modePlayer=false;
 	Shape2D shape;
 	protected Vector2 size;
@@ -22,7 +22,9 @@ public abstract partial class Object : CharacterBody2D
 	{
 		shape = GetNode<CollisionShape2D>("CollisionShape2D").Shape;
 		parametreLevel.VitesseMax = VitesseMaxDefault;
-		direction = new Vector2(0, 0);
+		if(waitPlayer){
+			direction = new Vector2(0, 0);
+		}
 		sprite = GetNode<Sprite2D>("Sprite2D");
 		annimation = GetNode<AnimationPlayer>("AnimationPlayer");
 		annimation.Connect("animation_finished", new Callable(this, "On_animation_finish"));

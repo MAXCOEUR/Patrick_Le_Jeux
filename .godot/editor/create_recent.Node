@@ -1,10 +1,14 @@
-Node2D
+Sprite2D
+AnimationPlayer
+PinJoint2D
+TileMap
+StaticBody2D
 CollisionShape2D
 Area2D
-Sprite2D
+CharacterBody2D
+Node2D
 CenterContainer
 Button
-TileMap
 ColorRect
 TextEdit
 OptionButton
@@ -12,8 +16,6 @@ MenuButton
 Tree
 MenuBar
 ProgressBar
-AnimationPlayer
-CharacterBody2D
 VideoStreamPlayer
 Polygon2D
 SubViewport

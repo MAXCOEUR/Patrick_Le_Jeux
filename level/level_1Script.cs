@@ -21,8 +21,8 @@ public partial class level_1Script : Node2D
 		_camera = GetNode<CameraScript>("Camera2D");
 		_player = GetNode<Patrick>("Patrick");
 		_player.setEtat(1);
-		debugMode();
-		//setVideo("res://art/annimation/video_episode1/intro.ogv");
+		//debugMode();
+		setVideo("res://art/annimation/video_episode1/intro.ogv");
 	}
 
 	public void setMap1()
@@ -51,7 +51,16 @@ public partial class level_1Script : Node2D
 	}
 	public void Finish_map_2()
 	{
-		GD.Print("fin map 2 ");
+		setMapBoss2();
+	}
+	public void setMapBoss2()
+	{
+		removeNonEssentialChildren();
+		setVideo("res://art/annimation/video_episode2/start_fight.ogv");
+	}
+	public void Finish_map_Boss_2()
+	{
+		setVideo("res://art/annimation/video_episode2/fin_fight.ogv");
 	}
 
 	public void setVideo(string lienVideo)
@@ -104,6 +113,15 @@ public partial class level_1Script : Node2D
 				_player.Position = new Vector2(100, 500);
 				_player.setParam(new ParametreLevel());
 				break;
+			case "res://art/annimation/video_episode2/start_fight.ogv":
+				_camera.set_maxOffset(new Vector2(1280, 0));
+				background.Color = new Color(255 / 255.0f, 0 / 255.0f, 0 / 255.0f);
+				PackedScene missileSceneBoss2 = (PackedScene)ResourceLoader.Load("res://map/boss/map_boss_2.tscn");
+				map_boss_2 mapBoss2 = (map_boss_2)missileSceneBoss2.Instantiate();
+				AddChild(mapBoss2);
+				_player.Position = new Vector2(100, 500);
+				_player.setParam(new ParametreLevel());
+			break;
 		}
 	}
 
@@ -120,19 +138,19 @@ public partial class level_1Script : Node2D
 				child.QueueFree();
 			}
 		}
+		_player.setEtat(_player.getEtat());
 		GD.Print("remove all children");
 	}
 
 	private void debugMode()
 	{
-		_camera.set_maxOffset(new Vector2(25600, -1440));
+		_camera.set_maxOffset(new Vector2(15359, -400));
 				background.Color = new Color(0 / 255.0f, 168 / 255.0f, 243 / 255.0f);
-				PackedScene SceneMap2 = (PackedScene)ResourceLoader.Load("res://map/map_2.tscn");
-				map_2 map2 = (map_2)SceneMap2.Instantiate();
-				AddChild(map2);
-				_player.Position = new Vector2(100, 500);
+				PackedScene missileScene = (PackedScene)ResourceLoader.Load("res://map/map_1.tscn");
+				map_1 map = (map_1)missileScene.Instantiate();
+				AddChild(map);
+				_player.Position = new Vector2(14300, 0);
 				_player.setParam(new ParametreLevel());
-				_player.setEtat(6);
 	}
 
 }

@@ -11,7 +11,6 @@ public partial class fireball : Object
 		startLunch = DateTime.Now;
 		parametreLevel.VitesseMax = VitesseMaxDefault * 2;
 		parametreLevel.Gravity = new ParametreLevel().Gravity;
-		waitPlayer = true;
 	}
 	public override void _Process(double delta)
 	{

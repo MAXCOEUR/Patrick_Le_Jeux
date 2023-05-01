@@ -1,3 +1,4 @@
-res://map/map_2.tscn
+res://Collection/renard.tscn
+res://Collection/renard.cs
+res://Collection/chateaux.tscn
 res://map/map_1.tscn
-res://map/map_2.cs

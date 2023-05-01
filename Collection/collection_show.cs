@@ -33,7 +33,8 @@ public partial class collection_show : Node2D
 			}
 			else if(Collection.numeroMap==2){
 				if(Collection.id==1){
-					
+					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/renard.tscn");
+					col = (Collection)SceneCollection.Instantiate();
 				}
 				if(Collection.id==2){
 					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/gateau.tscn");
@@ -45,6 +46,7 @@ public partial class collection_show : Node2D
 				}	
 			}
 			
+			col.Scale = new Vector2(1,1);
 			col.Position = new Vector2(480+(Collection.id-1)*145,110+(Collection.numeroMap-1)*130);
 			AddChild(col);
 		}

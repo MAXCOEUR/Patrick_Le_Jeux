@@ -84,6 +84,9 @@ public abstract partial class Charactere : CharacterBody2D
 
 	}
 
+	protected float goJump(){
+		return parametreLevel.jumpBase;
+	}
 	protected float goLeft(Vector2 direction)
 	{
 		sprite.FlipH = true;

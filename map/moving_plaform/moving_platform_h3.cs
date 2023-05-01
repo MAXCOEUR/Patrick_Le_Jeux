@@ -5,6 +5,6 @@ public partial class moving_platform_h3 : moving_platform_h
 {
 	public override void _Ready(){
 		base._Ready();
-		changeTimer.Interval=5000;
+		endPosition = new Vector2(Position.X+750,Position.Y);
 	}
 }

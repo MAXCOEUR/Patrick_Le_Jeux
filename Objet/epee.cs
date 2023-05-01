@@ -16,7 +16,6 @@ public partial class epee : Object
 		size = GetViewportRect().Size;
 		parametreLevel.VitesseMax = vitessLance;
 		parametreLevel.Friction=1f;
-		waitPlayer=true;
 	}
 	public override void _Process(double delta)
 	{

@@ -17,6 +17,9 @@ public partial class Patrick : Charactere
 	CollisionShape2D collisionShapePlayer;
 	bool directionPlayerWantIsLeft=false;
 
+	protected PackedScene missileScene = (PackedScene)ResourceLoader.Load("res://Objet/missile.tscn");
+	protected PackedScene epeeScene = (PackedScene)ResourceLoader.Load("res://Objet/epee.tscn");
+
 	public int getEtat(){
 		return etat;
 	}
@@ -43,7 +46,7 @@ public partial class Patrick : Charactere
 					missile missile = (missile)missileScene.Instantiate();
 					missile.Position = Position;
 
-					GetParent().AddChild(missile);
+					
 
 					if (directionCurrent.X < 0)
 					{
@@ -53,6 +56,7 @@ public partial class Patrick : Charactere
 					{
 						missile.setdirection(new Vector2(1, 0), this);
 					}
+					GetParent().AddChild(missile);
 				}
 
 
@@ -71,8 +75,8 @@ public partial class Patrick : Charactere
 			if (!isInvincible)
 			{
 				Charactere enemie = (Charactere)otherParent;
-				float piedPatrick = Position.Y + (getSize()*Scale/2).Y -5 ;
-				float teteEnemie = enemie.Position.Y - (enemie.getSize()*enemie.Scale/2).Y +5;
+				float piedPatrick = Position.Y + (getSize()*Scale/2).Y -10 ;
+				float teteEnemie = enemie.Position.Y - (enemie.getSize()*enemie.Scale/2).Y +10;
 
 				if (piedPatrick <= teteEnemie)
 				{
@@ -157,11 +161,16 @@ public partial class Patrick : Charactere
 
 		objet = null;
 	}
+
+	protected void AddObjectToChild(Object obj)
+    {
+        obj.Position = new Vector2(obj.Position.X, (obj.Position.Y - size.Y));
+        AddChild(obj);
+    }
 	override public void setEtat(int i)
 	{
 		Vector2 newScale;
 		etat = i;
-		int o = 0;
 		switch (i)
 		{
 			case 0: //ded
@@ -182,21 +191,19 @@ public partial class Patrick : Charactere
 				newScale = new Vector2(1f, 1f);
 				this.Scale = newScale;
 				resetObjet();
-				PackedScene missileScene = (PackedScene)ResourceLoader.Load("res://Objet/missile.tscn");
 				missile ob = (missile)missileScene.Instantiate();
 				objet = ob;
-				AddChild(ob);
 				ob.setModePlayer(this);
+				AddObjectToChild(ob);
 				break;
 			case 4: //epee
 				newScale = new Vector2(1f, 1f);
 				this.Scale = newScale;
 				resetObjet();
-				PackedScene epeeScene = (PackedScene)ResourceLoader.Load("res://Objet/epee.tscn");
 				epee epee = (epee)epeeScene.Instantiate();
 				objet = epee;
-				AddChild(epee);
 				epee.setModePlayer(this);
+				AddObjectToChild(epee);
 				break;
 			case 5: //fire
 				newScale = new Vector2(1f, 1f);
@@ -259,7 +266,7 @@ public partial class Patrick : Charactere
 			{
 				isJumping = true;
 				currentJumpTime = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-				velocity.Y += parametreLevel.jumpBase;
+				velocity.Y += goJump();
 			}
 			else if (isOnLeftWall())
 			{

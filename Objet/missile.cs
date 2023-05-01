@@ -12,8 +12,10 @@ public partial class missile : Object
 		parametreLevel.VitesseMax = VitesseMaxDefault * 2;
 		CpuParticles2D paticule2DFumée = GetNode<CpuParticles2D>("fumée");
 		paticule2DFumée.Emitting = false;
-		parametreLevel.Gravity = new ParametreLevel().Gravity;
-		waitPlayer = true;
+		if(waitPlayer){
+			parametreLevel.Gravity = new ParametreLevel().Gravity;
+		}
+		
 	}
 	public override void _Process(double delta)
 	{

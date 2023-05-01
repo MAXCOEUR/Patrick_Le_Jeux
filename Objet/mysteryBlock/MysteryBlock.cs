@@ -29,13 +29,18 @@ public partial class MysteryBlock : StaticBody2D
             annimation.Play("hit");
             if (Object != null)
             {
-                Object.Position = new Vector2(Object.Position.X, (Object.Position.Y - size.Y));
-                AddChild(Object);
+                CallDeferred("AddObjectToChild", Object);
                 Object = null;
             }
-
         }
     }
+
+    protected void AddObjectToChild(Object obj)
+    {
+        obj.Position = new Vector2(obj.Position.X, (obj.Position.Y - size.Y));
+        AddChild(obj);
+    }
+
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
