@@ -1,4 +1,4 @@
-res://interface/menu_niveaux.tscn
-res://level/level_1Script.cs
-res://interface/menu_niveaux.cs
 res://interface/echap.tscn
+res://interface/StartMenu.tscn
+res://interface/menu_niveaux.tscn
+res://interface/GameOver.tscn

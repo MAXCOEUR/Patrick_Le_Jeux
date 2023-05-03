@@ -1,3 +1,4 @@
+Button
 Sprite2D
 AnimationPlayer
 PinJoint2D
@@ -8,7 +9,6 @@ Area2D
 CharacterBody2D
 Node2D
 CenterContainer
-Button
 ColorRect
 TextEdit
 OptionButton

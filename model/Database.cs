@@ -42,4 +42,10 @@ public class Database
 	{
 		get { return connection; }
 	}
+
+	public void resetTable(){
+		string createTableQuery = "DELETE FROM Collection; DELETE FROM MapCurrent;";
+		SQLiteCommand createTableCommand = new SQLiteCommand(createTableQuery, connection);
+		createTableCommand.ExecuteNonQuery();
+	}
 }

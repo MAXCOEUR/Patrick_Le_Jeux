@@ -28,6 +28,10 @@ uppercase = true
 layout_mode = 2
 text = "Jouer"
 
+[node name="bt_recommencer" type="Button" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Recommencer"
+
 [node name="bt_collection" type="Button" parent="CenterContainer/GridContainer"]
 layout_mode = 2
 text = "Collection"

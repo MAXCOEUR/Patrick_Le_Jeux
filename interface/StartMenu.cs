@@ -3,12 +3,14 @@ using System;
 
 public partial class StartMenu : Control
 {
-	
+	protected Database db = Database.Instance;
 	public override void _Ready()
 	{
 		GetNode<Button>("CenterContainer/GridContainer/bt_NouvellePartie").Connect("button_down", new Callable(this, "_OnBt_NouvellePartiePressed"));
 		GetNode<Button>("CenterContainer/GridContainer/bt_quitter").Connect("button_down", new Callable(this, "_OnBt_quitter"));
 		GetNode<Button>("CenterContainer/GridContainer/bt_collection").Connect("button_down", new Callable(this, "_OnBt_collection"));
+		GetNode<Button>("CenterContainer/GridContainer/bt_recommencer").Connect("button_down", new Callable(this, "_OnBt_recommencer"));
+
 	}
 	
 	
@@ -22,6 +24,10 @@ public partial class StartMenu : Control
 	}
 	private void _OnBt_collection(){
 		GetTree().ChangeSceneToFile("res://Collection/collection_show.tscn");
+	}
+
+	private void _OnBt_recommencer(){
+		db.resetTable();
 	}
 	
 }
