@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://5dkx7x67u6uc"]
 
-[ext_resource type="Script" path="res://map/moving_plaform/moving_platform_v3.cs" id="1_ntvgr"]
+[ext_resource type="Script" path="res://map/moving_plaform/moving_platform_v3_bis.cs" id="1_g1oa5"]
 [ext_resource type="Texture2D" uid="uid://bj8bjbncee6yj" path="res://art/block/tilesheet_complete.png" id="2_pb1kv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pa3qf"]
@@ -23,7 +23,7 @@ size = Vector2(60, 20)
 [node name="moving_platform_h3" type="CharacterBody2D"]
 collision_layer = 16
 collision_mask = 0
-script = ExtResource("1_ntvgr")
+script = ExtResource("1_g1oa5")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_bkgct")

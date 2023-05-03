@@ -1,4 +1,4 @@
-res://interface/menu_niveaux.tscn
-res://level/level_1Script.cs
-res://interface/menu_niveaux.cs
-res://interface/echap.tscn
+res://map/map_3.tscn
+res://Character/SoldatClassique.cs
+res://Character/SoldatRouge.cs
+res://map/map_2.tscn

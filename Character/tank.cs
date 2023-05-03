@@ -1,8 +1,5 @@
 using Godot;
 using System;
-using System.Reflection;
-using System.Threading;
-using System.Timers;
 
 public partial class tank : Enemies
 {
@@ -11,7 +8,7 @@ public partial class tank : Enemies
     protected Sprite2D canon;
     protected Sprite2D tankSprite;
 
-    protected System.Timers.Timer timerFire;
+    protected Timer timerFire;
     Vector2 direction = new Vector2(1, 0);
     Vector2 distance = new Vector2(1, 0);
 
@@ -31,12 +28,13 @@ public partial class tank : Enemies
 
         Random random = new Random();
         int intervalSeconds = random.Next(3,7);
-        int intervalMillis = intervalSeconds * 1000;
+        int intervalMillis = intervalSeconds;
 
-        timerFire = new System.Timers.Timer(intervalMillis);
-        timerFire.Elapsed += (timerSender, timerEvent) => send(timerSender, timerEvent);
-        timerFire.AutoReset = true;
-        timerFire.Enabled = true;
+        timerFire = new Timer();
+		timerFire.WaitTime = intervalSeconds;
+		timerFire.Connect("timeout", new Callable(this,"send"));
+		AddChild(timerFire);
+		timerFire.Start();
 
         if (ResourceLoader.Exists("res://Objet/missile.tscn"))
         {
@@ -98,7 +96,7 @@ public partial class tank : Enemies
         canon.LookAt(patrickPosition);
     }
 
-    public void send(object source, System.Timers.ElapsedEventArgs e)
+    public void send()
     {
         if (distance.Length() < 1280)
         {
