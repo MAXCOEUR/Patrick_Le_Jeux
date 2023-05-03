@@ -1,4 +1,4 @@
-res://interface/echap.tscn
-res://interface/StartMenu.tscn
-res://interface/menu_niveaux.tscn
-res://interface/GameOver.tscn
+res://map/map_3.tscn
+res://Character/SoldatClassique.cs
+res://Character/SoldatRouge.cs
+res://map/map_2.tscn

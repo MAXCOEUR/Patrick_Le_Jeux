@@ -3,23 +3,25 @@ using System;
 
 public partial class SoldatClassique : Among_us_vert
 {
-	protected System.Timers.Timer timerFire;
+	protected Timer timerFire;
+	PackedScene epeeScene;
 
 	public override void _Ready()
 	{
 		base._Ready();
-		timerFire = new System.Timers.Timer(2500);
-		timerFire.Elapsed += (timerSender, timerEvent) => send(timerSender, timerEvent);
-		timerFire.AutoReset = true;
-		timerFire.Enabled = true;
+		timerFire = new Timer();
+		timerFire.WaitTime = 2.5f;
+		timerFire.Connect("timeout", new Callable(this,"send"));
+		AddChild(timerFire);
+		timerFire.Start();
+		epeeScene = (PackedScene)ResourceLoader.Load("res://Objet/epee.tscn");
 	}
 	public override void _PhysicsProcess(double delta)
 	{
 		base._PhysicsProcess(delta);
 	}
-	public void send(object source, System.Timers.ElapsedEventArgs e)
+	public void send()
 	{
-		PackedScene epeeScene = (PackedScene)ResourceLoader.Load("res://Objet/epee.tscn");
 		epee epee = (epee)epeeScene.Instantiate();
 		epee.Position = Position;
 		epee.setdirection(new Vector2(0,0),this);

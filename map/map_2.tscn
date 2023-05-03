@@ -1,8 +1,8 @@
 [gd_scene load_steps=29 format=3 uid="uid://d1tt1cbgw3fpj"]
 
 [ext_resource type="Script" path="res://map/map_2.cs" id="1_5wlth"]
-[ext_resource type="Texture2D" uid="uid://dklw15x32au3h" path="res://art/fond/map2.png" id="1_woprj"]
 [ext_resource type="Texture2D" uid="uid://bj8bjbncee6yj" path="res://art/block/tilesheet_complete.png" id="2_bu7ug"]
+[ext_resource type="Texture2D" uid="uid://nep7plwh8pqi" path="res://art/fond/map2%2.png" id="2_en0s6"]
 [ext_resource type="PackedScene" uid="uid://vrotx5batqhf" path="res://map/fin/fin_map_2.tscn" id="4_uwaa4"]
 [ext_resource type="PackedScene" uid="uid://e3mjeeyjk3ml" path="res://map/moving_plaform/fond_moving_platform_v.tscn" id="5_xd1h5"]
 [ext_resource type="PackedScene" uid="uid://de6w0o5btpv4b" path="res://map/moving_plaform/fond_moving_platform_h.tscn" id="6_rfcrm"]
@@ -870,8 +870,12 @@ size = Vector2(120.25, 104.5)
 script = ExtResource("1_5wlth")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(12800, -360)
-texture = ExtResource("1_woprj")
+position = Vector2(6401, -330)
+texture = ExtResource("2_en0s6")
+
+[node name="Map22" type="Sprite2D" parent="."]
+position = Vector2(19201, -330)
+texture = ExtResource("2_en0s6")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
@@ -1056,6 +1060,54 @@ position = Vector2(15865, 207)
 
 [node name="tank10" parent="bot" instance=ExtResource("15_4ts36")]
 position = Vector2(19913, -815)
+
+[node name="tank11" parent="bot" instance=ExtResource("15_4ts36")]
+position = Vector2(4789, -846)
+
+[node name="tank12" parent="bot" instance=ExtResource("15_4ts36")]
+position = Vector2(9077, -1217)
+
+[node name="tank13" parent="bot" instance=ExtResource("15_4ts36")]
+position = Vector2(9421, -587)
+
+[node name="tank14" parent="bot" instance=ExtResource("15_4ts36")]
+position = Vector2(10169, -629)
+
+[node name="tank15" parent="bot" instance=ExtResource("15_4ts36")]
+position = Vector2(13029, -1206)
+
+[node name="tank16" parent="bot" instance=ExtResource("15_4ts36")]
+position = Vector2(14712, -1210)
+
+[node name="tank17" parent="bot" instance=ExtResource("15_4ts36")]
+position = Vector2(15830, -1217)
+
+[node name="tank18" parent="bot" instance=ExtResource("15_4ts36")]
+position = Vector2(16853, -1210)
+
+[node name="tank19" parent="bot" instance=ExtResource("15_4ts36")]
+position = Vector2(17756, -942)
+
+[node name="tank20" parent="bot" instance=ExtResource("15_4ts36")]
+position = Vector2(18639, -961)
+
+[node name="tank21" parent="bot" instance=ExtResource("15_4ts36")]
+position = Vector2(20598, -832)
+
+[node name="tank22" parent="bot" instance=ExtResource("15_4ts36")]
+position = Vector2(21198, -821)
+
+[node name="tank23" parent="bot" instance=ExtResource("15_4ts36")]
+position = Vector2(21569, -633)
+
+[node name="tank24" parent="bot" instance=ExtResource("15_4ts36")]
+position = Vector2(22200, -638)
+
+[node name="tank25" parent="bot" instance=ExtResource("15_4ts36")]
+position = Vector2(22742, -642)
+
+[node name="tank26" parent="bot" instance=ExtResource("15_4ts36")]
+position = Vector2(23187, -642)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_m5u7h")

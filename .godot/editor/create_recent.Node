@@ -1,13 +1,13 @@
-Button
+
+Node2D
+CollisionShape2D
 Sprite2D
 AnimationPlayer
 PinJoint2D
 TileMap
 StaticBody2D
-CollisionShape2D
 Area2D
 CharacterBody2D
-Node2D
 CenterContainer
 ColorRect
 TextEdit
