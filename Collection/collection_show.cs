@@ -45,6 +45,20 @@ public partial class collection_show : Node2D
 					col = (Collection)SceneCollection.Instantiate();
 				}	
 			}
+			else if(Collection.numeroMap==3){
+				if(Collection.id==1){
+					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/baignoire.tscn");
+					col = (Collection)SceneCollection.Instantiate();
+				}
+				if(Collection.id==2){
+					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/gros_vaisseau.tscn");
+					col = (Collection)SceneCollection.Instantiate();
+				}
+				if(Collection.id==3){
+					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/chateaux.tscn");
+					col = (Collection)SceneCollection.Instantiate();
+				}	
+			}
 			
 			col.Scale = new Vector2(1,1);
 			col.Position = new Vector2(480+(Collection.id-1)*145,110+(Collection.numeroMap-1)*130);

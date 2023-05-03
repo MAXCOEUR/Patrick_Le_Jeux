@@ -48,7 +48,7 @@ public partial class CameraScript : Camera2D
 			Vector2 offset = targetPos;
 
 			offset.X = Mathf.Clamp(offset.X,_sizeScreen.X*zoom / 2, maxPos.X-_sizeScreen.X*zoom / 2 );
-			offset.Y = Mathf.Clamp(offset.Y,maxPos.Y+_sizeScreen.Y*zoom / 2,_sizeScreen.Y / 2);
+			offset.Y = Mathf.Clamp(offset.Y,maxPos.Y+_sizeScreen.Y / 2,_sizeScreen.Y / 2);
 
 			// Déplacer la caméra en douceur
 			Position = Position.MoveToward(offset, speed * (float)delta);

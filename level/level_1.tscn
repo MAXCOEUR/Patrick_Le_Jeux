@@ -45,5 +45,3 @@ layout_mode = 1
 
 [node name="GameOver" parent="Camera2D" instance=ExtResource("4")]
 visible = false
-grow_horizontal = 2
-grow_vertical = 2

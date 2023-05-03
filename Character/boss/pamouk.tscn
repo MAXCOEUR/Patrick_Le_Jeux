@@ -1,32 +1,32 @@
-[gd_scene load_steps=10 format=3 uid="uid://ymeind6px2jv"]
+[gd_scene load_steps=11 format=3 uid="uid://bcvtxotdq8jcb"]
 
-[ext_resource type="Script" path="res://Character/boss/thierry.cs" id="1_bbp3i"]
-[ext_resource type="Texture2D" uid="uid://c53emvmgpl334" path="res://art/charactere/Thierry.png" id="1_ft4j6"]
-[ext_resource type="Texture2D" uid="uid://dapiqy32tp18" path="res://art/annimation/shield.png" id="3_ww0dy"]
+[ext_resource type="Texture2D" uid="uid://d1skb1lkfxu64" path="res://art/charactere/Pamouk.png" id="1_3ajwk"]
+[ext_resource type="Script" path="res://Character/boss/pamouk.cs" id="1_aab3a"]
+[ext_resource type="Texture2D" uid="uid://dapiqy32tp18" path="res://art/annimation/shield.png" id="2_w4gdf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sfafv"]
-size = Vector2(340, 219)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hw66k"]
+size = Vector2(213, 93)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5sc1b"]
-size = Vector2(340, 218)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjdel"]
+size = Vector2(213, 93)
 
-[sub_resource type="Animation" id="Animation_j6yvi"]
+[sub_resource type="Animation" id="Animation_bmmc2"]
 resource_name = "mort"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
+tracks/0/path = NodePath("Sprite2D:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
+"times": PackedFloat32Array(0, 0.1, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1, 0.1), Vector2(1, 0.1)]
+"values": [Vector2(0.2, 0.2), Vector2(0.2, 0.1), Vector2(0.2, 0.1)]
 }
 
-[sub_resource type="Animation" id="Animation_y31kx"]
+[sub_resource type="Animation" id="Animation_yb7mu"]
 resource_name = "prend_un_cout"
 length = 3.0
 tracks/0/type = "value"
@@ -39,7 +39,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 2.8, 3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0.5, 0.3), Vector2(0.5, 0.3), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(0.33, 0.114), Vector2(0.33, 0.114), Vector2(0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -66,7 +66,23 @@ tracks/2/keys = {
 "values": [false, true, false]
 }
 
-[sub_resource type="Animation" id="Animation_xh32i"]
+[sub_resource type="Animation" id="Animation_2fr75"]
+resource_name = "attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_pgfey"]
 resource_name = "enervement_left"
 length = 3.0
 tracks/0/type = "value"
@@ -94,57 +110,58 @@ tracks/1/keys = {
 "values": [false, true, false]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3c07x"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_js48w"]
 _data = {
-"enervement": SubResource("Animation_xh32i"),
-"mort": SubResource("Animation_j6yvi"),
-"prend_un_cout": SubResource("Animation_y31kx")
+"attack": SubResource("Animation_2fr75"),
+"enervement": SubResource("Animation_pgfey"),
+"mort": SubResource("Animation_bmmc2"),
+"prend_un_cout": SubResource("Animation_yb7mu")
 }
 
-[node name="Thierry" type="CharacterBody2D" groups=["enemies"]]
+[node name="Pamouk" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 2
-collision_mask = 58
-script = ExtResource("1_bbp3i")
+collision_mask = 26
+script = ExtResource("1_aab3a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 6.28319
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_ft4j6")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_3ajwk")
 
 [node name="Shield" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-2.00002, -6.00002)
+position = Vector2(-8.99999, -0.500004)
 scale = Vector2(1e-05, 1e-05)
-texture = ExtResource("3_ww0dy")
+texture = ExtResource("2_w4gdf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -13.5)
-shape = SubResource("RectangleShape2D_sfafv")
+position = Vector2(-0.5, -3.5)
+shape = SubResource("RectangleShape2D_hw66k")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -14)
-shape = SubResource("RectangleShape2D_5sc1b")
+position = Vector2(-0.5, -3.5)
+shape = SubResource("RectangleShape2D_mjdel")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_3c07x")
+"": SubResource("AnimationLibrary_js48w")
 }
 
 [node name="RayCast2D_bot" type="RayCast2D" parent="."]
-position = Vector2(1, 97)
+position = Vector2(0, 39)
 target_position = Vector2(0, 15)
 collision_mask = 48
 
 [node name="RayCast2D_right" type="RayCast2D" parent="."]
-position = Vector2(170, 0)
+position = Vector2(106, 0)
 target_position = Vector2(5, 0)
 collision_mask = 50
 
 [node name="RayCast2D_left" type="RayCast2D" parent="."]
-position = Vector2(-169, 0)
+position = Vector2(-106, 0)
 target_position = Vector2(-5, 0)
 collision_mask = 50

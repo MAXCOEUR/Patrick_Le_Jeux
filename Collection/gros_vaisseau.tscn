@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqi5hn5a0brqg"]
+
+[ext_resource type="Script" path="res://Collection/gros_vaisseau.cs" id="1_5p3ss"]
+[ext_resource type="Texture2D" uid="uid://dq88u7n5tjswv" path="res://art/collection/Gros_vaisseau_boss_ultime.png" id="1_06w5j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47su7"]
+size = Vector2(128, 52)
+
+[node name="Gros_vaisseau" type="Node2D"]
+script = ExtResource("1_5p3ss")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_06w5j")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_47su7")

@@ -1,13 +1,12 @@
-
+AnimationPlayer
+TileMap
+Sprite2D
+CharacterBody2D
 Node2D
 CollisionShape2D
-Sprite2D
-AnimationPlayer
 PinJoint2D
-TileMap
 StaticBody2D
 Area2D
-CharacterBody2D
 CenterContainer
 ColorRect
 TextEdit

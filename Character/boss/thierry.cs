@@ -16,7 +16,6 @@ public partial class thierry : Among_us_vert
 		progressBar = GetNode<ProgressBar>("../ProgressBar");
 		level_1 = GetNode<level_1Script>("../../../level_1");
 
-		GD.Print(level_1);
 		setEtat(5);
 		timerFire = new System.Timers.Timer(2000);
 		timerFire.Elapsed += (timerSender, timerEvent) => sendFireball();
@@ -41,9 +40,9 @@ public partial class thierry : Among_us_vert
 			direction = new Vector2(1, possibleValues[random.Next(possibleValues.Length)]);
 		}
 
-
-		GetParent().AddChild(fireball);
 		fireball.setdirection(direction, this);
+		GetParent().AddChild(fireball);
+		
 
 	}
 	override public void setEtat(int i)
@@ -64,14 +63,7 @@ public partial class thierry : Among_us_vert
 				break;
 			case 2:
 				sprite.Modulate = new Color(1, 0, 0);
-				if (directionDeplacment.X < 0)
-				{
-					annimation.Play("enervement_left");
-				}
-				else
-				{
-					annimation.Play("enervement_right");
-				}
+				annimation.Play("enervement");
 
 				timerFire.Interval = timerFire.Interval / 4 * 3;
 				break;

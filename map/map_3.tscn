@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ck8dn5clg51b7"]
+[gd_scene load_steps=32 format=3 uid="uid://ck8dn5clg51b7"]
 
 [ext_resource type="Script" path="res://map/map_3.cs" id="1_uvdjq"]
 [ext_resource type="Texture2D" uid="uid://82jo5f0uivk1" path="res://art/fond/map3%2.png" id="2_ha55x"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cpbnhxghs1c6v" path="res://Objet/mysteryBlock/MysteryBlock_epee.tscn" id="17_i6oln"]
 [ext_resource type="PackedScene" uid="uid://w5c6htdkxq5a" path="res://Objet/mysteryBlock/MysteryBlock_missile.tscn" id="18_fe662"]
 [ext_resource type="PackedScene" uid="uid://c0bffrtnaqpx2" path="res://Objet/mysteryBlock/MysteryBlock_mushroom_mini.tscn" id="18_v53hu"]
+[ext_resource type="PackedScene" uid="uid://bqi5hn5a0brqg" path="res://Collection/gros_vaisseau.tscn" id="20_2q1sm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lamyi"]
 size = Vector2(25810, 817)
@@ -938,7 +939,7 @@ position = Vector2(10313, 428)
 position = Vector2(11117, 434)
 
 [node name="moving_platform_h3" parent="moving" instance=ExtResource("5_sovd4")]
-position = Vector2(9915, -30)
+position = Vector2(9915, -35)
 
 [node name="fond_moving_platform_v6" parent="moving" instance=ExtResource("4_g163n")]
 position = Vector2(11900, -15)
@@ -1118,9 +1119,6 @@ position = Vector2(15096, 389)
 [node name="MysteryBlock_mushroom" parent="mystery" instance=ExtResource("16_idpiu")]
 position = Vector2(18585, 525)
 
-[node name="MysteryBlock_mushroom3" parent="mystery" instance=ExtResource("16_idpiu")]
-position = Vector2(13185, 195)
-
 [node name="MysteryBlock_mushroom4" parent="mystery" instance=ExtResource("17_i6oln")]
 position = Vector2(9255, 435)
 
@@ -1130,6 +1128,12 @@ position = Vector2(2355, 285)
 [node name="MysteryBlock_mushroom6" parent="mystery" instance=ExtResource("18_v53hu")]
 position = Vector2(525, 375)
 
+[node name="MysteryBlock_mushroom2" parent="mystery" instance=ExtResource("18_fe662")]
+position = Vector2(13185, 195)
+
+[node name="MysteryBlock_mushroom3" parent="mystery" instance=ExtResource("18_fe662")]
+position = Vector2(15105, 255)
+
 [node name="look_map" type="Area2D" parent="."]
 collision_layer = 8
 
@@ -1137,5 +1141,6 @@ collision_layer = 8
 position = Vector2(17850, -29.375)
 shape = SubResource("RectangleShape2D_fbdfl")
 
-[node name="MysteryBlock_mushroom" parent="." instance=ExtResource("18_fe662")]
-position = Vector2(15105, 255)
+[node name="Gros_vaisseau" parent="." instance=ExtResource("20_2q1sm")]
+position = Vector2(31, 16)
+scale = Vector2(0.5, 0.5)
