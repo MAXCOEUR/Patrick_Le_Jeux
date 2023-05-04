@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkswny66kxc4t"]
+
+[ext_resource type="Script" path="res://map/fin/fin_map_4.cs" id="1_xccah"]
+[ext_resource type="Texture2D" uid="uid://c3t6cwm2hlsl0" path="res://art/fin de map/finMap4.png" id="2_wec82"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4wsx"]
+size = Vector2(140, 143)
+
+[node name="fin_map_4" type="Node2D" groups=["fin"]]
+script = ExtResource("1_xccah")
+
+[node name="FinMap1" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_wec82")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, 0.5)
+shape = SubResource("RectangleShape2D_d4wsx")

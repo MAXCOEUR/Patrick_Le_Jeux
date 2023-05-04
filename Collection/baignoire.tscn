@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ho2vdvuydwxt"]
+[gd_scene load_steps=4 format=3 uid="uid://22xkkkeu0y3v"]
 
 [ext_resource type="Script" path="res://Collection/baignoire.cs" id="1_hqsdo"]
 [ext_resource type="Texture2D" uid="uid://dk7gdr6a3v07u" path="res://art/collection/baignoire.png" id="1_o872w"]

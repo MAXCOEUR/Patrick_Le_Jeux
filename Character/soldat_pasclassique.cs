@@ -4,21 +4,22 @@ using System;
 public partial class soldat_pasclassique : Among_us_rouge
 {
 	bool isInvincible = false;
-	protected System.Timers.Timer timerFire;
+	protected Timer timerFire;
 	public override void _Ready()
 	{
 		base._Ready();
-		timerFire = new System.Timers.Timer(6000);
-		timerFire.Elapsed += (timerSender, timerEvent) => shoot(timerSender, timerEvent);
-		timerFire.AutoReset = true;
-		timerFire.Enabled = true;
+		timerFire = new Timer();
+		timerFire.WaitTime = 10f;
+		timerFire.Connect("timeout", new Callable(this,"send"));
+		AddChild(timerFire);
+		timerFire.Start();
 		setEtat(3);
 	}
 	public override void _PhysicsProcess(double delta)
 	{
 		base._PhysicsProcess(delta);
 	}
-	public void shoot(object source, System.Timers.ElapsedEventArgs e)
+	public void send()
 	{
 		isInvincible = true;
 		annimation.Play("shoot");

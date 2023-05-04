@@ -15,7 +15,36 @@
     <property name="ignore_points">0</property>
     <property name="xml">was here</property>
   </chain>
+  <chain id="chain1" out="00:03:03.720">
+    <property name="length">00:03:03.760</property>
+    <property name="eof">pause</property>
+    <property name="resource">lady-of-the-80x27s-128379.mp3</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-05-04T07:55:52</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">8046957f0d0ca0f5b81a704e0832260e</property>
+    <property name="ignore_points">1</property>
+    <property name="shotcut:caption">lady-of-the-80x27s-128379.mp3</property>
+  </chain>
   <producer id="producer0" in="00:00:00.000" out="03:59:59.960">
+    <property name="length">04:00:00.000</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/Maxen/Documents/01 Project/Patrick_Le_Jeux/art/collection/cle.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="format">2</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2023-05-04T10:48:08</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">9696ba5f8cd977d6ef150f0f799daa14</property>
+  </producer>
+  <producer id="producer1" in="00:00:00.000" out="03:59:59.960">
     <property name="length">04:00:00.000</property>
     <property name="eof">pause</property>
     <property name="resource">video_episode1/noir.png</property>
@@ -29,100 +58,15 @@
     <property name="xml">was here</property>
     <property name="shotcut:hash">2e05cd843032b3c72634b5b0994aba7a</property>
   </producer>
-  <producer id="producer1" in="00:00:00.000" out="03:59:59.960">
-    <property name="length">04:00:00.000</property>
-    <property name="eof">pause</property>
-    <property name="resource">C:/Users/Maxen/Documents/01 Project/Patrick_Le_Jeux/art/collection/Pouet.png</property>
-    <property name="ttl">1</property>
-    <property name="aspect_ratio">1</property>
-    <property name="progressive">1</property>
-    <property name="seekable">1</property>
-    <property name="format">2</property>
-    <property name="mlt_service">qimage</property>
-    <property name="creation_time">2023-05-02T08:16:56</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">5ea85e991902636c655a05eb60f0c08b</property>
-  </producer>
-  <chain id="chain1" out="00:03:03.720">
-    <property name="length">00:03:03.760</property>
-    <property name="eof">pause</property>
-    <property name="resource">C:/Users/Maxen/Downloads/lady-of-the-80x27s-128379.mp3</property>
-    <property name="mlt_service">avformat-novalidate</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">0</property>
-    <property name="video_index">-1</property>
-    <property name="mute_on_pause">0</property>
-    <property name="creation_time">2023-05-03T08:12:52</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">8046957f0d0ca0f5b81a704e0832260e</property>
-  </chain>
-  <chain id="chain2" out="00:00:10.920">
-    <property name="length">00:00:10.960</property>
-    <property name="eof">pause</property>
-    <property name="resource">video_episode2/fin_fight.ogv</property>
-    <property name="mlt_service">avformat-novalidate</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">1</property>
-    <property name="video_index">0</property>
-    <property name="mute_on_pause">0</property>
-    <property name="creation_time">2023-05-02T08:16:56</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">a5d074b08265efb0e8d215d88fefa879</property>
-  </chain>
-  <producer id="producer2" in="00:00:00.000" out="03:59:59.960">
-    <property name="length">04:00:00.000</property>
-    <property name="eof">pause</property>
-    <property name="resource">C:/Users/Maxen/Documents/01 Project/Patrick_Le_Jeux/art/collection/renard.png</property>
-    <property name="ttl">1</property>
-    <property name="aspect_ratio">1</property>
-    <property name="progressive">1</property>
-    <property name="seekable">1</property>
-    <property name="format">2</property>
-    <property name="mlt_service">qimage</property>
-    <property name="creation_time">2023-05-02T08:16:56</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">b61f965e6a251092a67c15394ba3d21b</property>
-  </producer>
-  <producer id="producer3" in="00:00:00.000" out="03:59:59.960">
-    <property name="length">04:00:00.000</property>
-    <property name="eof">pause</property>
-    <property name="resource">C:/Users/Maxen/Documents/01 Project/Patrick_Le_Jeux/art/collection/baignoire.png</property>
-    <property name="ttl">1</property>
-    <property name="aspect_ratio">1</property>
-    <property name="progressive">1</property>
-    <property name="seekable">1</property>
-    <property name="format">2</property>
-    <property name="mlt_service">qimage</property>
-    <property name="creation_time">2023-05-03T08:56:23</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">548c4f65be0cf8828108ec6d1c14f857</property>
-  </producer>
-  <chain id="chain3" out="00:00:09.320">
-    <property name="length">00:00:09.360</property>
-    <property name="eof">pause</property>
-    <property name="resource">C:/Users/Maxen/Downloads/fin_fight.mp4</property>
-    <property name="mlt_service">avformat-novalidate</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">1</property>
-    <property name="video_index">0</property>
-    <property name="mute_on_pause">0</property>
-    <property name="creation_time">2023-05-03T08:54:56</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">7d37e45e72baede15f308f22dfbbd2d2</property>
-  </chain>
   <playlist id="main_bin">
     <property name="xml_retain">1</property>
     <entry producer="chain0" in="00:00:00.000" out="00:00:04.960"/>
+    <entry producer="chain1" in="00:00:00.000" out="00:03:03.720"/>
     <entry producer="producer0" in="00:00:00.000" out="00:00:03.960"/>
     <entry producer="producer1" in="00:00:00.000" out="00:00:03.960"/>
-    <entry producer="chain1" in="00:00:00.000" out="00:03:03.720"/>
-    <entry producer="chain2" in="00:00:00.000" out="00:00:10.920"/>
-    <entry producer="producer2" in="00:00:00.000" out="00:00:03.960"/>
-    <entry producer="producer3" in="00:00:00.000" out="00:00:03.960"/>
-    <entry producer="chain3" in="00:00:00.000" out="00:00:09.320"/>
   </playlist>
-  <producer id="black" in="00:00:00.000" out="00:00:19.200">
-    <property name="length">00:00:19.240</property>
+  <producer id="black" in="00:00:00.000" out="00:00:19.960">
+    <property name="length">00:00:20.000</property>
     <property name="eof">pause</property>
     <property name="resource">0</property>
     <property name="aspect_ratio">1</property>
@@ -131,7 +75,7 @@
     <property name="set.test_audio">0</property>
   </producer>
   <playlist id="background">
-    <entry producer="black" in="00:00:00.000" out="00:00:19.200"/>
+    <entry producer="black" in="00:00:00.000" out="00:00:19.960"/>
   </playlist>
   <chain id="chain4" out="00:00:09.320">
     <property name="length">00:00:09.360</property>
@@ -190,7 +134,7 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana'; font-size:50pt; font-weight:600; color:#ffffff;&quot;&gt;Bien joué vous avez libéré baignoire&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana'; font-size:50pt; font-weight:600; color:#ffffff;&quot;&gt;Bien joué vous avez obtenu la clé&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Verdana'; font-size:50pt; font-weight:600; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Verdana'; font-size:50pt; font-weight:600; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Verdana'; font-size:50pt; font-weight:600; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
@@ -198,7 +142,7 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Verdana'; font-size:50pt; font-weight:600; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Verdana'; font-size:50pt; font-weight:600; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Verdana'; font-size:50pt; font-weight:600; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana'; font-size:20pt; font-weight:600; color:#ffffff;&quot;&gt;baignoire est maintenent disponible dans la collection&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</property>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana'; font-size:20pt; font-weight:600; color:#ffffff;&quot;&gt;la clé est maintenent disponible dans la collection&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</property>
       <property name="shotcut:animIn">00:00:00.000</property>
       <property name="shotcut:animOut">00:00:00.000</property>
     </filter>
@@ -225,23 +169,24 @@ p, li { white-space: pre-wrap; }
     <entry producer="chain4" in="00:00:00.000" out="00:00:09.320"/>
     <entry producer="producer4" in="00:00:00.000" out="00:00:09.160"/>
   </playlist>
-  <chain id="chain5" out="00:03:03.720">
+  <chain id="chain2" out="00:03:03.720">
     <property name="length">00:03:03.760</property>
     <property name="eof">pause</property>
-    <property name="resource">C:/Users/Maxen/Downloads/lady-of-the-80x27s-128379.mp3</property>
+    <property name="resource">lady-of-the-80x27s-128379.mp3</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">0</property>
     <property name="video_index">-1</property>
     <property name="mute_on_pause">0</property>
-    <property name="creation_time">2023-05-03T08:12:52</property>
+    <property name="creation_time">2023-05-04T07:55:52</property>
     <property name="xml">was here</property>
     <property name="shotcut:hash">8046957f0d0ca0f5b81a704e0832260e</property>
+    <property name="ignore_points">0</property>
     <property name="shotcut:caption">lady-of-the-80x27s-128379.mp3</property>
-    <filter id="filter4" out="00:00:09.840">
+    <filter id="filter4" out="00:00:10.600">
       <property name="window">75</property>
       <property name="max_gain">20dB</property>
-      <property name="level">00:00:08.880=0;00:00:09.840=-60</property>
+      <property name="level">00:00:09.640=0;00:00:10.600=-60</property>
       <property name="mlt_service">volume</property>
       <property name="shotcut:filter">fadeOutVolume</property>
       <property name="shotcut:animOut">00:00:01.000</property>
@@ -251,29 +196,29 @@ p, li { white-space: pre-wrap; }
     <property name="shotcut:audio">1</property>
     <property name="shotcut:name">A1</property>
     <blank length="00:00:09.360"/>
-    <entry producer="chain5" in="00:00:00.000" out="00:00:09.840"/>
+    <entry producer="chain2" in="00:00:00.000" out="00:00:10.600"/>
   </playlist>
-  <producer id="producer5" in="00:00:00.000" out="03:59:59.960">
+  <producer id="producer2" in="00:00:00.000" out="03:59:59.960">
     <property name="length">04:00:00.000</property>
     <property name="eof">pause</property>
-    <property name="resource">C:/Users/Maxen/Documents/01 Project/Patrick_Le_Jeux/art/collection/baignoire.png</property>
+    <property name="resource">C:/Users/Maxen/Documents/01 Project/Patrick_Le_Jeux/art/collection/cle.png</property>
     <property name="ttl">1</property>
     <property name="aspect_ratio">1</property>
     <property name="progressive">1</property>
     <property name="seekable">1</property>
     <property name="format">2</property>
     <property name="mlt_service">qimage</property>
-    <property name="creation_time">2023-05-03T08:56:23</property>
+    <property name="creation_time">2023-05-04T10:48:08</property>
     <property name="xml">was here</property>
-    <property name="shotcut:hash">548c4f65be0cf8828108ec6d1c14f857</property>
-    <property name="shotcut:caption">baignoire.png</property>
+    <property name="shotcut:hash">9696ba5f8cd977d6ef150f0f799daa14</property>
+    <property name="shotcut:caption">cle.png</property>
     <filter id="filter5" out="00:00:09.160">
       <property name="background">color:#00000000</property>
       <property name="mlt_service">affine</property>
       <property name="shotcut:filter">affineSizePosition</property>
       <property name="transition.fill">1</property>
       <property name="transition.distort">0</property>
-      <property name="transition.rect">00:00:00.000=395.148 1000 488.555 321 1;00:00:09.160=395.148 -600 488.555 321 1</property>
+      <property name="transition.rect">00:00:00.040=388 900 504 504 1;00:00:09.160=388 -600 504 504 1</property>
       <property name="transition.valign">middle</property>
       <property name="transition.halign">center</property>
       <property name="shotcut:animIn">00:00:00.000</property>
@@ -285,13 +230,13 @@ p, li { white-space: pre-wrap; }
     <property name="shotcut:video">1</property>
     <property name="shotcut:name">V2</property>
     <blank length="00:00:09.360"/>
-    <entry producer="producer5" in="00:00:00.000" out="00:00:09.160"/>
+    <entry producer="producer2" in="00:00:00.000" out="00:00:09.160"/>
   </playlist>
-  <tractor id="tractor0" title="Shotcut version 22.12.21" in="00:00:00.000" out="00:00:19.200">
+  <tractor id="tractor0" title="Shotcut version 22.12.21" in="00:00:00.000" out="00:00:19.960">
     <property name="shotcut">1</property>
     <property name="shotcut:projectAudioChannels">2</property>
     <property name="shotcut:projectFolder">0</property>
-    <property name="shotcut:scaleFactor">1.91662</property>
+    <property name="shotcut:scaleFactor">1.01</property>
     <track producer="background"/>
     <track producer="playlist0"/>
     <track producer="playlist1" hide="video"/>

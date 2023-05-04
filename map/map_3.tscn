@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ck8dn5clg51b7"]
+[gd_scene load_steps=33 format=3 uid="uid://ck8dn5clg51b7"]
 
 [ext_resource type="Script" path="res://map/map_3.cs" id="1_uvdjq"]
 [ext_resource type="Texture2D" uid="uid://82jo5f0uivk1" path="res://art/fond/map3%2.png" id="2_ha55x"]
@@ -19,7 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://cpbnhxghs1c6v" path="res://Objet/mysteryBlock/MysteryBlock_epee.tscn" id="17_i6oln"]
 [ext_resource type="PackedScene" uid="uid://w5c6htdkxq5a" path="res://Objet/mysteryBlock/MysteryBlock_missile.tscn" id="18_fe662"]
 [ext_resource type="PackedScene" uid="uid://c0bffrtnaqpx2" path="res://Objet/mysteryBlock/MysteryBlock_mushroom_mini.tscn" id="18_v53hu"]
-[ext_resource type="PackedScene" uid="uid://bqi5hn5a0brqg" path="res://Collection/gros_vaisseau.tscn" id="20_2q1sm"]
+[ext_resource type="PackedScene" path="res://Collection/gros_vaisseau.tscn" id="20_2q1sm"]
+[ext_resource type="PackedScene" uid="uid://bbifu0qmbxrtx" path="res://Collection/sombrero.tscn" id="21_eicjx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lamyi"]
 size = Vector2(25810, 817)
@@ -1144,3 +1145,6 @@ shape = SubResource("RectangleShape2D_fbdfl")
 [node name="Gros_vaisseau" parent="." instance=ExtResource("20_2q1sm")]
 position = Vector2(31, 16)
 scale = Vector2(0.5, 0.5)
+
+[node name="SOMBRERO" parent="." instance=ExtResource("21_eicjx")]
+position = Vector2(17838, 15)

@@ -163,7 +163,6 @@ _data = {
 }
 
 [node name="SoldatPasclassique" type="CharacterBody2D" groups=["enemies"]]
-scale = Vector2(0.5, 0.5)
 collision_layer = 2
 collision_mask = 58
 script = ExtResource("1_gbru4")

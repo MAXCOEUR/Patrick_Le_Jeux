@@ -28,7 +28,7 @@ public partial class pamouk : Among_us_vert
 		setEtat(10);
 
 		timerFire = new Timer();
-		timerFire.WaitTime = 5;
+		timerFire.WaitTime = 10;
 		timerFire.Connect("timeout", new Callable(this, "send"));
 		AddChild(timerFire);
 		timerFire.Start();
