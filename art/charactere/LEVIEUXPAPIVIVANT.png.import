@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bypv0glebts7k"
-path="res://.godot/imported/le_papy_de_brigitte.png-0f136b84d802cf30f4468b819bfeae47.ctex"
+uid="uid://dywwe7onus23l"
+path="res://.godot/imported/LEVIEUXPAPIVIVANT.png-9ef8861bb207728472abc83768584f4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/charactere/le_papy_de_brigitte.png"
-dest_files=["res://.godot/imported/le_papy_de_brigitte.png-0f136b84d802cf30f4468b819bfeae47.ctex"]
+source_file="res://art/charactere/LEVIEUXPAPIVIVANT.png"
+dest_files=["res://.godot/imported/LEVIEUXPAPIVIVANT.png-9ef8861bb207728472abc83768584f4a.ctex"]
 
 [params]
 

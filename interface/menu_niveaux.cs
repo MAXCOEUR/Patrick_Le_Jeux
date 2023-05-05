@@ -92,4 +92,22 @@ public partial class menu_niveaux : Control
 		ech.active = false;
 		level_1Script.setMap2();
 	}
+	void _OnBt_level1_map3()
+	{
+		Visible = false;
+		ech.active = false;
+		level_1Script.setMap3();
+	}
+	void _OnBt_level1_map4()
+	{
+		Visible = false;
+		ech.active = false;
+		level_1Script.setMap4();
+	}
+	void _OnBt_level1_map5()
+	{
+		Visible = false;
+		ech.active = false;
+		level_1Script.setMap5();
+	}
 }

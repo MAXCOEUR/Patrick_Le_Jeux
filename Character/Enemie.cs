@@ -26,6 +26,10 @@ public abstract partial class Enemies : Charactere
 				{
 					player.lessEtat();
 				}
+				else if(piedPatrick<=teteEnemie && player.directionCurrent.Y<=0 )
+				{
+					player.lessEtat();
+				}
 			}
 		}
 	}

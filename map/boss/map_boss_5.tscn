@@ -1,19 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2dn64ixctdna"]
+[gd_scene load_steps=8 format=3 uid="uid://cv8jw1co4c2d1"]
 
-[ext_resource type="Script" path="res://map/boss/map_boss_4.cs" id="1_fsrt3"]
-[ext_resource type="Texture2D" uid="uid://bj8bjbncee6yj" path="res://art/block/tilesheet_complete.png" id="2_7ipx6"]
-[ext_resource type="Texture2D" uid="uid://b657y8ukubkp4" path="res://art/fond/planet_rouge.png" id="3_y1cjt"]
-[ext_resource type="Texture2D" uid="uid://bysns4f2qd8d4" path="res://art/charactere/ARBRE..png" id="4_q7www"]
-[ext_resource type="Texture2D" uid="uid://dywwe7onus23l" path="res://art/charactere/LEVIEUXPAPIVIVANT.png" id="5_8idhr"]
-[ext_resource type="Texture2D" uid="uid://xxm0sefkx2rw" path="res://art/backgroud_dialogue.png" id="6_qkw3i"]
+[ext_resource type="Script" path="res://map/boss/map_boss_5.cs" id="1_lvgcc"]
+[ext_resource type="Texture2D" uid="uid://dbsf4prigejs5" path="res://art/fond/salle_boss.png" id="2_u7ihw"]
+[ext_resource type="Texture2D" uid="uid://bj8bjbncee6yj" path="res://art/block/tilesheet_complete.png" id="3_k3ywq"]
+[ext_resource type="PackedScene" uid="uid://cq30d6prm10rh" path="res://Character/boss/saucisse_desmort.tscn" id="4_bitxh"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oqnx2"]
-texture = ExtResource("2_7ipx6")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3djs"]
+size = Vector2(2565.75, 1123.38)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1k3f3"]
+texture = ExtResource("3_k3ywq")
 texture_region_size = Vector2i(30, 30)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -15, 15, -15, 15, 15, -15, 15)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
@@ -407,18 +407,23 @@ texture_region_size = Vector2i(30, 30)
 0:6/0 = 0
 0:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:6/0/physics_layer_0/angular_velocity = 0.0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -15, 15, -15, 15, 15, -15, 15)
 1:6/0 = 0
 1:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:6/0/physics_layer_0/angular_velocity = 0.0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -15, 15, -15, 15, 15, -15, 15)
 2:6/0 = 0
 2:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:6/0/physics_layer_0/angular_velocity = 0.0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -15, 15, -15, 15, 15, -15, 15)
 3:6/0 = 0
 3:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:6/0/physics_layer_0/angular_velocity = 0.0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -15, 15, -15, 15, 15, -15, 15)
 4:6/0 = 0
 4:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:6/0/physics_layer_0/angular_velocity = 0.0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -15, 15, -15, 15, 15, -15, 15)
 5:6/0 = 0
 5:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:6/0/physics_layer_0/angular_velocity = 0.0
@@ -473,6 +478,7 @@ texture_region_size = Vector2i(30, 30)
 0:7/0 = 0
 0:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:7/0/physics_layer_0/angular_velocity = 0.0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -15, 15, -15, 15, 15, -15, 15)
 1:7/0 = 0
 1:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:7/0/physics_layer_0/angular_velocity = 0.0
@@ -539,6 +545,7 @@ texture_region_size = Vector2i(30, 30)
 0:8/0 = 0
 0:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:8/0/physics_layer_0/angular_velocity = 0.0
+0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -15, 15, -15, 15, 15, -15, 15)
 1:8/0 = 0
 1:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:8/0/physics_layer_0/angular_velocity = 0.0
@@ -614,7 +621,6 @@ texture_region_size = Vector2i(30, 30)
 3:9/0 = 0
 3:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:9/0/physics_layer_0/angular_velocity = 0.0
-3:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -15, 15, -15, 15, 15, -15, 15)
 4:9/0 = 0
 4:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:9/0/physics_layer_0/angular_velocity = 0.0
@@ -802,94 +808,39 @@ texture_region_size = Vector2i(30, 30)
 21:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 21:11/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="TileSet_5gn3q"]
+[sub_resource type="TileSet" id="TileSet_jrlnp"]
 tile_size = Vector2i(30, 30)
-physics_layer_0/collision_layer = 8
+physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 0
-sources/0 = SubResource("TileSetAtlasSource_oqnx2")
+sources/0 = SubResource("TileSetAtlasSource_1k3f3")
 
-[node name="map_boss_4" type="Node2D"]
-z_index = 1
-script = ExtResource("1_fsrt3")
+[node name="map_boss_5" type="Node2D"]
+script = ExtResource("1_lvgcc")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 71
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1283.13, 235.313)
+shape = SubResource("RectangleShape2D_k3djs")
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_5gn3q")
+tile_set = SubResource("TileSet_jrlnp")
 format = 2
-layer_0/tile_data = PackedInt32Array(1507328, 0, 0, 1507329, 0, 0, 1507330, 0, 0, 1507331, 0, 0, 1507332, 0, 0, 1507333, 0, 0, 1507334, 0, 0, 1441798, 0, 0, 1376262, 0, 0, 1310726, 0, 0, 1245190, 0, 0, 1179654, 0, 0, 1114118, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 917510, 0, 0, 983046, 0, 0, 1048582, 0, 0, 1441792, 0, 0, 1376256, 0, 0, 1310720, 0, 0, 1245184, 0, 0, 1179648, 0, 0, 1114112, 0, 0, 1048576, 0, 0, 983040, 0, 0, 917504, 0, 0)
+layer_0/tile_data = PackedInt32Array(-327681, 0, 6, -262145, 0, 6, -196609, 0, 6, -131073, 0, 6, -65537, 0, 6, -1, 0, 6, 65535, 0, 6, 131071, 0, 6, 196607, 0, 6, 262143, 0, 6, 327679, 0, 6, 393215, 0, 6, 458751, 0, 6, 524287, 0, 6, 589823, 0, 6, 655359, 0, 6, 720895, 0, 6, 786431, 0, 6, 851967, 0, 6, 917503, 0, 6, 983039, 0, 6, 1048575, 0, 6, 1114111, 0, 6, 1179647, 0, 6, 1245183, 0, 6, 1310719, 0, 6, 1376255, 0, 6, 1441791, 0, 6, 1507327, 0, 6, 1572863, 0, 6, 1638399, 0, 6, -720897, 0, 6, -655361, 0, 6, -589825, 0, 6, -524289, 0, 6, -458753, 0, 6, -393217, 0, 6, -786432, 0, 6, -786431, 0, 6, -786430, 0, 6, -786429, 0, 6, -786428, 0, 6, -786427, 0, 6, -786426, 0, 6, -786425, 0, 6, -786424, 0, 6, -786423, 0, 6, -786422, 0, 6, -786421, 0, 6, -786420, 0, 6, -786419, 0, 6, -786418, 0, 6, -786417, 0, 6, -786416, 0, 6, -786415, 0, 6, -786414, 0, 6, -786413, 0, 6, -786412, 0, 6, -786411, 0, 6, -786410, 0, 6, -786409, 0, 6, -786408, 0, 6, -786407, 0, 6, -786406, 0, 6, -786405, 0, 6, -786404, 0, 6, -786403, 0, 6, -786402, 0, 6, -786401, 0, 6, -786400, 0, 6, -786399, 0, 6, -786398, 0, 6, -786397, 0, 6, -786396, 0, 6, -786395, 0, 6, -786394, 0, 6, -786393, 0, 6, -786392, 0, 6, -786391, 0, 6, -786390, 0, 6, -786389, 0, 6, -786388, 0, 6, -786387, 0, 6, -786386, 0, 6, -786385, 0, 6, -786384, 0, 6, -786383, 0, 6, -786382, 0, 6, -786381, 0, 6, -786380, 0, 6, -786379, 0, 6, -786378, 0, 6, -786377, 0, 6, -786376, 0, 6, -786375, 0, 6, -786374, 0, 6, -786373, 0, 6, -786372, 0, 6, -786371, 0, 6, -786370, 0, 6, -786369, 0, 6, -786368, 0, 6, -786367, 0, 6, -786366, 0, 6, -786365, 0, 6, -786364, 0, 6, -786363, 0, 6, -786362, 0, 6, -786361, 0, 6, -786360, 0, 6, -786359, 0, 6, -786358, 0, 6, -786357, 0, 6, -786356, 0, 6, -786355, 0, 6, -786354, 0, 6, -786353, 0, 6, -786352, 0, 6, -786351, 0, 6, -786350, 0, 6, -786349, 0, 6, -786348, 0, 6, -786347, 0, 6, -720811, 0, 6, -655275, 0, 6, -589739, 0, 6, -524203, 0, 6, -458667, 0, 6, -393131, 0, 6, -327595, 0, 6, -262059, 0, 6, -196523, 0, 6, -130987, 0, 6, -65451, 0, 6, 85, 0, 6, 65621, 0, 6, 131157, 0, 6, 196693, 0, 6, 262229, 0, 6, 327765, 0, 6, 393301, 0, 6, 458837, 0, 6, 524373, 0, 6, 589909, 0, 6, 655445, 0, 6, 720981, 0, 6, 786517, 0, 6, 852053, 0, 6, 917589, 0, 6, 983125, 0, 6, 1048661, 0, 6, 1114197, 0, 6, 1179733, 0, 6, 1245269, 0, 6, 1310805, 0, 6, 1376341, 0, 6, 1441877, 0, 6, 1507413, 0, 6, 1572949, 0, 6, 1638485, 0, 6, 1704021, 0, 6, 1769557, 0, 6, 1835093, 0, 6, 1900629, 0, 6, 1966165, 0, 6, 2031701, 0, 6, 2097237, 0, 6, 2162773, 0, 6, 2228309, 0, 6, 2293759, 0, 6, 2228224, 0, 6, 2228225, 0, 6, 2228226, 0, 6, 2228227, 0, 6, 2228228, 0, 6, 2228229, 0, 6, 2228230, 0, 6, 2228231, 0, 6, 2228232, 0, 6, 2228233, 0, 6, 2228234, 0, 6, 2228235, 0, 6, 2228236, 0, 6, 2228237, 0, 6, 2228238, 0, 6, 2228239, 0, 6, 2228240, 0, 6, 2228241, 0, 6, 2228242, 0, 6, 2228243, 0, 6, 2228244, 0, 6, 2228245, 0, 6, 2228246, 0, 6, 2228247, 0, 6, 2228248, 0, 6, 2228249, 0, 6, 2228250, 0, 6, 2228251, 0, 6, 2228252, 0, 6, 2228253, 0, 6, 2228254, 0, 6, 2228255, 0, 6, 2228256, 0, 6, 2228257, 0, 6, 2228258, 0, 6, 2228259, 0, 6, 2228260, 0, 6, 2228261, 0, 6, 2228262, 0, 6, 2228263, 0, 6, 2228264, 0, 6, 2228265, 0, 6, 2228266, 0, 6, 2228267, 0, 6, 2228268, 0, 6, 2228269, 0, 6, 2228270, 0, 6, 2228271, 0, 6, 2228272, 0, 6, 2228273, 0, 6, 2228274, 0, 6, 2228275, 0, 6, 2228276, 0, 6, 2228277, 0, 6, 2228278, 0, 6, 2228279, 0, 6, 2228280, 0, 6, 2228281, 0, 6, 2228282, 0, 6, 2228283, 0, 6, 2228284, 0, 6, 2228285, 0, 6, 2228286, 0, 6, 2228287, 0, 6, 2228288, 0, 6, 2228289, 0, 6, 2228290, 0, 6, 2228291, 0, 6, 2228292, 0, 6, 2228293, 0, 6, 2228294, 0, 6, 2228295, 0, 6, 2228296, 0, 6, 2228297, 0, 6, 2228298, 0, 6, 2228299, 0, 6, 2228300, 0, 6, 2228301, 0, 6, 2228302, 0, 6, 2228303, 0, 6, 2228304, 0, 6, 2228305, 0, 6, 2228306, 0, 6, 2228307, 0, 6, 2228308, 0, 6, 1703935, 0, 6, 1769471, 0, 6, 1835007, 0, 6, 1900543, 0, 6, 1966079, 0, 6, 2031615, 0, 6, 2097151, 0, 6, 2162687, 0, 6, 2228223, 0, 6)
 
-[node name="PlanetRouge" type="Sprite2D" parent="."]
-position = Vector2(639, 358)
-scale = Vector2(0.667708, 0.668519)
-texture = ExtResource("3_y1cjt")
-
-[node name="Arbre" type="Sprite2D" parent="."]
-position = Vector2(437, 185)
-texture = ExtResource("4_q7www")
-
-[node name="Levieuxpapivivant" type="Sprite2D" parent="."]
-position = Vector2(644, 253)
-scale = Vector2(0.622175, 0.667135)
-texture = ExtResource("5_8idhr")
-
-[node name="dialogue" type="NinePatchRect" parent="."]
-offset_left = 129.0
-offset_top = 299.0
-offset_right = 1117.0
-offset_bottom = 656.0
-texture = ExtResource("6_qkw3i")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="dialogue"]
-layout_mode = 0
-offset_left = 92.0
-offset_top = 80.0
-offset_right = 224.0
-offset_bottom = 116.0
-text = "papy de brigitte"
-
-[node name="message" type="RichTextLabel" parent="dialogue"]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 127.0
-offset_right = 958.0
-offset_bottom = 212.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-
-[node name="reponse" type="NinePatchRect" parent="."]
-visible = false
-offset_left = 130.0
-offset_top = 478.0
-offset_right = 1118.0
-offset_bottom = 835.0
-texture = ExtResource("6_qkw3i")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="reponse"]
-layout_mode = 0
-offset_left = 115.0
-offset_top = 79.0
-offset_right = 199.0
-offset_bottom = 115.0
-text = "Reponse :"
-
-[node name="input" type="LineEdit" parent="reponse"]
-layout_mode = 0
-offset_left = 54.0
-offset_top = 135.0
-offset_right = 759.0
-offset_bottom = 208.0
-
-[node name="bt_valide" type="Button" parent="reponse"]
-layout_mode = 0
-offset_left = 770.0
-offset_top = 134.0
-offset_right = 938.0
-offset_bottom = 206.0
-text = "Valider"
+[node name="SalleBoss" type="Sprite2D" parent="."]
+position = Vector2(1280, 360)
+texture = ExtResource("2_u7ihw")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 292.0
-offset_top = 4.0
-offset_right = 1022.0
-offset_bottom = 31.0
-max_value = 5.0
+offset_left = 915.0
+offset_top = 8.0
+offset_right = 1645.0
+offset_bottom = 35.0
+max_value = 10.0
 step = 1.0
-value = 5.0
+
+[node name="saucisse-desmort" parent="." instance=ExtResource("4_bitxh")]
+position = Vector2(1280, 493)

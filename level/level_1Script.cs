@@ -59,6 +59,7 @@ public partial class level_1Script : Node2D
 				setMap4();
 				break;
 			case 5:
+				setMap5();
 				break;
 		}
 	}
@@ -207,7 +208,16 @@ public partial class level_1Script : Node2D
 	}
 	public void Finish_map_5()
 	{
-		GD.Print("finish map 5");
+		setMapBoss5();
+	}
+	public void setMapBoss5()
+	{
+		removeNonEssentialChildren();
+		setVideo("res://art/annimation/video_episode5/start_fight.ogv");
+	}
+	public void Finish_map_Boss_5()
+	{
+		setVideo("res://art/annimation/video_episode5/fin_fight.ogv");
 	}
 
 	public void setVideo(string lienVideo)
@@ -318,12 +328,21 @@ public partial class level_1Script : Node2D
 				setMap5();
 				break;
 			case "res://art/annimation/video_episode5/debut_map.ogv":
-				_camera.set_maxOffset(new Vector2(20480, -948));
+				_camera.set_maxOffset(new Vector2(30720, 0));
 				background.Color = new Color(64 / 255.0f, 64 / 255.0f, 64 / 255.0f);
 				PackedScene SceneMap5 = (PackedScene)ResourceLoader.Load("res://map/map_5.tscn");
 				map_5 map5 = (map_5)SceneMap5.Instantiate();
 				AddChild(map5);
 				_player.Position = new Vector2(100, 500);
+				_player.setParam(new ParametreLevel());
+				break;
+			case "res://art/annimation/video_episode5/start_fight.ogv":
+				_camera.set_maxOffset(new Vector2(1280, 0));
+				background.Color = new Color(255 / 255.0f, 0 / 255.0f, 0 / 255.0f);
+				PackedScene missileSceneBoss5 = (PackedScene)ResourceLoader.Load("res://map/boss/map_boss_5.tscn");
+				map_boss_5 mapBoss5 = (map_boss_5)missileSceneBoss5.Instantiate();
+				AddChild(mapBoss5);
+				_player.Position = new Vector2(100, 400);
 				_player.setParam(new ParametreLevel());
 				break;
 		}
@@ -348,12 +367,12 @@ public partial class level_1Script : Node2D
 
 	private void debugMode()
 	{
-		_camera.set_maxOffset(new Vector2(20480, -948));
-				background.Color = new Color(64 / 255.0f, 64 / 255.0f, 64 / 255.0f);
-				PackedScene SceneMap5 = (PackedScene)ResourceLoader.Load("res://map/map_5.tscn");
-				map_5 map5 = (map_5)SceneMap5.Instantiate();
-				AddChild(map5);
-				_player.Position = new Vector2(100, 500);
+				_camera.set_maxOffset(new Vector2(2560, 0));
+				background.Color = new Color(255 / 255.0f, 0 / 255.0f, 0 / 255.0f);
+				PackedScene missileSceneBoss5 = (PackedScene)ResourceLoader.Load("res://map/boss/map_boss_5.tscn");
+				map_boss_5 mapBoss5 = (map_boss_5)missileSceneBoss5.Instantiate();
+				AddChild(mapBoss5);
+				_player.Position = new Vector2(100, 400);
 				_player.setParam(new ParametreLevel());
 	}
 

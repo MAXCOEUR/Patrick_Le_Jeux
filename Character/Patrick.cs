@@ -78,7 +78,7 @@ public partial class Patrick : Charactere
 				float piedPatrick = Position.Y + (getSize()*Scale/2).Y -10 ;
 				float teteEnemie = enemie.Position.Y - (enemie.getSize()*enemie.Scale/2).Y +10;
 
-				if (piedPatrick <= teteEnemie)
+				if (piedPatrick <= teteEnemie && Velocity.Y>0)
 				{
 					annimation.Play("saut_sur_ennmie");
 					Velocity = new Vector2(Velocity.X, parametreLevel.jumpBase);
@@ -98,7 +98,7 @@ public partial class Patrick : Charactere
 					float piedPatrick = Position.Y + (getSize()*Scale/2).Y -5;
 					float teteEnemie = enemie.Position.Y - (enemie.getSize()*enemie.Scale/2).Y+5;
 
-					if (piedPatrick <= teteEnemie)
+					if (piedPatrick <= teteEnemie&& Velocity.Y>0)
 					{
 						if (!enemie.waitPlayer)
 						{
@@ -240,6 +240,7 @@ public partial class Patrick : Charactere
 
 	public override void _PhysicsProcess(double delta)
 	{
+		
 		base._PhysicsProcess(delta);
 		Vector2 velocity = Velocity;
 

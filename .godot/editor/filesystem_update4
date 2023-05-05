@@ -1,4 +1,13 @@
 res://map/map_5.tscn
-res://level/level_1.tscn
-res://map/map_4.tscn
-res://map/map_5.cs
+res://interface/menu_niveaux.cs
+res://map/boss/map_boss_5.tscn
+res://map/boss/map_boss_5.cs
+res://map/boss/map_boss_1.tscn
+res://map/boss/sol_boss_5/sol_1.tscn
+res://map/boss/sol_boss_5/sol_2.tscn
+res://map/boss/sol_boss_5/sol_3.tscn
+res://map/boss/map_boss_2.tscn
+res://map/boss/map_boss_4.tscn
+res://Character/boss/saucisse_desmort.tscn
+res://Character/boss/saucisse_desmort.cs
+res://Character/boss/thierry.tscn
