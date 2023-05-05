@@ -75,8 +75,8 @@ public partial class pamouk : Among_us_vert
 			string insertQuery = "INSERT INTO Collection(numeroMap, numeroCollection) VALUES(@numeroMap, @numeroCollection)";
 			SQLiteCommand insertCommand = new SQLiteCommand(insertQuery, db.getConnection);
 
-			insertCommand.Parameters.AddWithValue("@numeroCollection", 3);
-			insertCommand.Parameters.AddWithValue("@numeroMap", 1);//ajout de pouet a la collection
+			insertCommand.Parameters.AddWithValue("@numeroCollection", 1);
+			insertCommand.Parameters.AddWithValue("@numeroMap", 3);//ajout de pouet a la collection
 
 			insertCommand.ExecuteNonQuery();
 

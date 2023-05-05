@@ -188,6 +188,28 @@ public partial class level_1Script : Node2D
 		setVideo("res://art/annimation/video_episode4/fin_fight.ogv");
 	}
 
+	public void setMap5()
+	{
+		removeNonEssentialChildren();
+		try
+		{
+			string insertQuery = "INSERT INTO MapCurrent(numeroMap) VALUES(@numeroMap)";
+			SQLiteCommand insertCommand = new SQLiteCommand(insertQuery, db.getConnection);
+			insertCommand.Parameters.AddWithValue("@numeroMap", 5);
+			insertCommand.ExecuteNonQuery();
+		}
+		catch
+		{
+
+		}
+
+		setVideo("res://art/annimation/video_episode5/debut_map.ogv");
+	}
+	public void Finish_map_5()
+	{
+		GD.Print("finish map 5");
+	}
+
 	public void setVideo(string lienVideo)
 	{
 		// Charger la vidéo
@@ -247,6 +269,9 @@ public partial class level_1Script : Node2D
 				_player.Position = new Vector2(100, 500);
 				_player.setParam(new ParametreLevel());
 				break;
+			case "res://art/annimation/video_episode2/fin_fight.ogv":
+				setMap3();
+				break;
 			case "res://art/annimation/video_episode3/debut_map.ogv":
 				_camera.set_maxOffset(new Vector2(25600, 0));
 				background.Color = new Color(64 / 255.0f, 64 / 255.0f, 64 / 255.0f);
@@ -264,6 +289,9 @@ public partial class level_1Script : Node2D
 				AddChild(mapBoss3);
 				_player.Position = new Vector2(100, 400);
 				_player.setParam(new ParametreLevel());
+				break;
+			case "res://art/annimation/video_episode3/fin_fight.ogv":
+				setMap4();
 				break;
 			case "res://art/annimation/video_episode4/debut_map.ogv":
 				_camera.set_maxOffset(new Vector2(20480, -948));
@@ -286,6 +314,18 @@ public partial class level_1Script : Node2D
 				_player.Position = new Vector2(100, 400);
 				_player.setParam(new ParametreLevel());
 			break;
+			case "res://art/annimation/video_episode4/fin_fight.ogv":
+				setMap5();
+				break;
+			case "res://art/annimation/video_episode5/debut_map.ogv":
+				_camera.set_maxOffset(new Vector2(20480, -948));
+				background.Color = new Color(64 / 255.0f, 64 / 255.0f, 64 / 255.0f);
+				PackedScene SceneMap5 = (PackedScene)ResourceLoader.Load("res://map/map_5.tscn");
+				map_5 map5 = (map_5)SceneMap5.Instantiate();
+				AddChild(map5);
+				_player.Position = new Vector2(100, 500);
+				_player.setParam(new ParametreLevel());
+				break;
 		}
 	}
 
@@ -308,12 +348,12 @@ public partial class level_1Script : Node2D
 
 	private void debugMode()
 	{
-		_camera.set_maxOffset(new Vector2(1280, 0));
-				background.Color = new Color(255 / 255.0f, 0 / 255.0f, 0 / 255.0f);
-				PackedScene missileSceneBoss4 = (PackedScene)ResourceLoader.Load("res://map/boss/map_boss_4.tscn");
-				map_boss_4 mapBoss4 = (map_boss_4)missileSceneBoss4.Instantiate();
-				AddChild(mapBoss4);
-				_player.Position = new Vector2(100, 400);
+		_camera.set_maxOffset(new Vector2(20480, -948));
+				background.Color = new Color(64 / 255.0f, 64 / 255.0f, 64 / 255.0f);
+				PackedScene SceneMap5 = (PackedScene)ResourceLoader.Load("res://map/map_5.tscn");
+				map_5 map5 = (map_5)SceneMap5.Instantiate();
+				AddChild(map5);
+				_player.Position = new Vector2(100, 500);
 				_player.setParam(new ParametreLevel());
 	}
 

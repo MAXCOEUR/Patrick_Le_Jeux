@@ -24,6 +24,7 @@ rotation = 0.0
 z_index = 2
 position = Vector2(640, 362)
 script = ExtResource("1")
+_smoothTime = null
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Camera2D"]
 offset_left = -640.0

@@ -1,20 +1,6 @@
 <?xml version="1.0" standalone="no"?>
 <mlt LC_NUMERIC="C" version="7.13.0" title="Shotcut version 22.12.21" producer="main_bin">
   <profile description="automatic" width="1280" height="720" progressive="1" sample_aspect_num="1" sample_aspect_den="1" display_aspect_num="16" display_aspect_den="9" frame_rate_num="25" frame_rate_den="1" colorspace="709"/>
-  <chain id="chain0" out="00:00:04.960">
-    <property name="length">00:00:05.000</property>
-    <property name="eof">pause</property>
-    <property name="resource">video_episode1/fin_fight.ogv</property>
-    <property name="mlt_service">avformat-novalidate</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">1</property>
-    <property name="video_index">0</property>
-    <property name="mute_on_pause">0</property>
-    <property name="creation_time">2023-05-02T08:16:55</property>
-    <property name="shotcut:hash">c4fd903b9cd20366618dd5dabc666130</property>
-    <property name="ignore_points">0</property>
-    <property name="xml">was here</property>
-  </chain>
   <chain id="chain1" out="00:03:03.720">
     <property name="length">00:03:03.760</property>
     <property name="eof">pause</property>
@@ -58,15 +44,59 @@
     <property name="xml">was here</property>
     <property name="shotcut:hash">2e05cd843032b3c72634b5b0994aba7a</property>
   </producer>
+  <chain id="chain0" out="00:00:57.120">
+    <property name="length">00:00:57.160</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/Maxen/Downloads/fin_fight.mp4</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-05-05T08:50:40</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">12278f4665129019e181b9aea1cf3b21</property>
+    <property name="ignore_points">1</property>
+    <property name="shotcut:caption">fin_fight.mp4</property>
+  </chain>
+  <producer id="producer2" in="00:00:00.000" out="03:59:59.960">
+    <property name="length">04:00:00.000</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/Maxen/Documents/01 Project/Patrick_Le_Jeux/art/collection/mayo.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="format">2</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2023-05-04T10:40:00</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">1478fe5065ab4e2035df74a008c2fc82</property>
+  </producer>
+  <chain id="chain2" out="00:10:32.040">
+    <property name="length">00:10:32.080</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/Maxen/Downloads/PLS.mp4</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-05-05T07:20:33</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">7e9ad06850a5f7378fb2bac6546ba65e</property>
+  </chain>
   <playlist id="main_bin">
     <property name="xml_retain">1</property>
-    <entry producer="chain0" in="00:00:00.000" out="00:00:04.960"/>
     <entry producer="chain1" in="00:00:00.000" out="00:03:03.720"/>
     <entry producer="producer0" in="00:00:00.000" out="00:00:03.960"/>
     <entry producer="producer1" in="00:00:00.000" out="00:00:03.960"/>
+    <entry producer="chain0" in="00:00:00.000" out="00:00:57.120"/>
+    <entry producer="producer2" in="00:00:00.000" out="00:00:03.960"/>
+    <entry producer="chain2" in="00:00:00.000" out="00:10:32.040"/>
   </playlist>
-  <producer id="black" in="00:00:00.000" out="00:00:19.960">
-    <property name="length">00:00:20.000</property>
+  <producer id="black" in="00:00:00.000" out="00:01:10.920">
+    <property name="length">00:01:10.960</property>
     <property name="eof">pause</property>
     <property name="resource">0</property>
     <property name="aspect_ratio">1</property>
@@ -75,30 +105,51 @@
     <property name="set.test_audio">0</property>
   </producer>
   <playlist id="background">
-    <entry producer="black" in="00:00:00.000" out="00:00:19.960"/>
+    <entry producer="black" in="00:00:00.000" out="00:01:10.920"/>
   </playlist>
-  <chain id="chain4" out="00:00:09.320">
-    <property name="length">00:00:09.360</property>
+  <chain id="chain3" out="00:10:32.040">
+    <property name="length">00:10:32.080</property>
     <property name="eof">pause</property>
-    <property name="resource">C:/Users/Maxen/Downloads/fin_fight.mp4</property>
+    <property name="resource">C:/Users/Maxen/Downloads/PLS.mp4</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">1</property>
     <property name="video_index">0</property>
     <property name="mute_on_pause">0</property>
-    <property name="creation_time">2023-05-03T08:54:56</property>
+    <property name="creation_time">2023-05-05T07:20:33</property>
     <property name="xml">was here</property>
-    <property name="shotcut:hash">7d37e45e72baede15f308f22dfbbd2d2</property>
-    <property name="shotcut:caption">fin_fight.mp4</property>
-    <filter id="filter0" out="00:00:09.320">
+    <property name="shotcut:hash">7e9ad06850a5f7378fb2bac6546ba65e</property>
+    <property name="shotcut:caption">PLS.mp4</property>
+    <filter id="filter0" in="00:08:35.000" out="00:09:45.920">
       <property name="start">1</property>
-      <property name="level">00:00:08.360=1;00:00:09.320=0</property>
+      <property name="level">00:00:00.000=0;00:00:00.960=1</property>
       <property name="mlt_service">brightness</property>
-      <property name="shotcut:filter">fadeOutBrightness</property>
+      <property name="shotcut:filter">fadeInBrightness</property>
       <property name="alpha">1</property>
+      <property name="shotcut:animIn">00:00:01.000</property>
+    </filter>
+    <filter id="filter2" in="00:08:35.000" out="00:09:45.920">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:00.000=-60;00:00:00.960=0</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeInVolume</property>
+      <property name="shotcut:animIn">00:00:01.000</property>
+    </filter>
+    <filter id="filter1" in="00:08:35.000" out="00:09:45.920">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:01:09.960=0;00:01:10.920=-60</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeOutVolume</property>
       <property name="shotcut:animOut">00:00:01.000</property>
     </filter>
   </chain>
+  <playlist id="playlist0">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V1</property>
+    <entry producer="chain3" in="00:08:35.000" out="00:09:45.920"/>
+  </playlist>
   <producer id="producer4" in="00:00:00.000" out="03:59:59.960">
     <property name="length">04:00:00.000</property>
     <property name="eof">pause</property>
@@ -113,7 +164,7 @@
     <property name="xml">was here</property>
     <property name="shotcut:hash">2e05cd843032b3c72634b5b0994aba7a</property>
     <property name="shotcut:caption">noir.png</property>
-    <filter id="filter1" out="00:00:09.160">
+    <filter id="filter3" out="00:00:13.760">
       <property name="argument"></property>
       <property name="geometry">00:00:00.000=121 721 1024 797 1;00:00:09.160=121 -800 1024 797 1</property>
       <property name="family">Sans</property>
@@ -134,7 +185,7 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana'; font-size:50pt; font-weight:600; color:#ffffff;&quot;&gt;Bien joué vous avez obtenu la clé&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana'; font-size:50pt; font-weight:600; color:#ffffff;&quot;&gt;Bien joué vous avez obtenu la mayo&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Verdana'; font-size:50pt; font-weight:600; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Verdana'; font-size:50pt; font-weight:600; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Verdana'; font-size:50pt; font-weight:600; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
@@ -142,11 +193,11 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Verdana'; font-size:50pt; font-weight:600; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Verdana'; font-size:50pt; font-weight:600; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Verdana'; font-size:50pt; font-weight:600; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana'; font-size:20pt; font-weight:600; color:#ffffff;&quot;&gt;la clé est maintenent disponible dans la collection&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</property>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana'; font-size:20pt; font-weight:600; color:#ffffff;&quot;&gt;la mayo est maintenent disponible dans la collection&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</property>
       <property name="shotcut:animIn">00:00:00.000</property>
       <property name="shotcut:animOut">00:00:00.000</property>
     </filter>
-    <filter id="filter2" out="00:00:09.160">
+    <filter id="filter4" out="00:00:13.760">
       <property name="start">1</property>
       <property name="level">00:00:00.000=0;00:00:00.960=1</property>
       <property name="mlt_service">brightness</property>
@@ -154,71 +205,42 @@ p, li { white-space: pre-wrap; }
       <property name="alpha">1</property>
       <property name="shotcut:animIn">00:00:01.000</property>
     </filter>
-    <filter id="filter3" out="00:00:09.160">
+    <filter id="filter5" out="00:00:13.760">
       <property name="start">1</property>
-      <property name="level">00:00:08.200=1;00:00:09.160=0</property>
+      <property name="level">00:00:12.800=1;00:00:13.760=0</property>
       <property name="mlt_service">brightness</property>
       <property name="shotcut:filter">fadeOutBrightness</property>
       <property name="alpha">1</property>
       <property name="shotcut:animOut">00:00:01.000</property>
     </filter>
   </producer>
-  <playlist id="playlist0">
-    <property name="shotcut:video">1</property>
-    <property name="shotcut:name">V1</property>
-    <entry producer="chain4" in="00:00:00.000" out="00:00:09.320"/>
-    <entry producer="producer4" in="00:00:00.000" out="00:00:09.160"/>
-  </playlist>
-  <chain id="chain2" out="00:03:03.720">
-    <property name="length">00:03:03.760</property>
-    <property name="eof">pause</property>
-    <property name="resource">lady-of-the-80x27s-128379.mp3</property>
-    <property name="mlt_service">avformat-novalidate</property>
-    <property name="seekable">1</property>
-    <property name="audio_index">0</property>
-    <property name="video_index">-1</property>
-    <property name="mute_on_pause">0</property>
-    <property name="creation_time">2023-05-04T07:55:52</property>
-    <property name="xml">was here</property>
-    <property name="shotcut:hash">8046957f0d0ca0f5b81a704e0832260e</property>
-    <property name="ignore_points">0</property>
-    <property name="shotcut:caption">lady-of-the-80x27s-128379.mp3</property>
-    <filter id="filter4" out="00:00:10.600">
-      <property name="window">75</property>
-      <property name="max_gain">20dB</property>
-      <property name="level">00:00:09.640=0;00:00:10.600=-60</property>
-      <property name="mlt_service">volume</property>
-      <property name="shotcut:filter">fadeOutVolume</property>
-      <property name="shotcut:animOut">00:00:01.000</property>
-    </filter>
-  </chain>
   <playlist id="playlist1">
-    <property name="shotcut:audio">1</property>
-    <property name="shotcut:name">A1</property>
-    <blank length="00:00:09.360"/>
-    <entry producer="chain2" in="00:00:00.000" out="00:00:10.600"/>
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V2</property>
+    <blank length="00:00:57.160"/>
+    <entry producer="producer4" in="00:00:00.000" out="00:00:13.760"/>
   </playlist>
-  <producer id="producer2" in="00:00:00.000" out="03:59:59.960">
+  <producer id="producer3" in="00:00:00.000" out="03:59:59.960">
     <property name="length">04:00:00.000</property>
     <property name="eof">pause</property>
-    <property name="resource">C:/Users/Maxen/Documents/01 Project/Patrick_Le_Jeux/art/collection/cle.png</property>
+    <property name="resource">C:/Users/Maxen/Documents/01 Project/Patrick_Le_Jeux/art/collection/mayo.png</property>
     <property name="ttl">1</property>
     <property name="aspect_ratio">1</property>
     <property name="progressive">1</property>
     <property name="seekable">1</property>
     <property name="format">2</property>
     <property name="mlt_service">qimage</property>
-    <property name="creation_time">2023-05-04T10:48:08</property>
+    <property name="creation_time">2023-05-04T10:40:00</property>
     <property name="xml">was here</property>
-    <property name="shotcut:hash">9696ba5f8cd977d6ef150f0f799daa14</property>
-    <property name="shotcut:caption">cle.png</property>
-    <filter id="filter5" out="00:00:09.160">
+    <property name="shotcut:hash">1478fe5065ab4e2035df74a008c2fc82</property>
+    <property name="shotcut:caption">mayo.png</property>
+    <filter id="filter6" out="00:00:09.160">
       <property name="background">color:#00000000</property>
       <property name="mlt_service">affine</property>
       <property name="shotcut:filter">affineSizePosition</property>
       <property name="transition.fill">1</property>
       <property name="transition.distort">0</property>
-      <property name="transition.rect">00:00:00.040=388 900 504 504 1;00:00:09.160=388 -600 504 504 1</property>
+      <property name="transition.rect">00:00:00.000=387.7 1000 504 504 1;00:00:09.160=387.7 -600 504 504 1</property>
       <property name="transition.valign">middle</property>
       <property name="transition.halign">center</property>
       <property name="shotcut:animIn">00:00:00.000</property>
@@ -228,18 +250,18 @@ p, li { white-space: pre-wrap; }
   </producer>
   <playlist id="playlist2">
     <property name="shotcut:video">1</property>
-    <property name="shotcut:name">V2</property>
-    <blank length="00:00:09.360"/>
-    <entry producer="producer2" in="00:00:00.000" out="00:00:09.160"/>
+    <property name="shotcut:name">V3</property>
+    <blank length="00:00:57.160"/>
+    <entry producer="producer3" in="00:00:00.000" out="00:00:09.160"/>
   </playlist>
-  <tractor id="tractor0" title="Shotcut version 22.12.21" in="00:00:00.000" out="00:00:19.960">
+  <tractor id="tractor0" title="Shotcut version 22.12.21" in="00:00:00.000" out="00:01:10.920">
     <property name="shotcut">1</property>
     <property name="shotcut:projectAudioChannels">2</property>
     <property name="shotcut:projectFolder">0</property>
-    <property name="shotcut:scaleFactor">1.01</property>
+    <property name="shotcut:scaleFactor">0.691472</property>
     <track producer="background"/>
     <track producer="playlist0"/>
-    <track producer="playlist1" hide="video"/>
+    <track producer="playlist1"/>
     <track producer="playlist2"/>
     <transition id="transition0">
       <property name="a_track">0</property>
@@ -264,13 +286,22 @@ p, li { white-space: pre-wrap; }
       <property name="sum">1</property>
     </transition>
     <transition id="transition3">
+      <property name="a_track">1</property>
+      <property name="b_track">2</property>
+      <property name="version">0.1</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="threads">0</property>
+      <property name="disable">0</property>
+      <property name="1">normal</property>
+    </transition>
+    <transition id="transition4">
       <property name="a_track">0</property>
       <property name="b_track">3</property>
       <property name="mlt_service">mix</property>
       <property name="always_active">1</property>
       <property name="sum">1</property>
     </transition>
-    <transition id="transition4">
+    <transition id="transition5">
       <property name="a_track">1</property>
       <property name="b_track">3</property>
       <property name="version">0.1</property>

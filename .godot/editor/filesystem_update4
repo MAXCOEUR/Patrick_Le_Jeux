@@ -1,9 +1,3 @@
-res://map/map_4.tscn
-res://map/boss/map_bass_4.tscn
-res://map/boss/map_bass_4.cs
-res://map/boss/map_boss_4.tscn
-res://map/boss/map_boss_3.tscn
-res://map/boss/dialogue.tscn
-res://map/boss/map_boss_4.cs
-res://level/level_1Script.cs
 res://level/level_1.tscn
+res://map/map_4.tscn
+res://map/map_5.tscn

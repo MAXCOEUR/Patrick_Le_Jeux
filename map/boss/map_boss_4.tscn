@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2dn64ixctdna"]
+[gd_scene load_steps=9 format=3 uid="uid://c2dn64ixctdna"]
 
 [ext_resource type="Script" path="res://map/boss/map_boss_4.cs" id="1_fsrt3"]
 [ext_resource type="Texture2D" uid="uid://bj8bjbncee6yj" path="res://art/block/tilesheet_complete.png" id="2_7ipx6"]
 [ext_resource type="Texture2D" uid="uid://b657y8ukubkp4" path="res://art/fond/planet_rouge.png" id="3_y1cjt"]
 [ext_resource type="Texture2D" uid="uid://bypv0glebts7k" path="res://art/charactere/le_papy_de_brigitte.png" id="4_h0emr"]
+[ext_resource type="Texture2D" uid="uid://bysns4f2qd8d4" path="res://art/charactere/ARBRE..png" id="4_q7www"]
 [ext_resource type="Texture2D" uid="uid://xxm0sefkx2rw" path="res://art/backgroud_dialogue.png" id="6_qkw3i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oqnx2"]
@@ -808,6 +809,7 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_oqnx2")
 
 [node name="map_boss_4" type="Node2D"]
+z_index = 1
 script = ExtResource("1_fsrt3")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -816,18 +818,19 @@ format = 2
 layer_0/tile_data = PackedInt32Array(1507328, 0, 0, 1507329, 0, 0, 1507330, 0, 0, 1507331, 0, 0, 1507332, 0, 0, 1507333, 0, 0, 1507334, 0, 0, 1441798, 0, 0, 1376262, 0, 0, 1310726, 0, 0, 1245190, 0, 0, 1179654, 0, 0, 1114118, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 917510, 0, 0, 983046, 0, 0, 1048582, 0, 0, 1441792, 0, 0, 1376256, 0, 0, 1310720, 0, 0, 1245184, 0, 0, 1179648, 0, 0, 1114112, 0, 0, 1048576, 0, 0, 983040, 0, 0, 917504, 0, 0)
 
 [node name="PlanetRouge" type="Sprite2D" parent="."]
-z_index = 5
 position = Vector2(639, 358)
 scale = Vector2(0.667708, 0.668519)
 texture = ExtResource("3_y1cjt")
 
+[node name="Arbre" type="Sprite2D" parent="."]
+position = Vector2(437, 185)
+texture = ExtResource("4_q7www")
+
 [node name="LePapyDeBrigitte" type="Sprite2D" parent="."]
-z_index = 5
 position = Vector2(620, 279)
 texture = ExtResource("4_h0emr")
 
 [node name="dialogue" type="NinePatchRect" parent="."]
-z_index = 5
 offset_left = 129.0
 offset_top = 299.0
 offset_right = 1117.0
@@ -851,7 +854,7 @@ offset_bottom = 212.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 
 [node name="reponse" type="NinePatchRect" parent="."]
-z_index = 5
+visible = false
 offset_left = 130.0
 offset_top = 478.0
 offset_right = 1118.0
@@ -880,3 +883,12 @@ offset_top = 134.0
 offset_right = 938.0
 offset_bottom = 206.0
 text = "Valider"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 292.0
+offset_top = 4.0
+offset_right = 1022.0
+offset_bottom = 31.0
+max_value = 5.0
+step = 1.0
+value = 5.0

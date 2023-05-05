@@ -42,14 +42,28 @@
     <property name="xml">was here</property>
     <property name="shotcut:hash">3f644c02da0049091e7e5fe6a7bfdb92</property>
   </chain>
+  <chain id="chain2" out="00:00:19.052">
+    <property name="length">00:00:19.086</property>
+    <property name="eof">pause</property>
+    <property name="resource">C:/Users/Maxen/Downloads/intro.mp4</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-05-05T08:43:26</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">bd808f82e8d43675b897769547a9f7b4</property>
+  </chain>
   <playlist id="main_bin">
     <property name="xml_retain">1</property>
     <entry producer="chain0" in="00:00:00.000" out="00:10:32.032"/>
     <entry producer="producer0" in="00:00:00.000" out="00:00:03.971"/>
     <entry producer="chain1" in="00:00:00.000" out="00:00:12.880"/>
+    <entry producer="chain2" in="00:00:00.000" out="00:00:19.052"/>
   </playlist>
-  <producer id="black" in="00:00:00.000" out="00:00:46.914">
-    <property name="length">00:00:46.947</property>
+  <producer id="black" in="00:00:00.000" out="00:00:25.025">
+    <property name="length">00:00:25.058</property>
     <property name="eof">pause</property>
     <property name="resource">0</property>
     <property name="aspect_ratio">1</property>
@@ -58,9 +72,9 @@
     <property name="set.test_audio">0</property>
   </producer>
   <playlist id="background">
-    <entry producer="black" in="00:00:00.000" out="00:00:46.914"/>
+    <entry producer="black" in="00:00:00.000" out="00:00:25.025"/>
   </playlist>
-  <chain id="chain2" out="00:00:12.880">
+  <chain id="chain3" out="00:00:12.880">
     <property name="length">00:00:12.913</property>
     <property name="eof">pause</property>
     <property name="resource">video_episode1/intro.ogv</property>
@@ -78,9 +92,9 @@
     <property name="shotcut:video">1</property>
     <property name="shotcut:name">V1</property>
     <blank length="00:00:07.541"/>
-    <entry producer="chain2" in="00:00:07.007" out="00:00:12.880"/>
+    <entry producer="chain3" in="00:00:07.007" out="00:00:12.880"/>
   </playlist>
-  <chain id="chain3" out="00:10:32.032">
+  <chain id="chain4" out="00:10:32.032">
     <property name="length">00:10:32.065</property>
     <property name="eof">pause</property>
     <property name="resource">C:/Users/Maxen/Downloads/PLS.mp4</property>
@@ -130,7 +144,7 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana'; font-size:72pt; font-weight:600; color:#ffffff;&quot;&gt;CHAPITRE 4&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</property>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana'; font-size:72pt; font-weight:600; color:#ffffff;&quot;&gt;CHAPITRE 5&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</property>
       <property name="shotcut:animIn">00:00:00.000</property>
       <property name="shotcut:animOut">00:00:00.000</property>
     </filter>
@@ -151,45 +165,44 @@ p, li { white-space: pre-wrap; }
       <property name="shotcut:animOut">00:00:01.001</property>
     </filter>
   </producer>
-  <chain id="chain4" out="00:10:32.032">
-    <property name="length">00:10:32.065</property>
+  <chain id="chain5" out="00:00:19.052">
+    <property name="length">00:00:19.086</property>
     <property name="eof">pause</property>
-    <property name="resource">C:/Users/Maxen/Downloads/PLS.mp4</property>
+    <property name="resource">C:/Users/Maxen/Downloads/intro.mp4</property>
     <property name="mlt_service">avformat-novalidate</property>
     <property name="seekable">1</property>
     <property name="audio_index">1</property>
     <property name="video_index">0</property>
     <property name="mute_on_pause">0</property>
-    <property name="creation_time">2023-05-04T07:05:04</property>
-    <property name="shotcut:hash">7e9ad06850a5f7378fb2bac6546ba65e</property>
-    <property name="ignore_points">0</property>
+    <property name="creation_time">2023-05-05T08:43:26</property>
     <property name="xml">was here</property>
-    <property name="shotcut:caption">PLS.mp4</property>
-    <filter id="filter3" in="00:04:33.400" out="00:05:06.840">
-      <property name="start">1</property>
-      <property name="level">00:00:00.000=0;00:00:00.968=1</property>
-      <property name="mlt_service">brightness</property>
-      <property name="shotcut:filter">fadeInBrightness</property>
-      <property name="alpha">1</property>
+    <property name="shotcut:hash">bd808f82e8d43675b897769547a9f7b4</property>
+    <property name="shotcut:caption">intro.mp4</property>
+    <filter id="filter3" in="00:00:07.474" out="00:00:19.052">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:00.000=-60;00:00:00.968=0</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeInVolume</property>
       <property name="shotcut:animIn">00:00:01.001</property>
     </filter>
-    <filter id="filter4" in="00:04:33.400" out="00:05:06.840">
-      <property name="start">1</property>
-      <property name="level">00:00:32.499=1;00:00:33.467=0</property>
-      <property name="mlt_service">brightness</property>
-      <property name="shotcut:filter">fadeOutBrightness</property>
-      <property name="alpha">1</property>
+    <filter id="filter4" in="00:00:07.474" out="00:00:19.052">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:10.611=0;00:00:11.578=-60</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeOutVolume</property>
       <property name="shotcut:animOut">00:00:01.001</property>
     </filter>
   </chain>
   <playlist id="playlist1">
     <property name="shotcut:video">1</property>
     <property name="shotcut:name">V2</property>
-    <entry producer="chain3" in="00:00:00.000" out="00:00:07.574"/>
+    <entry producer="chain4" in="00:00:00.000" out="00:00:07.574"/>
     <entry producer="producer1" in="00:00:00.000" out="00:00:05.806"/>
-    <entry producer="chain4" in="00:04:33.400" out="00:05:06.840"/>
+    <entry producer="chain5" in="00:00:07.474" out="00:00:19.052"/>
   </playlist>
-  <tractor id="tractor0" title="Shotcut version 22.12.21" in="00:00:00.000" out="00:00:46.914">
+  <tractor id="tractor0" title="Shotcut version 22.12.21" in="00:00:00.000" out="00:00:25.025">
     <property name="shotcut">1</property>
     <property name="shotcut:scaleFactor">0.840584</property>
     <property name="shotcut:projectAudioChannels">2</property>
