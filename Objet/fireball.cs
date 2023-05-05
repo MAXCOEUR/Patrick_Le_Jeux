@@ -102,7 +102,7 @@ public partial class fireball : Object
 		base.setModePlayer(user);
 		parametreLevel.Gravity = 0f;
 	}
-	public override void setdirection(Vector2 dir, Charactere user)
+	public override void setdirection(Vector2 dir, Charactere user=null)
 	{
 		base.setdirection(dir, user);
 		parametreLevel.Gravity = 0f;
