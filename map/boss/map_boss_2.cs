@@ -12,6 +12,8 @@ public partial class map_boss_2 : ZoneGame
 	private PackedScene sol_2_Scene;
 	private PackedScene sol_3_Scene;
 	private int solActif = 1;
+	private AudioStreamPlayer musique;
+	AudioStream audioStream;
 
 	pascal boss;
 	public override void _Ready()
@@ -49,6 +51,16 @@ public partial class map_boss_2 : ZoneGame
 		AddChild(timerRemoveSol_3);
 
 		ChangerSols();
+		musique = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
+		musique.Connect("finished", new Callable(this, "OnMusiqueFinish"));
+		var musiqueFilePath = "res://art/musique/map_2_boss/boss2.mp3"; // chemin de la vidéo
+		audioStream = (AudioStream)ResourceLoader.Load(musiqueFilePath);
+		musique.Stream = audioStream;
+		musique.Play();
+	}
+	private void OnMusiqueFinish(){
+		musique.Stream = audioStream;
+		musique.Play();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

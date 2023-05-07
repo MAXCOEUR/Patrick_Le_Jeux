@@ -6,6 +6,8 @@ public partial class map_2 : ZoneGame
 	// Called when the node enters the scene tree for the first time.
 	Area2D look_map;
 	CameraScript camera;
+	private AudioStreamPlayer musique;
+	AudioStream audioStream;
 	public override void _Ready()
 	{
 		base._Ready();
@@ -13,6 +15,17 @@ public partial class map_2 : ZoneGame
 		look_map.Connect("area_entered", new Callable(this, "on_UnZoom"));
 		look_map.Connect("area_exited", new Callable(this, "on_Zoom"));
 		camera = GetNode<CameraScript>("../Camera2D");
+
+		musique = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
+		musique.Connect("finished", new Callable(this, "OnMusiqueFinish"));
+		var musiqueFilePath = "res://art/musique/map_2/map_2.mp3"; // chemin de la vidéo
+		audioStream = (AudioStream)ResourceLoader.Load(musiqueFilePath);
+		musique.Stream = audioStream;
+		musique.Play();
+	}
+	private void OnMusiqueFinish(){
+		musique.Stream = audioStream;
+		musique.Play();
 	}
 
 	void on_UnZoom(Area2D otherArea) {

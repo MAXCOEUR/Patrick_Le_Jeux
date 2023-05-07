@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://kae1dpusjuy4"]
+[gd_scene load_steps=8 format=3 uid="uid://kae1dpusjuy4"]
 
 [ext_resource type="Texture2D" uid="uid://cpdr3t88f1pw2" path="res://art/charactere/Among-Us-Green.png" id="1"]
 [ext_resource type="Script" path="res://Character/Among_us_vert.cs" id="1_ltvvh"]
+[ext_resource type="AudioStream" uid="uid://u50onxavi62i" path="res://art/bruitage/enemie/mortEnemie.mp3" id="3_bs1er"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(74, 96)
@@ -9,9 +10,9 @@ size = Vector2(74, 96)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ch1pf"]
 size = Vector2(74, 96)
 
-[sub_resource type="Animation" id="Animation_ubu13"]
+[sub_resource type="Animation" id="Animation_e3vn1"]
 resource_name = "mort"
-length = 0.5
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -19,15 +20,27 @@ tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5),
+"times": PackedFloat32Array(0, 0.1, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(0.5, 0.1), Vector2(1, 0.2)]
+"values": [Vector2(0.5, 0.5), Vector2(0.5, 0.1), Vector2(2, 0.4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5kbs1"]
 _data = {
-"mort": SubResource("Animation_ubu13")
+"mort": SubResource("Animation_e3vn1")
 }
 
 [node name="Among_us_vert" type="CharacterBody2D" groups=["enemies"]]
@@ -71,3 +84,7 @@ collision_mask = 50
 position = Vector2(-34, 0)
 target_position = Vector2(-5, 0)
 collision_mask = 50
+
+[node name="mort" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_bs1er")
+volume_db = -10.0

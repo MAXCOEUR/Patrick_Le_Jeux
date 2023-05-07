@@ -15,6 +15,7 @@ public partial class mushroom_mini : mushroomGeneral
 		{
 			Patrick player = (Patrick)otherParent;
 			player.setEtat(6);
+			player.Powerup.Play();
 			lessEtat();
 		}
 

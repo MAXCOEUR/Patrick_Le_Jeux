@@ -7,8 +7,19 @@ public partial class collection_show : Node2D
 {
 	protected Database db = Database.Instance;
 	List<idCollection> Collections;
+	private AudioStreamPlayer musique;
+	AudioStream audioStream;
+
 	public override void _Ready()
 	{
+		musique = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
+		musique.Connect("finished", new Callable(this, "OnMusiqueFinish"));
+		var musiqueFilePath = "res://art/musique/collection/1.mp3"; // chemin de la vidéo
+		audioStream = (AudioStream)ResourceLoader.Load(musiqueFilePath);
+		musique.Stream = audioStream;
+		musique.Play();
+
+
 		GetNode<Button>("bt_retour").Connect("button_down", new Callable(this, "_OnBt_retour"));
 		Collections=getCollections();
 		foreach (idCollection Collection in Collections)
@@ -92,6 +103,11 @@ public partial class collection_show : Node2D
 			col.Position = new Vector2(480+(Collection.id-1)*145,110+(Collection.numeroMap-1)*130);
 			AddChild(col);
 		}
+	}
+
+	private void OnMusiqueFinish(){
+		musique.Stream = audioStream;
+		musique.Play();
 	}
 
 	private void _OnBt_retour(){

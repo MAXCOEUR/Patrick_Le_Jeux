@@ -840,3 +840,6 @@ value = 10.0
 
 [node name="Pascal" parent="." instance=ExtResource("5_81ml1")]
 position = Vector2(751, 510)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0

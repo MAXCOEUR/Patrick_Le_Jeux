@@ -20,6 +20,10 @@ public partial class Patrick : Charactere
 	protected PackedScene missileScene = (PackedScene)ResourceLoader.Load("res://Objet/missile.tscn");
 	protected PackedScene epeeScene = (PackedScene)ResourceLoader.Load("res://Objet/epee.tscn");
 
+	AudioStreamPlayer2D Jump;
+	AudioStreamPlayer2D PowerDown;
+	public AudioStreamPlayer2D Powerup;
+
 	public int getEtat(){
 		return etat;
 	}
@@ -27,6 +31,11 @@ public partial class Patrick : Charactere
 	{
 		base._Ready();
 		collisionShapePlayer = GetNode<CollisionShape2D>("CollisionShape2D");
+
+		Jump=GetNode<AudioStreamPlayer2D>("Jump");
+		
+		PowerDown=GetNode<AudioStreamPlayer2D>("PowerDown");
+		Powerup=GetNode<AudioStreamPlayer2D>("Powerup");
 	}
 	public override void _Input(InputEvent @event)
 	{
@@ -35,6 +44,7 @@ public partial class Patrick : Charactere
 			if (objet is epee)
 			{
 				objet.attack_player(directionPlayerWantIsLeft);
+				((epee)objet).lunch.Play();
 			}
 			else if (objet is missile)
 			{
@@ -78,7 +88,7 @@ public partial class Patrick : Charactere
 				float piedPatrick = Position.Y + (getSize()*Scale/2).Y -10 ;
 				float teteEnemie = enemie.Position.Y - (enemie.getSize()*enemie.Scale/2).Y +10;
 
-				if (piedPatrick <= teteEnemie && Velocity.Y>0)
+				if (piedPatrick <= teteEnemie)
 				{
 					annimation.Play("saut_sur_ennmie");
 					Velocity = new Vector2(Velocity.X, parametreLevel.jumpBase);
@@ -122,6 +132,7 @@ public partial class Patrick : Charactere
 	{
 		isInvincible = true;
 		annimation.Play("hit");
+		PowerDown.Play();
 		switch (etat)
 		{
 			case 1:
@@ -163,10 +174,10 @@ public partial class Patrick : Charactere
 	}
 
 	protected void AddObjectToChild(Object obj)
-    {
-        obj.Position = new Vector2(obj.Position.X, (obj.Position.Y - size.Y));
-        AddChild(obj);
-    }
+	{
+		obj.Position = new Vector2(obj.Position.X, (obj.Position.Y - size.Y));
+		AddChild(obj);
+	}
 	override public void setEtat(int i)
 	{
 		Vector2 newScale;
@@ -175,6 +186,7 @@ public partial class Patrick : Charactere
 		{
 			case 0: //ded
 				annimation.Play("mort");
+				mort.Play();
 				parametreLevel.setDed();
 				break;
 			case 1: //petit
@@ -265,6 +277,7 @@ public partial class Patrick : Charactere
 
 			if (IsOnFloor())
 			{
+				Jump.Play();
 				isJumping = true;
 				currentJumpTime = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
 				velocity.Y += goJump();

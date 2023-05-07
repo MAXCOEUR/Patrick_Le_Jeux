@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0e7yryadi3wn"]
+[gd_scene load_steps=9 format=3 uid="uid://b0e7yryadi3wn"]
 
 [ext_resource type="Script" path="res://Character/tank.cs" id="1_gqtdh"]
 [ext_resource type="Texture2D" uid="uid://d32coloinfj08" path="res://art/charactere/tank.png" id="1_xorhk"]
 [ext_resource type="Texture2D" uid="uid://bn808hj5yxrif" path="res://art/charactere/canon.png" id="2_6g3su"]
+[ext_resource type="AudioStream" uid="uid://u50onxavi62i" path="res://art/bruitage/enemie/mortEnemie.mp3" id="4_26fvq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdvto"]
 size = Vector2(518, 254)
@@ -10,9 +11,9 @@ size = Vector2(518, 254)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5u7k2"]
 size = Vector2(518, 253)
 
-[sub_resource type="Animation" id="Animation_xik2x"]
+[sub_resource type="Animation" id="Animation_1pgiq"]
 resource_name = "mort"
-length = 0.5
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -20,15 +21,27 @@ tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 1),
+"times": PackedFloat32Array(0, 0.1, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0.2, 0.2), Vector2(0.2, 0.05), Vector2(0.2, 0.05)]
+"values": [Vector2(0.2, 0.2), Vector2(0.2, 0.1), Vector2(0.5, 0.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vuf2e"]
 _data = {
-"mort": SubResource("Animation_xik2x")
+"mort": SubResource("Animation_1pgiq")
 }
 
 [node name="tank" type="CharacterBody2D" groups=["enemies"]]
@@ -79,3 +92,7 @@ collision_mask = 50
 position = Vector2(-258, 0)
 target_position = Vector2(-1, 0)
 collision_mask = 50
+
+[node name="mort" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_26fvq")
+volume_db = -10.0

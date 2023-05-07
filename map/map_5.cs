@@ -7,6 +7,8 @@ public partial class map_5 : ZoneGame
 	protected Timer timerFire;
 	Area2D look_map;
 	CameraScript camera;
+	private AudioStreamPlayer musique;
+	AudioStream audioStream;
 	public override void _Ready()
 	{
 		base._Ready();
@@ -23,8 +25,16 @@ public partial class map_5 : ZoneGame
 		AddChild(timerFire);
 		timerFire.Start();
 
-
-
+		musique = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
+		musique.Connect("finished", new Callable(this, "OnMusiqueFinish"));
+		var musiqueFilePath = "res://art/musique/map_5/map_5.mp3"; // chemin de la vidéo
+		audioStream = (AudioStream)ResourceLoader.Load(musiqueFilePath);
+		musique.Stream = audioStream;
+		musique.Play();
+	}
+	private void OnMusiqueFinish(){
+		musique.Stream = audioStream;
+		musique.Play();
 	}
 	protected void sendFireBall()
 	{

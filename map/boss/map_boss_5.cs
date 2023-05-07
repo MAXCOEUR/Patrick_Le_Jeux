@@ -13,6 +13,8 @@ public partial class map_boss_5 : ZoneGame
 	private PackedScene sol_3_Scene;
 	private int solActif = 1;
 	saucisse_desmort saucisse;
+	private AudioStreamPlayer musique;
+	AudioStream audioStream;
 	public override void _Ready()
 	{
 		base._Ready();
@@ -48,6 +50,17 @@ public partial class map_boss_5 : ZoneGame
 		AddChild(timerRemoveSol_3);
 
 		ChangerSols();
+
+		musique = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
+		musique.Connect("finished", new Callable(this, "OnMusiqueFinish"));
+		var musiqueFilePath = "res://art/musique/map_5_boss/boss5.mp3"; // chemin de la vidéo
+		audioStream = (AudioStream)ResourceLoader.Load(musiqueFilePath);
+		musique.Stream = audioStream;
+		musique.Play();
+	}
+	private void OnMusiqueFinish(){
+		musique.Stream = audioStream;
+		musique.Play();
 	}
 
 	private void ChangerSols()

@@ -16,6 +16,7 @@ public partial class mushroom : mushroomGeneral
 			Patrick player = (Patrick)otherParent;
 			if(player.getEtat()<2 ||player.getEtat()==6 ){
 				player.setEtat(2);
+				player.Powerup.Play();
 				lessEtat();
 			}
 			

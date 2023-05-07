@@ -7,7 +7,7 @@ public abstract partial class Charactere : CharacterBody2D
 	protected ParametreLevel parametreLevel = new ParametreLevel();
 	protected Sprite2D sprite;
 	protected Area2D area;
-	protected AnimationPlayer annimation;
+	public AnimationPlayer annimation;
 	protected RayCast2D raycastLeft ;
 	protected RayCast2D raycastRight;
 	protected RayCast2D raycastBot;
@@ -24,8 +24,9 @@ public abstract partial class Charactere : CharacterBody2D
 
 	protected Vector2 scaleAbsolute;
 
-	Shape2D shape;
+	protected Shape2D shape;
 	protected Vector2 size;
+	protected AudioStreamPlayer2D mort;
 
 
 	public Area2D GetArea2D(){
@@ -34,6 +35,7 @@ public abstract partial class Charactere : CharacterBody2D
 
 	public override void _Ready()
 	{
+		mort=GetNode<AudioStreamPlayer2D>("mort");
 		shape = GetNode<CollisionShape2D>("CollisionShape2D").Shape;
 		sprite = GetNode<Sprite2D>("Sprite2D");
 		annimation = GetNode<AnimationPlayer>("AnimationPlayer");

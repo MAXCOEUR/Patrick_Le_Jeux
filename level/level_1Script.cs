@@ -38,8 +38,8 @@ public partial class level_1Script : Node2D
 			maxNumeroMap = 1;
 		}
 
-		debugMode();
-		//setMapChose(maxNumeroMap);
+		//debugMode();
+		setMapChose(maxNumeroMap);
 	}
 
 	private void setMapChose(int numMap)
@@ -367,12 +367,12 @@ public partial class level_1Script : Node2D
 
 	private void debugMode()
 	{
-				_camera.set_maxOffset(new Vector2(2560, 0));
-				background.Color = new Color(255 / 255.0f, 0 / 255.0f, 0 / 255.0f);
-				PackedScene missileSceneBoss5 = (PackedScene)ResourceLoader.Load("res://map/boss/map_boss_5.tscn");
-				map_boss_5 mapBoss5 = (map_boss_5)missileSceneBoss5.Instantiate();
-				AddChild(mapBoss5);
-				_player.Position = new Vector2(100, 400);
+				_camera.set_maxOffset(new Vector2(15359, -400));
+				background.Color = new Color(0 / 255.0f, 168 / 255.0f, 243 / 255.0f);
+				PackedScene missileScene = (PackedScene)ResourceLoader.Load("res://map/map_1.tscn");
+				map_1 map = (map_1)missileScene.Instantiate();
+				AddChild(map);
+				_player.Position = new Vector2(100, 500);
 				_player.setParam(new ParametreLevel());
 	}
 

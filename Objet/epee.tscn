@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbj1unyjbptq8"]
+[gd_scene load_steps=11 format=3 uid="uid://bbj1unyjbptq8"]
 
 [ext_resource type="Script" path="res://Objet/epee.cs" id="1_5mki1"]
 [ext_resource type="Texture2D" uid="uid://bx2ggfiju61s3" path="res://art/charactere/objet/epee.png" id="1_7nx20"]
+[ext_resource type="AudioStream" uid="uid://dn4og3vqp7gmk" path="res://art/bruitage/enemie/sword.mp3" id="3_ip8od"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23wkb"]
 size = Vector2(101, 100)
@@ -179,3 +180,6 @@ shape = SubResource("RectangleShape2D_cv445")
 libraries = {
 "": SubResource("AnimationLibrary_wkq0b")
 }
+
+[node name="lunch" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ip8od")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://hjx4d4vrpwqh"]
+[gd_scene load_steps=12 format=3 uid="uid://hjx4d4vrpwqh"]
 
 [ext_resource type="Script" path="res://Character/soldat_pasclassique.cs" id="1_gbru4"]
 [ext_resource type="Texture2D" uid="uid://do4nloa6d56o1" path="res://art/charactere/SoldatPasclassique.png" id="1_sjqsj"]
 [ext_resource type="Texture2D" uid="uid://ctthppd84qbxq" path="res://art/charactere/soldat_pas_normal_spin.png" id="3_tqus6"]
 [ext_resource type="Texture2D" uid="uid://dapiqy32tp18" path="res://art/annimation/shield.png" id="4_fnno5"]
+[ext_resource type="AudioStream" uid="uid://u50onxavi62i" path="res://art/bruitage/enemie/mortEnemie.mp3" id="5_ojpbf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45o8j"]
 size = Vector2(52, 120)
@@ -49,22 +50,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
-}
-
-[sub_resource type="Animation" id="Animation_ubu13"]
-resource_name = "mort"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.5, 0.5), Vector2(0.5, 0.1), Vector2(0.5, 0.1)]
 }
 
 [sub_resource type="Animation" id="Animation_5khac"]
@@ -155,14 +140,43 @@ tracks/6/keys = {
 "values": [false, true, false]
 }
 
+[sub_resource type="Animation" id="Animation_0nycm"]
+resource_name = "mort"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.5, 0.1), Vector2(2, 0.4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5kbs1"]
 _data = {
 "cout_pri": SubResource("Animation_5eoas"),
-"mort": SubResource("Animation_ubu13"),
+"mort": SubResource("Animation_0nycm"),
 "shoot": SubResource("Animation_5khac")
 }
 
 [node name="SoldatPasclassique" type="CharacterBody2D" groups=["enemies"]]
+scale = Vector2(0.5, 0.5)
 collision_layer = 2
 collision_mask = 58
 script = ExtResource("1_gbru4")
@@ -209,7 +223,10 @@ target_position = Vector2(-5, 0)
 collision_mask = 50
 
 [node name="Shield" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-2, 4)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("4_fnno5")
+
+[node name="mort" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ojpbf")
+volume_db = -10.0

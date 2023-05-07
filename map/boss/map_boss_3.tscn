@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://map/boss/map_boss_3.cs" id="1_agp21"]
 [ext_resource type="Texture2D" uid="uid://dhw7vui1jpxdw" path="res://art/fond/Salle_pamouk.png" id="1_jtwsv"]
 [ext_resource type="Texture2D" uid="uid://bj8bjbncee6yj" path="res://art/block/tilesheet_complete.png" id="2_6d874"]
-[ext_resource type="PackedScene" path="res://Character/boss/pamouk.tscn" id="4_43lvr"]
+[ext_resource type="PackedScene" uid="uid://bcvtxotdq8jcb" path="res://Character/boss/pamouk.tscn" id="4_43lvr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ioi5o"]
 size = Vector2(1291.75, 1076.75)
@@ -850,3 +850,6 @@ layer_0/tile_data = PackedInt32Array(-720897, 0, 6, -655361, 0, 6, -589825, 0, 6
 
 [node name="Pamouk" parent="." instance=ExtResource("4_43lvr")]
 position = Vector2(690, 446)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0

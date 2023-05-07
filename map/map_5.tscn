@@ -1032,3 +1032,6 @@ position = Vector2(9587, 31)
 
 [node name="pistolet" parent="." instance=ExtResource("16_msw1q")]
 position = Vector2(24962, 62)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0

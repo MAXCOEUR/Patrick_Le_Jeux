@@ -31,6 +31,7 @@ public partial class soldat_pasclassique : Among_us_rouge
 		{
 			case 0:
 				directionDeplacment = new Vector2(0, 0);
+				mort.Play();
 				break;
 			case 1:
 				Scale = new Vector2(0.5f, 0.5f);

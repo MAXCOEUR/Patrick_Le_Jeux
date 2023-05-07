@@ -8,11 +8,13 @@ public partial class epee : Object
 	protected System.Timers.Timer timerFire;
 	int vitessLance = 300;
 	Vector2 size;
+	public AudioStreamPlayer2D lunch;
 
 
 	public override void _Ready()
 	{
 		base._Ready();
+		lunch=GetNode<AudioStreamPlayer2D>("lunch");
 		size = GetViewportRect().Size;
 		parametreLevel.VitesseMax = vitessLance;
 		parametreLevel.Friction=1f;
@@ -64,6 +66,7 @@ public partial class epee : Object
 			{
 				Patrick player = (Patrick)otherParent;
 				player.setEtat(4);
+				player.Powerup.Play();
 				setEtat(0);
 			}
 		}
@@ -105,5 +108,7 @@ public partial class epee : Object
 	public override void setdirection(Vector2 dir,Charactere user){
 		base.setdirection(dir,user);
 		CollisionMask &= ~(uint)48;
+		lunch=GetNode<AudioStreamPlayer2D>("lunch");
+		lunch.Play();
 	}
 }

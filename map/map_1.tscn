@@ -1601,3 +1601,6 @@ position = Vector2(10212, -309)
 
 [node name="pot_de_fleur" parent="collection" instance=ExtResource("18_nr80e")]
 position = Vector2(13939, -123)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0

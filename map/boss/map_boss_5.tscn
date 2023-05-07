@@ -844,3 +844,6 @@ step = 1.0
 
 [node name="saucisse-desmort" parent="." instance=ExtResource("4_bitxh")]
 position = Vector2(1280, 493)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0

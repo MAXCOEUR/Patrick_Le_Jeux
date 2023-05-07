@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c54042f041qys"]
+[gd_scene load_steps=9 format=3 uid="uid://c54042f041qys"]
 
 [ext_resource type="Texture2D" uid="uid://dj4itnm3moe5q" path="res://art/charactere/objet/fireball.png" id="1_8g8b3"]
 [ext_resource type="Script" path="res://Objet/fireball.cs" id="1_rwvpr"]
+[ext_resource type="AudioStream" uid="uid://n4njht0owk1s" path="res://art/bruitage/enemie/fireLunch.wav" id="3_geivs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owcyg"]
 size = Vector2(24, 24)
@@ -72,3 +73,6 @@ shape = SubResource("RectangleShape2D_fgesd")
 libraries = {
 "": SubResource("AnimationLibrary_f4fas")
 }
+
+[node name="lunch" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_geivs")

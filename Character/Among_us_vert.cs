@@ -22,6 +22,7 @@ public partial class Among_us_vert : Enemies
 		switch (i){
 			case 0:
 				directionDeplacment= new Vector2(0, 0);
+				mort.Play();
 				annimation.Play("mort");
 			break;
 		}

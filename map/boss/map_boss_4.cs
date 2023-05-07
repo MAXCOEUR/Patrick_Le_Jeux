@@ -37,6 +37,8 @@ public partial class map_boss_4 : Node2D
 	int currentBefor = MaxTimeBefor;
 
 	Patrick patrick;
+	private AudioStreamPlayer musique;
+	AudioStream audioStream;
 	public override void _Ready()
 	{
 		timerSeconde = new Timer();
@@ -89,7 +91,18 @@ public partial class map_boss_4 : Node2D
 
 		message.Text = "Cependant, Avant de pouvoir toucher l'arbre, il faut que tu répondes à cette énigme :";
 
+		musique = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
+		musique.Connect("finished", new Callable(this, "OnMusiqueFinish"));
+		var musiqueFilePath = "res://art/musique/map_4_boss/boss4.mp3"; // chemin de la vidéo
+		audioStream = (AudioStream)ResourceLoader.Load(musiqueFilePath);
+		musique.Stream = audioStream;
+		musique.Play();
 
+
+	}
+	private void OnMusiqueFinish(){
+		musique.Stream = audioStream;
+		musique.Play();
 	}
 
 	void oneSeconde()

@@ -1,7 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkpq2bm023kog"]
+[gd_scene load_steps=14 format=3 uid="uid://dkpq2bm023kog"]
 
 [ext_resource type="Texture2D" uid="uid://qh8rkgl7c3s5" path="res://art/charactere/Patrick.png" id="1"]
 [ext_resource type="Script" path="res://Character/Patrick.cs" id="2"]
+[ext_resource type="AudioStream" uid="uid://bhmy043exkfyk" path="res://art/bruitage/patrick/Jump.wav" id="3_7mown"]
+[ext_resource type="AudioStream" uid="uid://dgm4hp7k46dg" path="res://art/bruitage/patrick/death.wav" id="4_ft5kl"]
+[ext_resource type="AudioStream" uid="uid://ddcx6mm2lwr2c" path="res://art/bruitage/patrick/PowerDown.wav" id="5_8ikva"]
+[ext_resource type="AudioStream" uid="uid://bx8icsncpj2dn" path="res://art/bruitage/patrick/Powerup.wav" id="6_dsyxy"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(210, 63)
@@ -217,3 +221,15 @@ radial_accel_max = 50.0
 scale_amount_min = 3.0
 scale_amount_max = 3.0
 color = Color(0, 1, 0, 1)
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7mown")
+
+[node name="PowerDown" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_8ikva")
+
+[node name="Powerup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_dsyxy")
+
+[node name="mort" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ft5kl")

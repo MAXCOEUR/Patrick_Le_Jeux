@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cpbnhxghs1c6v" path="res://Objet/mysteryBlock/MysteryBlock_epee.tscn" id="17_i6oln"]
 [ext_resource type="PackedScene" uid="uid://w5c6htdkxq5a" path="res://Objet/mysteryBlock/MysteryBlock_missile.tscn" id="18_fe662"]
 [ext_resource type="PackedScene" uid="uid://c0bffrtnaqpx2" path="res://Objet/mysteryBlock/MysteryBlock_mushroom_mini.tscn" id="18_v53hu"]
-[ext_resource type="PackedScene" path="res://Collection/gros_vaisseau.tscn" id="20_2q1sm"]
+[ext_resource type="PackedScene" uid="uid://bqi5hn5a0brqg" path="res://Collection/gros_vaisseau.tscn" id="20_2q1sm"]
 [ext_resource type="PackedScene" uid="uid://bbifu0qmbxrtx" path="res://Collection/sombrero.tscn" id="21_eicjx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lamyi"]
@@ -1148,3 +1148,6 @@ scale = Vector2(0.5, 0.5)
 
 [node name="SOMBRERO" parent="." instance=ExtResource("21_eicjx")]
 position = Vector2(17838, 15)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0

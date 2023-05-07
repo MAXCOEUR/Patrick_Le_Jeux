@@ -893,3 +893,6 @@ offset_bottom = 31.0
 max_value = 5.0
 step = 1.0
 value = 5.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0

@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dsqr4gue7x8wr"]
+[gd_scene load_steps=11 format=3 uid="uid://dsqr4gue7x8wr"]
 
 [ext_resource type="Texture2D" uid="uid://b1x3q65tcpxfr" path="res://art/charactere/objet/rocket.png" id="1_b0sbs"]
 [ext_resource type="Script" path="res://Objet/missile.cs" id="1_s2ix4"]
+[ext_resource type="AudioStream" uid="uid://5cw6y1udu4e3" path="res://art/bruitage/enemie/BillLunch.wav" id="3_odtr1"]
+[ext_resource type="AudioStream" uid="uid://cmvogt4mdy2ly" path="res://art/bruitage/enemie/explosion.wav" id="4_4du7d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fviju"]
 size = Vector2(100, 30)
@@ -20,15 +22,26 @@ tracks/0/path = NodePath("CPUParticles2D:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, false]
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_l3ffb"]
 resource_name = "mort"
-length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -36,10 +49,22 @@ tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.2, 0.2), Vector2(0.2, 0.05), Vector2(0.2, 0.05)]
+"values": [Vector2(0.2, 0.2), Vector2(0.2, 0.05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f4fas"]
@@ -106,3 +131,9 @@ gravity = Vector2(0, 0)
 initial_velocity_min = 50.0
 initial_velocity_max = 100.0
 color = Color(0, 0, 0, 1)
+
+[node name="lunch" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_odtr1")
+
+[node name="explosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_4du7d")

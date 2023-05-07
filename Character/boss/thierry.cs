@@ -85,6 +85,8 @@ public partial class thierry : Among_us_vert
 		base.On_animation_finish(anim_name);
 		if (anim_name == "mort")
 		{
+			this.QueueFree();
+			level_1.Finish_map_Boss_1();
 			string insertQuery = "INSERT INTO Collection(numeroMap, numeroCollection) VALUES(@numeroMap, @numeroCollection)";
 			SQLiteCommand insertCommand = new SQLiteCommand(insertQuery, db.getConnection);
 
@@ -93,7 +95,7 @@ public partial class thierry : Among_us_vert
 
 			insertCommand.ExecuteNonQuery();
 
-			level_1.Finish_map_Boss_1();
+			
 		}
 	}
 	override public void lessEtat()

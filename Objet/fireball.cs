@@ -5,14 +5,17 @@ public partial class fireball : Object
 {
 	private DateTime startLunch;
 	private int TimeLife = 10;
+	AudioStreamPlayer2D lunch;
 	public override void _Ready()
 	{
 		base._Ready();
+		lunch=GetNode<AudioStreamPlayer2D>("lunch");
 		startLunch = DateTime.Now;
 		parametreLevel.VitesseMax = VitesseMaxDefault * 2;
 		if(waitPlayer){
 			parametreLevel.Gravity = new ParametreLevel().Gravity;
 		}
+		lunch.Play();
 	}
 	public override void _Process(double delta)
 	{
@@ -75,6 +78,7 @@ public partial class fireball : Object
 			{
 				Patrick player = (Patrick)otherParent;
 				player.setEtat(5);
+				player.Powerup.Play();
 				setEtat(0);
 			}
 		}
