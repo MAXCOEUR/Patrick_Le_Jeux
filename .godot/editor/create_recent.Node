@@ -1,8 +1,8 @@
+VideoStreamPlayer
 AudioStreamPlayer2D
 AudioListener2D
 AudioStreamPlayer
 TextureRect
-VideoStreamPlayer
 Sprite2D
 Camera2D
 CenterContainer

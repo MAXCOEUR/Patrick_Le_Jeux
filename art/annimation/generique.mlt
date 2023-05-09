@@ -81,7 +81,7 @@
     <property name="format">2</property>
     <property name="mlt_service">qimage</property>
     <property name="xml">was here</property>
-    <property name="shotcut:hash">baa7a767bbf816f739cb8d1f75eafdc2</property>
+    <property name="shotcut:hash">cc4174099a05e0370608f15d9ca82f47</property>
   </producer>
   <producer id="producer5" in="00:00:00.000" out="03:59:59.960">
     <property name="length">04:00:00.000</property>
@@ -448,9 +448,9 @@ p, li { white-space: pre-wrap; }
     <transition id="transition1" out="00:00:00.160">
       <property name="a_track">0</property>
       <property name="b_track">1</property>
+      <property name="mlt_service">mix</property>
       <property name="start">-1</property>
       <property name="accepts_blanks">1</property>
-      <property name="mlt_service">mix</property>
     </transition>
   </tractor>
   <playlist id="playlist2">
@@ -539,7 +539,7 @@ p, li { white-space: pre-wrap; }
     <property name="format">2</property>
     <property name="mlt_service">qimage</property>
     <property name="xml">was here</property>
-    <property name="shotcut:hash">baa7a767bbf816f739cb8d1f75eafdc2</property>
+    <property name="shotcut:hash">cc4174099a05e0370608f15d9ca82f47</property>
     <property name="shotcut:caption">saucissepng.png</property>
     <filter id="filter6" out="00:00:22.960">
       <property name="background">color:#00000000</property>
@@ -547,13 +547,12 @@ p, li { white-space: pre-wrap; }
       <property name="shotcut:filter">affineSizePosition</property>
       <property name="transition.fill">1</property>
       <property name="transition.distort">0</property>
-      <property name="transition.rect">00:00:00.000=-3015.56 -1114.86 7689.6 4325.4 1;00:00:23.120=-3025.61 -2284.28 7689.6 4325.4 1</property>
+      <property name="transition.rect">00:00:00.000=614.85 1097.83 333.745 190.712 1;00:00:22.960=530.425 -190.342 333.745 190.712 1</property>
       <property name="transition.valign">middle</property>
       <property name="transition.halign">center</property>
       <property name="shotcut:animIn">00:00:00.000</property>
       <property name="shotcut:animOut">00:00:00.000</property>
       <property name="transition.threads">0</property>
-      <property name="transition.fix_rotate_x">0</property>
     </filter>
   </producer>
   <producer id="producer18" in="00:00:00.000" out="03:59:59.960">

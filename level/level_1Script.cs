@@ -345,6 +345,9 @@ public partial class level_1Script : Node2D
 				_player.Position = new Vector2(100, 400);
 				_player.setParam(new ParametreLevel());
 				break;
+			case "res://art/annimation/video_episode5/fin_fight.ogv":
+				GetTree().ChangeSceneToFile("res://interface/generique.tscn");
+				break;
 		}
 	}
 
@@ -367,13 +370,7 @@ public partial class level_1Script : Node2D
 
 	private void debugMode()
 	{
-				_camera.set_maxOffset(new Vector2(15359, -400));
-				background.Color = new Color(0 / 255.0f, 168 / 255.0f, 243 / 255.0f);
-				PackedScene missileScene = (PackedScene)ResourceLoader.Load("res://map/map_1.tscn");
-				map_1 map = (map_1)missileScene.Instantiate();
-				AddChild(map);
-				_player.Position = new Vector2(100, 500);
-				_player.setParam(new ParametreLevel());
+		Finish_map_Boss_5();
 	}
 
 }
