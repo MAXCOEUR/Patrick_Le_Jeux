@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl82i3ijcqpym"]
+
+[ext_resource type="Script" path="res://teaser/patrick.cs" id="1_dn55g"]
+[ext_resource type="PackedScene" uid="uid://cw0lragpwieel" path="res://art3D/charactere/patrick.glb" id="1_hdhf2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_utov7"]
+size = Vector3(5.61649, 9.86464, 17.0315)
+
+[node name="patrick3D" type="CharacterBody3D"]
+collision_mask = 8
+script = ExtResource("1_dn55g")
+
+[node name="patrick" parent="." instance=ExtResource("1_hdhf2")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1.77398, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 2.75261, 0)
+shape = SubResource("BoxShape3D_utov7")

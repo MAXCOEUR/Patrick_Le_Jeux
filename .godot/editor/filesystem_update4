@@ -1,2 +1,7 @@
-res://interface/generique.tscn
+res://test/node_3d.tscn
 res://interface/StartMenu.tscn
+res://test/poisson.tscn
+res://teaser/main.tscn
+res://teaser/patrick.tscn
+res://teaser/patrick.cs
+res://Character/Patrick.cs

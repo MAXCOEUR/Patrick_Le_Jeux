@@ -1,3 +1,13 @@
+DirectionalLight3D
+Camera3D
+CollisionShape3D
+CharacterBody3D
+MeshInstance3D
+MultiMeshInstance3D
+StaticBody3D
+Node
+Node3D
+Sprite3D
 VideoStreamPlayer
 AudioStreamPlayer2D
 AudioListener2D
@@ -20,13 +30,3 @@ CollisionShape2D
 PinJoint2D
 StaticBody2D
 Area2D
-TextEdit
-OptionButton
-MenuButton
-Tree
-MenuBar
-ProgressBar
-Polygon2D
-SubViewport
-CPUParticles2D
-GPUParticles2D
