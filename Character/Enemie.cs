@@ -21,7 +21,6 @@ public abstract partial class Enemies : Charactere
 			{
 				float piedPatrick = player.Position.Y + (player.getSize()*player.Scale/2).Y-10;
 				float teteEnemie = Position.Y - (getSize()*Scale/2).Y+10;
-				GD.Print(piedPatrick+"<="+teteEnemie+" "+player.Velocity);
 				if (!(piedPatrick <= teteEnemie))
 				{
 					player.lessEtat();

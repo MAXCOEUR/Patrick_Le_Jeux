@@ -1,2 +1,6 @@
 res://interface/StartMenu.tscn
 res://Collection/collection_show.tscn
+res://level/level_1.tscn
+res://map/boss/map_boss_2.tscn
+res://map/boss/map_boss_3.tscn
+res://map/boss/map_boss_5.tscn

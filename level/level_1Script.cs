@@ -224,6 +224,8 @@ public partial class level_1Script : Node2D
 	{
 		// Charger la vidéo
 		_player.Position = new Vector2(0, 0);
+		_player.Visible=false;
+		background.Color = new Color(0 , 0, 0);
 		var videoFilePath = lienVideo; // chemin de la vidéo
 		var videoResource = (VideoStream)ResourceLoader.Load(videoFilePath);
 		videoPlayer.Stream = videoResource;
@@ -235,6 +237,8 @@ public partial class level_1Script : Node2D
 	private void OnVideoFinish()
 	{
 		GD.Print("OnVideoFinish");
+		_player.Visible=true;
+		_player.Position = new Vector2(100, 500);
 		switch (videoPlayer.Stream.ResourcePath.ToString())
 		{
 			case "res://art/annimation/video_episode1/intro.ogv":
@@ -246,7 +250,6 @@ public partial class level_1Script : Node2D
 				PackedScene missileScene = (PackedScene)ResourceLoader.Load("res://map/map_1.tscn");
 				map_1 map = (map_1)missileScene.Instantiate();
 				AddChild(map);
-				_player.Position = new Vector2(100, 500);
 				_player.setParam(new ParametreLevel());
 				break;
 			case "res://art/annimation/video_episode1/start_fight.ogv":
@@ -255,7 +258,6 @@ public partial class level_1Script : Node2D
 				PackedScene missileSceneBoss1 = (PackedScene)ResourceLoader.Load("res://map/boss/map_boss_1.tscn");
 				map_boss_1 mapBoss1 = (map_boss_1)missileSceneBoss1.Instantiate();
 				AddChild(mapBoss1);
-				_player.Position = new Vector2(100, 500);
 				_player.setParam(new ParametreLevel());
 				break;
 			case "res://art/annimation/video_episode1/fin_fight.ogv":
@@ -267,7 +269,6 @@ public partial class level_1Script : Node2D
 				PackedScene SceneMap2 = (PackedScene)ResourceLoader.Load("res://map/map_2.tscn");
 				map_2 map2 = (map_2)SceneMap2.Instantiate();
 				AddChild(map2);
-				_player.Position = new Vector2(100, 500);
 				_player.setParam(new ParametreLevel());
 				break;
 			case "res://art/annimation/video_episode2/start_fight.ogv":
@@ -276,7 +277,6 @@ public partial class level_1Script : Node2D
 				PackedScene missileSceneBoss2 = (PackedScene)ResourceLoader.Load("res://map/boss/map_boss_2.tscn");
 				map_boss_2 mapBoss2 = (map_boss_2)missileSceneBoss2.Instantiate();
 				AddChild(mapBoss2);
-				_player.Position = new Vector2(100, 500);
 				_player.setParam(new ParametreLevel());
 				break;
 			case "res://art/annimation/video_episode2/fin_fight.ogv":
@@ -288,7 +288,6 @@ public partial class level_1Script : Node2D
 				PackedScene SceneMap3 = (PackedScene)ResourceLoader.Load("res://map/map_3.tscn");
 				map_3 map3 = (map_3)SceneMap3.Instantiate();
 				AddChild(map3);
-				_player.Position = new Vector2(100, 500);
 				_player.setParam(new ParametreLevel());
 				break;
 			case "res://art/annimation/video_episode3/start_fight.ogv":
@@ -297,7 +296,6 @@ public partial class level_1Script : Node2D
 				PackedScene missileSceneBoss3 = (PackedScene)ResourceLoader.Load("res://map/boss/map_boss_3.tscn");
 				map_boss_3 mapBoss3 = (map_boss_3)missileSceneBoss3.Instantiate();
 				AddChild(mapBoss3);
-				_player.Position = new Vector2(100, 400);
 				_player.setParam(new ParametreLevel());
 				break;
 			case "res://art/annimation/video_episode3/fin_fight.ogv":
@@ -309,7 +307,6 @@ public partial class level_1Script : Node2D
 				PackedScene SceneMap4 = (PackedScene)ResourceLoader.Load("res://map/map_4.tscn");
 				map_4 map4 = (map_4)SceneMap4.Instantiate();
 				AddChild(map4);
-				_player.Position = new Vector2(100, 500);
 				ParametreLevel paramNewPlanet = new ParametreLevel();
 				paramNewPlanet.Gravity = 300;
 				paramNewPlanet.jumpHold = -5;
@@ -321,7 +318,6 @@ public partial class level_1Script : Node2D
 				PackedScene missileSceneBoss4 = (PackedScene)ResourceLoader.Load("res://map/boss/map_boss_4.tscn");
 				map_boss_4 mapBoss4 = (map_boss_4)missileSceneBoss4.Instantiate();
 				AddChild(mapBoss4);
-				_player.Position = new Vector2(100, 400);
 				_player.setParam(new ParametreLevel());
 			break;
 			case "res://art/annimation/video_episode4/fin_fight.ogv":
@@ -333,7 +329,6 @@ public partial class level_1Script : Node2D
 				PackedScene SceneMap5 = (PackedScene)ResourceLoader.Load("res://map/map_5.tscn");
 				map_5 map5 = (map_5)SceneMap5.Instantiate();
 				AddChild(map5);
-				_player.Position = new Vector2(100, 500);
 				_player.setParam(new ParametreLevel());
 				break;
 			case "res://art/annimation/video_episode5/start_fight.ogv":
@@ -342,7 +337,6 @@ public partial class level_1Script : Node2D
 				PackedScene missileSceneBoss5 = (PackedScene)ResourceLoader.Load("res://map/boss/map_boss_5.tscn");
 				map_boss_5 mapBoss5 = (map_boss_5)missileSceneBoss5.Instantiate();
 				AddChild(mapBoss5);
-				_player.Position = new Vector2(100, 400);
 				_player.setParam(new ParametreLevel());
 				break;
 			case "res://art/annimation/video_episode5/fin_fight.ogv":
