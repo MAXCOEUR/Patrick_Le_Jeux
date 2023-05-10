@@ -15,7 +15,7 @@ res://Collection/pouet.tscn::5127f1fcabe1dafc4bfacf7878244dc0::1683750978::res:/
 res://interface/echap.tscn::227ff508cf2f21efe4f9c239cd06c38a::1683750978::res://.godot/exported/133200997/export-afd2e4e471a6dfdc2f753b47df054c6e-echap.scn
 res://interface/GameOver.tscn::13b992300a6e4392a5060d58dbb1eddb::1683750978::res://.godot/exported/133200997/export-7b875657bc4fec4a478cdba8a91cd39d-GameOver.scn
 res://interface/menu_niveaux.tscn::37de53bbfd4f4c0dabd8175576657a32::1683750978::res://.godot/exported/133200997/export-29d8ab1bc806bfcc5851c4649093ff6a-menu_niveaux.scn
-res://interface/StartMenu.tscn::7422317bd78c9f9a8139400100df1216::1683753571::res://.godot/exported/133200997/export-7fbcf5da1c8fe90823de098496016fba-StartMenu.scn
+res://interface/StartMenu.tscn::7422317bd78c9f9a8139400100df1216::1683753753::res://.godot/exported/133200997/export-7fbcf5da1c8fe90823de098496016fba-StartMenu.scn
 res://level/level_1.tscn::4c334acc78fa956b1d36598bf4f8b00a::1683750978::res://.godot/exported/133200997/export-9fdbe4ec9c6d387c69671bd9f8dbf907-level_1.scn
 res://map/boss/map_boss_1.tscn::816e2823696ff4d270cda6f004eb1c3f::1683750978::res://.godot/exported/133200997/export-1d844c659b75c7770ed183b7b3ef48e5-map_boss_1.scn
 res://map/fin/fin_map_1.tscn::7c26866f942d15b23d12c674b2147851::1683750978::res://.godot/exported/133200997/export-c07c884715c5ee98470cde6d9b39ef81-fin_map_1.scn
