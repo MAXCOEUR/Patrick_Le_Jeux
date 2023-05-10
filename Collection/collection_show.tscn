@@ -4,16 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://c4tq3hmi7p2ls" path="res://art/collection/etegere.png" id="2_7xo8o"]
 [ext_resource type="Texture2D" uid="uid://bfd7txe8r4dif" path="res://art/fond/Interieur_maison_de_Patrick.png" id="2_060dr"]
 
-[node name="CollectionShow" type="Node2D"]
-script = ExtResource("1_algdg")
-
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="CollectionShow" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 1.0
-offset_right = 1280.0
-offset_bottom = 721.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_algdg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0

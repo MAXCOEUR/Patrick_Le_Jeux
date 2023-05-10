@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 
-public partial class collection_show : Node2D
+public partial class collection_show : Control
 {
 	protected Database db = Database.Instance;
 	List<idCollection> Collections;

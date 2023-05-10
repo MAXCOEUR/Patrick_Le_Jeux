@@ -53,5 +53,9 @@ text = "Collection"
 layout_mode = 2
 text = "Quitter"
 
+[node name="bt_siteWeb" type="Button" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+text = "le site internet"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -20.0

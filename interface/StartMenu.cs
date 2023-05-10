@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 
 public partial class StartMenu : Control
@@ -18,6 +19,7 @@ public partial class StartMenu : Control
 		GetNode<Button>("CenterContainer/GridContainer/bt_quitter").Connect("button_down", new Callable(this, "_OnBt_quitter"));
 		GetNode<Button>("CenterContainer/GridContainer/bt_collection").Connect("button_down", new Callable(this, "_OnBt_collection"));
 		GetNode<Button>("CenterContainer/GridContainer/bt_recommencer").Connect("button_down", new Callable(this, "_OnBt_recommencer"));
+		GetNode<Button>("CenterContainer/GridContainer/bt_siteWeb").Connect("button_down", new Callable(this, "_OnBt_siteWeb"));
 
 		videoPlayer = GetNode<VideoStreamPlayer>("VideoStreamPlayer");
 		videoPlayer.Connect("finished", new Callable(this, "OnVideoFinish"));
@@ -32,6 +34,15 @@ public partial class StartMenu : Control
 		audioStream = (AudioStream)ResourceLoader.Load(musiqueFilePath);
 		musique.Stream = audioStream;
 		musique.Play();
+	}
+	private void _OnBt_siteWeb(){
+		string url = "https://patrick-le-stegosaure.vercel.app";  // Remplacez par l'URL du site web que vous souhaitez ouvrir
+
+		Process.Start(new ProcessStartInfo
+		{
+			FileName = url,
+			UseShellExecute = true
+		});
 	}
 	private void OnVideoFinish(){
 		videoPlayer.Stream = videoResource;

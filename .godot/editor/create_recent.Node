@@ -1,3 +1,6 @@
+Button
+TextureButton
+Control
 VideoStreamPlayer
 AudioStreamPlayer2D
 AudioListener2D
@@ -10,7 +13,6 @@ TileMap
 AnimationPlayer
 CharacterBody2D
 Node2D
-Button
 LineEdit
 ColorRect
 RichTextLabel
@@ -28,5 +30,3 @@ MenuBar
 ProgressBar
 Polygon2D
 SubViewport
-CPUParticles2D
-GPUParticles2D
