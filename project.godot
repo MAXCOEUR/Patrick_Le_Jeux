@@ -13,6 +13,7 @@ config_version=5
 config/name="Patrick Le Jeu"
 run/main_scene="res://interface/intro_video.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
+boot_splash/image="res://art/logo.png"
 config/icon="res://icon.svg"
 
 [display]
