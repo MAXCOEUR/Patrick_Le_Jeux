@@ -26,82 +26,69 @@ public partial class collection_show : Control
 		{
 			
 			Collection col;
-			PackedScene SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/pouet.tscn");
-			col = (Collection)SceneCollection.Instantiate();
+			PackedScene SceneCollection = null;
 			if(Collection.numeroMap==1){
 				if(Collection.id==1){
 					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/pouet.tscn");
-					col = (Collection)SceneCollection.Instantiate();
 				}
 				if(Collection.id==2){
 					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/kalash.tscn");
-					col = (Collection)SceneCollection.Instantiate();
 				}
 				if(Collection.id==3){
 					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/pot_de_fleur.tscn");
-					col = (Collection)SceneCollection.Instantiate();
 				}				
 			}
 			else if(Collection.numeroMap==2){
 				if(Collection.id==1){
 					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/renard.tscn");
-					col = (Collection)SceneCollection.Instantiate();
 				}
 				if(Collection.id==2){
 					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/gateau.tscn");
-					col = (Collection)SceneCollection.Instantiate();
 				}
 				if(Collection.id==3){
 					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/chateaux.tscn");
-					col = (Collection)SceneCollection.Instantiate();
 				}	
 			}
 			else if(Collection.numeroMap==3){
 				if(Collection.id==1){
 					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/baignoire.tscn");
-					col = (Collection)SceneCollection.Instantiate();
 				}
 				if(Collection.id==2){
 					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/gros_vaisseau.tscn");
-					col = (Collection)SceneCollection.Instantiate();
 				}
 				if(Collection.id==3){
 					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/sombrero.tscn");
-					col = (Collection)SceneCollection.Instantiate();
 				}	
 			}
 			else if(Collection.numeroMap==4){
 				if(Collection.id==1){
 					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/cle.tscn");
-					col = (Collection)SceneCollection.Instantiate();
 				}
 				if(Collection.id==2){
 					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/la_canne_de_brigitte.tscn");
-					col = (Collection)SceneCollection.Instantiate();
 				}
 				if(Collection.id==3){
 					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/saussice.tscn");
-					col = (Collection)SceneCollection.Instantiate();
 				}	
 			}
 			else if(Collection.numeroMap==5){
 				if(Collection.id==1){
 					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/mayo.tscn");
-					col = (Collection)SceneCollection.Instantiate();
 				}
 				if(Collection.id==2){
 					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/tnt.tscn");
-					col = (Collection)SceneCollection.Instantiate();
 				}
 				if(Collection.id==3){
 					SceneCollection = (PackedScene)ResourceLoader.Load("res://Collection/pistolet.tscn");
-					col = (Collection)SceneCollection.Instantiate();
 				}	
 			}
+			if(SceneCollection!=null){
+				col = (Collection)SceneCollection.Instantiate();
+				col.Scale = new Vector2(1,1);
+				col.Position = new Vector2(480+(Collection.id-1)*145,110+(Collection.numeroMap-1)*130);
+				AddChild(col);
+			}
 			
-			col.Scale = new Vector2(1,1);
-			col.Position = new Vector2(480+(Collection.id-1)*145,110+(Collection.numeroMap-1)*130);
-			AddChild(col);
 		}
 	}
 

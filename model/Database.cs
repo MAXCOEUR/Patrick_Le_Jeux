@@ -21,7 +21,7 @@ public class Database
 		connection.Open();
 
 		// Création de la table Collection si elle n'existe pas.
-		string createTableQuery = "CREATE TABLE IF NOT EXISTS Collection (id INTEGER PRIMARY KEY AUTOINCREMENT,numeroMap INTEGER NOT NULL,numeroCollection INTEGER NOT NULL,UNIQUE(numeroMap, numeroCollection)); CREATE TABLE IF NOT EXISTS MapCurrent (id INTEGER PRIMARY KEY AUTOINCREMENT,numeroMap INTEGER NOT NULL UNIQUE)";
+		string createTableQuery = "CREATE TABLE IF NOT EXISTS Collection (id INTEGER PRIMARY KEY AUTOINCREMENT,numeroMap INTEGER NOT NULL,numeroCollection INTEGER NOT NULL,UNIQUE(numeroMap, numeroCollection)); CREATE TABLE IF NOT EXISTS MapCurrent (id INTEGER PRIMARY KEY AUTOINCREMENT,numeroMap INTEGER NOT NULL UNIQUE);";
 		SQLiteCommand createTableCommand = new SQLiteCommand(createTableQuery, connection);
 		createTableCommand.ExecuteNonQuery();
 	}
