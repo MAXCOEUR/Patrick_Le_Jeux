@@ -41,3 +41,46 @@ D:\Document\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\refi
 D:\Document\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\Patrick Le Jeux.pdb
 D:\Document\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\Patrick Le Jeux.genruntimeconfig.cache
 D:\Document\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\ref\Patrick Le Jeux.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\Patrick Le Jeux.deps.json
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\Patrick Le Jeux.runtimeconfig.json
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\Patrick Le Jeux.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\Patrick Le Jeux.pdb
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\EntityFramework.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\Microsoft.Win32.SystemEvents.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\System.Data.SQLite.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\System.CodeDom.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\System.Data.SqlClient.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\System.Drawing.Common.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\System.Security.Permissions.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\System.Windows.Extensions.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\runtimes\win-arm64\native\sni.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\runtimes\win-x64\native\sni.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\runtimes\win-x86\native\sni.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\runtimes\win-x86\native\SQLite.Interop.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\bin\Debug\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\Patrick Le Jeux.csproj.AssemblyReference.cache
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\Patrick Le Jeux.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\Patrick Le Jeux.AssemblyInfoInputs.cache
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\Patrick Le Jeux.AssemblyInfo.cs
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\Patrick Le Jeux.csproj.CoreCompileInputs.cache
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\Patrick Le Jeux.csproj.CopyComplete
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\Patrick Le Jeux.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\refint\Patrick Le Jeux.dll
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\Patrick Le Jeux.pdb
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\Patrick Le Jeux.genruntimeconfig.cache
+C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\ref\Patrick Le Jeux.dll

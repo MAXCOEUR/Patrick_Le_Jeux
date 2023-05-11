@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Document\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj": {}
+    "C:\\Users\\Maxen\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj": {}
   },
   "projects": {
-    "D:\\Document\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj": {
+    "C:\\Users\\Maxen\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Document\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj",
+        "projectUniqueName": "C:\\Users\\Maxen\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj",
         "projectName": "Patrick Le Jeux",
-        "projectPath": "D:\\Document\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj",
+        "projectPath": "C:\\Users\\Maxen\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj",
         "packagesPath": "C:\\Users\\Maxen\\.nuget\\packages\\",
-        "outputPath": "D:\\Document\\Documents\\01 Project\\Patrick_Le_Jeux\\.godot\\mono\\temp\\obj\\",
+        "outputPath": "C:\\Users\\Maxen\\Documents\\01 Project\\Patrick_Le_Jeux\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\Maxen\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Users\\Maxen\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\Maxen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Users\\Maxen\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,6 +52,10 @@
               "target": "Package",
               "version": "[4.0.2, )"
             },
+            "GodotSharpEditor": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
             "System.Data.SQLite": {
               "target": "Package",
               "version": "[1.0.117, )"
@@ -70,31 +72,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[6.0.15, 6.0.15]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[6.0.15, 6.0.15]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[6.0.15, 6.0.15]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
