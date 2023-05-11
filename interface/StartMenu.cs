@@ -11,7 +11,7 @@ public partial class StartMenu : Control
 
 	private AudioStreamPlayer musique;
 	AudioStream audioStream;
-
+	SceneTree tree;
 	int currentback=0;
 	public override void _Ready()
 	{
@@ -34,6 +34,7 @@ public partial class StartMenu : Control
 		audioStream = (AudioStream)ResourceLoader.Load(musiqueFilePath);
 		musique.Stream = audioStream;
 		musique.Play();
+		tree = GetTree();
 	}
 	private void _OnBt_siteWeb(){
 		string url = "https://patrick-le-stegosaure.vercel.app";  // Remplacez par l'URL du site web que vous souhaitez ouvrir
@@ -55,14 +56,15 @@ public partial class StartMenu : Control
 	
 	private void _OnBt_NouvellePartiePressed()
 	{	
-		GetTree().ChangeSceneToFile("res://level/level_1.tscn");
+		tree.ChangeSceneToFile("res://level/level_1.tscn");
 	}
 	private void _OnBt_quitter()
 	{	
-		GetTree().Quit();
+		tree.Quit();
 	}
 	private void _OnBt_collection(){
-		GetTree().ChangeSceneToFile("res://Collection/collection_show.tscn");
+		tree.ChangeSceneToFile("res://Collection/collection_show.tscn");
+		
 	}
 
 	private void _OnBt_recommencer(){
