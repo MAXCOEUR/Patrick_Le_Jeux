@@ -1,5 +1,9 @@
 is_global = true
+<<<<<<< HEAD
 build_property.GodotProjectDir = d:\Document\Documents\01 Project\Patrick_Le_Jeux\
+=======
+build_property.GodotProjectDir = C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\
+>>>>>>> main
 build_property.GodotProjectDirBase64 = 
 build_property.GodotSourceGenerators = 
 build_property.IsGodotToolsProject = 
@@ -12,4 +16,8 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PatrickLeJeux
+<<<<<<< HEAD
 build_property.ProjectDir = d:\Document\Documents\01 Project\Patrick_Le_Jeux\
+=======
+build_property.ProjectDir = C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\
+>>>>>>> main
