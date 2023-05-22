@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Maxen\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj": {}
+    "D:\\Document\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Maxen\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj": {
+    "D:\\Document\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Maxen\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj",
+        "projectUniqueName": "D:\\Document\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj",
         "projectName": "Patrick Le Jeux",
-        "projectPath": "C:\\Users\\Maxen\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj",
+        "projectPath": "D:\\Document\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj",
         "packagesPath": "C:\\Users\\Maxen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Maxen\\Documents\\01 Project\\Patrick_Le_Jeux\\.godot\\mono\\temp\\obj\\",
+        "outputPath": "D:\\Document\\Documents\\01 Project\\Patrick_Le_Jeux\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\Maxen\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"
+          "C:\\Users\\Maxen\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\Maxen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Users\\Maxen\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,15 +73,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[6.0.14, 6.0.14]"
+              "version": "[6.0.16, 6.0.16]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[6.0.14, 6.0.14]"
+              "version": "[6.0.16, 6.0.16]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[6.0.14, 6.0.14]"
+              "version": "[6.0.16, 6.0.16]"
             }
           ],
           "frameworkReferences": {
@@ -87,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-preview.4.23260.5\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

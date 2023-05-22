@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Patrick Le Jeux")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("ExportDebug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17141d2740f6fa0f8827ebce6ce2c6605f917461")]
 [assembly: System.Reflection.AssemblyProductAttribute("Patrick Le Jeux")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Patrick Le Jeux")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

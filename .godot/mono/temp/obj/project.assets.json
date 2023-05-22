@@ -787,12 +787,11 @@
       ]
     },
     "Godot.SourceGenerators/4.0.2": {
-      "sha512": "nf4QegHOSrlw7WtpgwSwFnmKMuIzFBeF/f11r2e5witGfrnoxtqyxInxOahnYnnP3DntrDmXZe4XNKRr9qYUoQ==",
+      "sha512": "FH9W+m0rACy9a6vMfkEHYGtPQr7WNt0ha6pkD29BDrT6klLNM7mv2qvnLe3zCuNXfGP854jiP9ypIMoeE7OPKQ==",
       "type": "package",
       "path": "godot.sourcegenerators/4.0.2",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "analyzers/dotnet/cs/Godot.SourceGenerators.dll",
         "build/Godot.SourceGenerators.props",
         "godot.sourcegenerators.4.0.2.nupkg.sha512",
@@ -800,12 +799,11 @@
       ]
     },
     "GodotSharp/4.0.2": {
-      "sha512": "ZRXK64N5CoxaVxu0LmhmYJV+gOLJOMiILskklqLsanJk/4glUaZLqTmVy8yt74iLXseEaeXU2RwLBsSUEIZ4Gw==",
+      "sha512": "0974lh3Pd/2zusla/RxLyAzpSbSzu6cOaNtI4+sE7yEP0ixXaR1CdtHROJzHhCmGY0yl7Ockh0j5KhTwXCIkVw==",
       "type": "package",
       "path": "godotsharp/4.0.2",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "godotsharp.4.0.2.nupkg.sha512",
         "godotsharp.nuspec",
         "lib/net6.0/GodotSharp.dll",
@@ -1580,23 +1578,26 @@
   },
   "packageFolders": {
     "C:\\Users\\Maxen\\.nuget\\packages\\": {},
-    "C:\\Users\\Maxen\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {}
+    "C:\\Users\\Maxen\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Maxen\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj",
+      "projectUniqueName": "D:\\Document\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj",
       "projectName": "Patrick Le Jeux",
-      "projectPath": "C:\\Users\\Maxen\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj",
+      "projectPath": "D:\\Document\\Documents\\01 Project\\Patrick_Le_Jeux\\Patrick Le Jeux.csproj",
       "packagesPath": "C:\\Users\\Maxen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Maxen\\Documents\\01 Project\\Patrick_Le_Jeux\\.godot\\mono\\temp\\obj\\",
+      "outputPath": "D:\\Document\\Documents\\01 Project\\Patrick_Le_Jeux\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Users\\Maxen\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"
+        "C:\\Users\\Maxen\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\Maxen\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Users\\Maxen\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1649,15 +1650,15 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[6.0.14, 6.0.14]"
+            "version": "[6.0.16, 6.0.16]"
           },
           {
             "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[6.0.14, 6.0.14]"
+            "version": "[6.0.16, 6.0.16]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[6.0.14, 6.0.14]"
+            "version": "[6.0.16, 6.0.16]"
           }
         ],
         "frameworkReferences": {
@@ -1665,7 +1666,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-preview.4.23260.5\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

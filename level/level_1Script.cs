@@ -13,10 +13,14 @@ public partial class level_1Script : Node2D
 	private VideoStreamPlayer videoPlayer;
 	protected Database db = Database.Instance;
 
+	protected Button skip;
+
 
 	public override void _Ready()
 	{
 		videoPlayer = GetNode<VideoStreamPlayer>("Camera2D/VideoStreamPlayer");
+		skip = videoPlayer.GetNode<Button>("Skip");
+		skip.Connect("button_down", new Callable(this, "On_Skip"));
 		videoPlayer.Connect("finished", new Callable(this, "OnVideoFinish"));
 
 		background = GetNode<Polygon2D>("Polygon2D");
@@ -40,6 +44,12 @@ public partial class level_1Script : Node2D
 
 		//debugMode();
 		setMapChose(maxNumeroMap);
+	}
+
+	private void On_Skip()
+	{
+		OnVideoFinish();
+		videoPlayer.Stop();
 	}
 
 	private void setMapChose(int numMap)
@@ -233,11 +243,13 @@ public partial class level_1Script : Node2D
 		// Démarrer la lecture de la vidéo
 		GD.Print("set video play");
 		videoPlayer.Play();
+		videoPlayer.Visible=true;
 	}
 	private void OnVideoFinish()
 	{
 		GD.Print("OnVideoFinish");
 		_player.Visible=true;
+		videoPlayer.Visible=false;
 		_player.Position = new Vector2(100, 500);
 		switch (videoPlayer.Stream.ResourcePath.ToString())
 		{

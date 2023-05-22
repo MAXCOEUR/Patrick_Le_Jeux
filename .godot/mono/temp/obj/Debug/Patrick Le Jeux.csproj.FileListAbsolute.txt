@@ -84,3 +84,4 @@ C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\r
 C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\Patrick Le Jeux.pdb
 C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\Patrick Le Jeux.genruntimeconfig.cache
 C:\Users\Maxen\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\ref\Patrick Le Jeux.dll
+D:\Document\Documents\01 Project\Patrick_Le_Jeux\.godot\mono\temp\obj\Debug\Patrick Le Jeux.sourcelink.json

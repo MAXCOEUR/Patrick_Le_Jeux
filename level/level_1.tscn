@@ -31,6 +31,12 @@ offset_top = -362.0
 offset_right = 640.0
 offset_bottom = 358.0
 
+[node name="Skip" type="Button" parent="Camera2D/VideoStreamPlayer"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Skip... (les nullos)"
+
 [node name="echap" parent="Camera2D" instance=ExtResource("5")]
 visible = false
 anchors_preset = 0
