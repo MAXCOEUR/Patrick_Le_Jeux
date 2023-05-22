@@ -38,7 +38,6 @@ offset_bottom = 8.0
 text = "Skip... (les nullos)"
 
 [node name="echap" parent="Camera2D" instance=ExtResource("5")]
-visible = false
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -50,4 +49,3 @@ visible = false
 layout_mode = 1
 
 [node name="GameOver" parent="Camera2D" instance=ExtResource("4")]
-visible = false

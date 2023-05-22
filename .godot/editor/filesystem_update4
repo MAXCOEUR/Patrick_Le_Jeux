@@ -1,3 +1,4 @@
 res://interface/StartMenu.tscn
 res://level/level_1.tscn
 res://interface/GameOver.tscn
+res://interface/echap.tscn
