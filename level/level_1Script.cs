@@ -42,14 +42,15 @@ public partial class level_1Script : Node2D
 			maxNumeroMap = 1;
 		}
 
-		//debugMode();
-		setMapChose(maxNumeroMap);
+		debugMode();
+		//setMapChose(maxNumeroMap);
 	}
 
 	private void On_Skip()
 	{
-		OnVideoFinish();
+		
 		videoPlayer.Stop();
+		OnVideoFinish();
 	}
 
 	private void setMapChose(int numMap)
@@ -232,6 +233,7 @@ public partial class level_1Script : Node2D
 
 	public void setVideo(string lienVideo)
 	{
+		_camera.Position=new Vector2(100, 500);
 		// Charger la vidéo
 		_player.Position = new Vector2(0, 0);
 		_player.Visible=false;
@@ -376,7 +378,7 @@ public partial class level_1Script : Node2D
 
 	private void debugMode()
 	{
-		Finish_map_Boss_5();
+		setMapBoss5();
 	}
 
 }
