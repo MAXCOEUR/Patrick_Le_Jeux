@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Patrick Le Jeux")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f2fa641acb2ec1ca68efd16e7003f43b94e66af")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d93dcbcb0612758ae1a9dca3fe3d2bdb64105c4")]
 [assembly: System.Reflection.AssemblyProductAttribute("Patrick Le Jeux")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Patrick Le Jeux")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

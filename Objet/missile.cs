@@ -47,6 +47,7 @@ public partial class missile : Object
 			TimeSpan duration = DateTime.Now.Subtract(startLunch);
 			if (duration.TotalSeconds > TimeLife)
 			{
+				this.QueueFree();
 				annimation.Play("explosion");
 			}
 		}
