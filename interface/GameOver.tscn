@@ -37,7 +37,7 @@ uppercase = true
 
 [node name="bt_recommancer" type="Button" parent="CenterContainer/GridContainer"]
 layout_mode = 2
-text = "Recommancer"
+text = "Recommencer"
 
 [node name="bt_revenir_au_menu" type="Button" parent="CenterContainer/GridContainer"]
 layout_mode = 2
