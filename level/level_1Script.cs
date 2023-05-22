@@ -42,15 +42,14 @@ public partial class level_1Script : Node2D
 			maxNumeroMap = 1;
 		}
 
-		debugMode();
-		//setMapChose(maxNumeroMap);
+		//debugMode();
+		setMapChose(maxNumeroMap);
 	}
 
 	private void On_Skip()
 	{
-		
-		videoPlayer.Stop();
 		OnVideoFinish();
+		videoPlayer.Stop();
 	}
 
 	private void setMapChose(int numMap)

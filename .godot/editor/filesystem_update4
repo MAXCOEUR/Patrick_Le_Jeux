@@ -1,18 +1,6 @@
 res://interface/StartMenu.tscn
 res://level/level_1.tscn
-res://interface/GameOver.tscn
-<<<<<<< HEAD
-<<<<<<< HEAD
-res://interface/intro_video.tscn
-=======
 res://interface/echap.tscn
->>>>>>> parent of 89bb3dd... pamouk et camera skip
-=======
-<<<<<<< HEAD
-=======
+res://interface/GameOver.tscn
 res://interface/intro_video.tscn
->>>>>>> main
-=======
-res://interface/intro_video.tscn
->>>>>>> main
->>>>>>> main
+res://level/level_1Script.cs
