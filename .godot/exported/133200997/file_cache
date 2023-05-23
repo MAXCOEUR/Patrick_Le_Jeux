@@ -12,11 +12,11 @@ res://Collection/gateau.tscn::3f690d0e5160245c32f9930a9959f2d2::1683790088::res:
 res://Collection/kalash.tscn::4be43399c1d11159a6a31a0ac86f9ad7::1683790088::res://.godot/exported/133200997/export-5d3938df024cbc767a7b970276668400-kalash.scn
 res://Collection/pot_de_fleur.tscn::38600ebc0d739de968e02dede357bd11::1683790088::res://.godot/exported/133200997/export-c09b0100cc35af06c621711eec78030c-pot_de_fleur.scn
 res://Collection/pouet.tscn::5127f1fcabe1dafc4bfacf7878244dc0::1683790088::res://.godot/exported/133200997/export-d4d3886eb8e09419e85944be7b3572f6-pouet.scn
-res://interface/echap.tscn::227ff508cf2f21efe4f9c239cd06c38a::1684787249::res://.godot/exported/133200997/export-afd2e4e471a6dfdc2f753b47df054c6e-echap.scn
-res://interface/GameOver.tscn::f776b26dc4b0de44d607b9e7dd344d33::1684787249::res://.godot/exported/133200997/export-7b875657bc4fec4a478cdba8a91cd39d-GameOver.scn
+res://interface/echap.tscn::227ff508cf2f21efe4f9c239cd06c38a::1684789448::res://.godot/exported/133200997/export-afd2e4e471a6dfdc2f753b47df054c6e-echap.scn
+res://interface/GameOver.tscn::f776b26dc4b0de44d607b9e7dd344d33::1684789448::res://.godot/exported/133200997/export-7b875657bc4fec4a478cdba8a91cd39d-GameOver.scn
 res://interface/menu_niveaux.tscn::37de53bbfd4f4c0dabd8175576657a32::1683790088::res://.godot/exported/133200997/export-29d8ab1bc806bfcc5851c4649093ff6a-menu_niveaux.scn
-res://interface/StartMenu.tscn::7422317bd78c9f9a8139400100df1216::1684787249::res://.godot/exported/133200997/export-7fbcf5da1c8fe90823de098496016fba-StartMenu.scn
-res://level/level_1.tscn::d41756aa6c013a487a126584a7f118cf::1684787249::res://.godot/exported/133200997/export-9fdbe4ec9c6d387c69671bd9f8dbf907-level_1.scn
+res://interface/StartMenu.tscn::7422317bd78c9f9a8139400100df1216::1684789448::res://.godot/exported/133200997/export-7fbcf5da1c8fe90823de098496016fba-StartMenu.scn
+res://level/level_1.tscn::d41756aa6c013a487a126584a7f118cf::1684789543::res://.godot/exported/133200997/export-9fdbe4ec9c6d387c69671bd9f8dbf907-level_1.scn
 res://map/boss/map_boss_1.tscn::816e2823696ff4d270cda6f004eb1c3f::1683790088::res://.godot/exported/133200997/export-1d844c659b75c7770ed183b7b3ef48e5-map_boss_1.scn
 res://map/fin/fin_map_1.tscn::7c26866f942d15b23d12c674b2147851::1683790088::res://.godot/exported/133200997/export-c07c884715c5ee98470cde6d9b39ef81-fin_map_1.scn
 res://map/fin/fin_map_2.tscn::b30aa361d49179346655d87ca2f906f0::1683790088::res://.godot/exported/133200997/export-e534b4a510474c1965c5c30cd75c7ab0-fin_map_2.scn
@@ -59,7 +59,7 @@ res://Collection/saussice.tscn::7429ad5d357af7a75e13ec5d7596158b::1683790088::re
 res://Collection/sombrero.tscn::bf0142a673e3f863256a1e56b0c2dc38::1683790088::res://.godot/exported/133200997/export-edc3bc4fa0bfe25d34ca06731744f9b8-sombrero.scn
 res://Collection/tnt.tscn::aa6c99d667356ce40ec40aa522febd39::1683790088::res://.godot/exported/133200997/export-b985cfd0279a5f42b1ee5f87d844d6b9-tnt.scn
 res://interface/generique.tscn::8ed7543c0008072848b25184872a1210::1683790088::res://.godot/exported/133200997/export-7fd74a9691c2a88aa34b9debbb19061c-generique.scn
-res://interface/intro_video.tscn::6ffdc2ae6a81c10748dcf8df4b2d5f3b::1684787249::res://.godot/exported/133200997/export-e9794dfc60c1d82d094c1e7d37686b8f-intro_video.scn
+res://interface/intro_video.tscn::6ffdc2ae6a81c10748dcf8df4b2d5f3b::1684789448::res://.godot/exported/133200997/export-e9794dfc60c1d82d094c1e7d37686b8f-intro_video.scn
 res://map/boss/sol_boss_2/sol_1.tscn::9865467da10dc6c95c18e52750d57520::1683790088::res://.godot/exported/133200997/export-7b333747cd3533a332360b641a003a68-sol_1.scn
 res://map/boss/sol_boss_2/sol_2.tscn::8b62662a25337053f2f26a4a2527b7f8::1683790088::res://.godot/exported/133200997/export-0119b7f0d55cb6d46d8107b1df395e5a-sol_2.scn
 res://map/boss/sol_boss_2/sol_3.tscn::ab10ba03dd18c2237b320f57a94e3592::1683790088::res://.godot/exported/133200997/export-56e9892717feff41dacfd1e5c47b929c-sol_3.scn
